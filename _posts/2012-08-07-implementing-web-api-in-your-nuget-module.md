@@ -15,7 +15,7 @@ Whenever someone installs your module into their project, it should just work. G
 
 Similarly, your module shouldn't have to edit your project's Global.asax file to register its own Web API routes. I don't know if that's even possible, but then again I'm still an ASP.NET noob. In any case, we're kinda stuck. We need the module to register its Web API routes, but we don't want to have the users manually edit the Global.asax file.
 
-Enter <a href="http://nuget.org/packages/WebActivator" title="WebActivator NuGet page" target="_blank">WebActivator</a>. This module allows you to run start up codes in your web applications. You can even choose to run your start up code before the application starts, or after. Pretty cool, huh?
+Enter [WebActivator](http://nuget.org/packages/WebActivator "WebActivator NuGet page"){:target="_blank"}. This module allows you to run start up codes in your web applications. You can even choose to run your start up code before the application starts, or after. Pretty cool, huh?
 
 So on to the code. The following code will allow your NuGet module to register its Web API routes during application start up. Much like how Global.asax works.
 

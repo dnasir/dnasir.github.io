@@ -20,7 +20,7 @@ I thought that updating the connection string from `v11.0` to `v12.0` would solv
 
 After a couple of hours Googling, I finally came across this little gem:
 
-According to <a href="https://connect.microsoft.com/SQLServer/feedback/details/845278/sql-server-2014-express-localdb-does-not-create-automatic-instance-v12-0" target="_blank">Microsoft</a>
+According to [Microsoft](https://connect.microsoft.com/SQLServer/feedback/details/845278/sql-server-2014-express-localdb-does-not-create-automatic-instance-v12-0){:target="_blank"}
 
 > In SQL14, we moved away from the numbering/versioning for the automatic instance and named it "MSSQLLocalDB" instead of "v12.0".
 

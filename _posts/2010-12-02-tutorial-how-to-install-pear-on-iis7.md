@@ -7,7 +7,7 @@ categories: [iis, installation, Internet Information Services (IIS), pear, PHP, 
 ---
 I was looking around for some libraries to use in my server-side scripts and it led me to reading up on PEAR. So I decided to have a look, and install it on my Windows Server 2008 R2 server.
 
-I am assuming that you have properly installed PHP, and that you are using the latest version of PHP. At the time of writing, the latest PHP version is 5.3.3. You can read up on the whole installation process <a href="http://subject9.wordpress.com/2010/11/22/tutorial-how-to-install-php-on-iis/" target="_blank">here</a>.
+I am assuming that you have properly installed PHP, and that you are using the latest version of PHP. At the time of writing, the latest PHP version is 5.3.3. You can read up on the whole installation process [here](http://subject9.wordpress.com/2010/11/22/tutorial-how-to-install-php-on-iis/){:target="_blank"}.
 
 <!--more-->
 
@@ -16,7 +16,7 @@ Once  you have installed PHP, navigate to the folder in which PHP is installed,
 <a href="http://subject9.files.wordpress.com/2011/08/pear-install.png"><img class="aligncenter size-full wp-image-1242" title="pear-install" src="http://subject9.files.wordpress.com/2011/08/pear-install.png" alt="" width="590" height="428" /></a>
 
 I ran into some problems while trying to get PEAR working. Firstly, I kept getting an error telling me that there was a syntax error.
-<p style="text-align:center;"><a href="http://subject9.files.wordpress.com/2011/08/pear-run-error2.png"><img class="size-full wp-image-623 aligncenter" title="pear-run-error2" src="http://subject9.files.wordpress.com/2011/08/pear-run-error2.png" alt="" /></a></p>
+<a href="http://subject9.files.wordpress.com/2011/08/pear-run-error2.png"><img class="size-full wp-image-623 aligncenter" title="pear-run-error2" src="http://subject9.files.wordpress.com/2011/08/pear-run-error2.png" alt="" /></a>
 
 ```shell
 Syntax error, unexpected '(' in Unknown on line 14.
@@ -45,7 +45,7 @@ Now, edit this line so that it looks like this;
 Notice the single and double quotes. The double quotes keeps shell happy, while the single quotes are for PHP to use. This simple trick helped me fix one problem.
 
 The next problem was that whenever I try running pear in shell, I was getting this error telling me that OCI.dll is missing.
-<p style="text-align:center;"><a href="http://subject9.files.wordpress.com/2011/08/pear-run-error1.png"><img class="size-full wp-image-622 aligncenter" title="pear-run-error1" src="http://subject9.files.wordpress.com/2011/08/pear-run-error1.png" alt="" /></a></p>
+<a href="http://subject9.files.wordpress.com/2011/08/pear-run-error1.png"><img class="size-full wp-image-622 aligncenter" title="pear-run-error1" src="http://subject9.files.wordpress.com/2011/08/pear-run-error1.png" alt="" /></a>
 I figured it's a simple problem with PHP trying to call an extension that doesn't exist. So what I did was open up php.ini in Notepad++ and disabled the following extensions;
 
 ```
@@ -57,7 +57,7 @@ extension=php_pdo_oci.dll
 That solved another problem. I don't know what OCI is, but I hope it's not needed for any of the work I need PHP to do.
 
 Finally, the last problem is that shell was spewing out a bunch of errors telling me that PHP couldn't find several modules, as you can see in the image below.
-<p style="text-align:center;"><a href="http://subject9.files.wordpress.com/2011/08/pear-run-error3.png"><img class="size-full wp-image-621 aligncenter" title="pear-run-error3" src="http://subject9.files.wordpress.com/2011/08/pear-run-error3.png" alt="" width="675" height="490" /></a></p>
+<a href="http://subject9.files.wordpress.com/2011/08/pear-run-error3.png"><img class="size-full wp-image-621 aligncenter" title="pear-run-error3" src="http://subject9.files.wordpress.com/2011/08/pear-run-error3.png" alt="" width="675" height="490" /></a>
 It turned out that quoting the following line helped solve this problem.
 
 ```
@@ -71,9 +71,8 @@ Anyway, I hope this tutorial has helped setting up PEAR on your IIS server. If y
 Til next time, wassalam.
 
 References:
-
-<a href="http://pear.php.net/">http://pear.php.net</a>
-<a href="http://www.pear-forum.org/">http://www.pear-forum.org</a>
+[http://pear.php.net/](http://pear.php.net){:target="_blank"}
+[http://www.pear-forum.org](http://www.pear-forum.org){:target="_blank"}
 
 ### DISCLAIMER ###
 

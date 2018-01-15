@@ -19,4 +19,4 @@ Here's a list of changes.
 	<li>Methods can now be called using the plugin and passing in the method as string, along with additional parameters.</li>
 </ol>
 
-Check it out on the <a href="https://github.com/dnasir/jquery-cascading-dropdown" title="jQuery Cascading Dropdown plugin" target="_blank">project Github page</a>.
+Check it out on the [project Github page](https://github.com/dnasir/jquery-cascading-dropdown "jQuery Cascading Dropdown plugin"){:target="_blank"}.

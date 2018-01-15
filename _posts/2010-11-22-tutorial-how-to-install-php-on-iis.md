@@ -13,7 +13,7 @@ So here's how to set up PHP on IIS. At the time of writing, the server is runnin
 <ol>
 	<li>Make sure you have the Internet Information Service (IIS) installed and configured properly. This means you have to be able to see the IIS Welcome page when you access the server via web browser.</li>
 	<li>Make sure you have CGI installed and configured properly. I would just have all the stuff under Application Development install</li>
-	<li>Download the PHP installer from <a href="http://windows.php.net/download/">http://windows.php.net/download/</a>. At the time of writing, the latest PHP version available is 5.3.3, so I cannot guarantee this guide will work with newer versions.</li>
+	<li>Download the PHP installer from [http://windows.php.net/download/](http://windows.php.net/download/){:target="_blank"}. At the time of writing, the latest PHP version available is 5.3.3, so I cannot guarantee this guide will work with newer versions.</li>
 	<li>Run the installer.
 <ul>
 	<li>Set the install path to something easy to remember/use (eg. c:php)</li>

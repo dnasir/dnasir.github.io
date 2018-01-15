@@ -6,7 +6,7 @@ date: 2013-09-23 12:47
 comments: true
 categories: [ASP.NET, C#, EPiServer 7, Web Development]
 ---
-In one of my recent projects, I've had to implement a property that displays a list of checkboxes so the administrator could select an item to enable from the list of available options. I googled around for a bit and came across this <a href="http://world.episerver.com/Blogs/Linus-Ekstrom/Dates/2012/9/EPiServer-7-Configuring-editors-for-your-properties/" target="_blank">article by Linus Ekström.</a>
+In one of my recent projects, I've had to implement a property that displays a list of checkboxes so the administrator could select an item to enable from the list of available options. I googled around for a bit and came across this [article by Linus Ekström](http://world.episerver.com/Blogs/Linus-Ekstrom/Dates/2012/9/EPiServer-7-Configuring-editors-for-your-properties/){:target="_blank"}.
 
 This is my implementation.
 
@@ -52,7 +52,7 @@ And you'll end up with something like this:
 
 <strong>Note to CMS 7.1 developers!</strong>
 
-As pointed out by Linus in <a href="http://world.episerver.com/Forum/Developer-forum/EPiServer-7-CMS/Thread-Container/2013/9/How-to-use-PropertyCheckBoxList/" target="_blank">this forum post</a>, you'll need to replace this line:
+As pointed out by Linus in [this forum post](http://world.episerver.com/Forum/Developer-forum/EPiServer-7-CMS/Thread-Container/2013/9/How-to-use-PropertyCheckBoxList/){:target="_blank"}, you'll need to replace this line:
 
 ```csharp
 ClientEditingClass = "epi-cms.contentediting.editors.CheckBoxListEditor";

@@ -13,11 +13,11 @@ for (item in data) {
 }
 ```
 
-<!--more-->
-
 This piece of code will attach a data property for each JSON object it receives from an Ajax request. Simple, right? This works in every other browser I've tested it on, EXCEPT Internet Explorer.
 
-Turned out the word <strong>item</strong> is <del datetime="2012-05-11T06:25:17+00:00">a reserved word or something</del> <a href="http://msdn.microsoft.com/en-us/library/ie/ms536460(v=vs.85).aspx" target="_blank">an IE method</a>, because when I swapped item with something else, like j or _item, the code immediately works.
+Turned out the word <strong>item</strong> is <del datetime="2012-05-11T06:25:17+00:00">a reserved word or something</del> [an IE method](http://msdn.microsoft.com/en-us/library/ie/ms536460(v=vs.85).aspx){:target="_blank"}, because when I swapped item with something else, like j or _item, the code immediately works.
+
+<!--more-->
 
 So something like this:
 

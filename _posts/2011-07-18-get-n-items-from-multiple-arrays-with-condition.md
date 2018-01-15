@@ -5,7 +5,7 @@ date: 2011-07-18 15:25
 comments: true
 categories: [conditional array merge, multiple arrays, PHP, php, Programming]
 ---
-The title may be a bit confusing, but recent I have come to need a function that retrieves the latest items from my database object arrays in one of my PHP project. I have three object arrays obtained using the mysql_fetch_object function, and I needed to get the latest items based on the timestamp they were posted. Before you tell me I should have used better SQL queries, I should mention that the MySQL tables have different data structures, but with the same column names.
+The title may be a bit confusing, but recent I have come to need a function that retrieves the latest items from my database object arrays in one of my PHP project. I have three object arrays obtained using the `mysql_fetch_object` function, and I needed to get the latest items based on the timestamp they were posted. Before you tell me I should have used better SQL queries, I should mention that the MySQL tables have different data structures, but with the same column names.
 
 I googled around hoping that there would be some simple solution to my needs – a function that will retrieve a preset number of items based on a condition from an array and output them as a new array. But the search was taking too long and Google was showing me too many irrelevant results. This prompted me to write my own solution, as usual.
 
@@ -38,7 +38,7 @@ function getItemsFromArray($n,$inputArray,$outputArray=null){
 }
 ```
 
-This script will output an array containing the latest items sorted by posted timestamp. If an array is provided in the $outputArray field, the script will push the items from the $inputArray into that array, and sort the array on each loop to make sure the output array only contains the latest items. It’s worth to note though, the compare function I wrote for sorting the arrays using the usort function was written for my usage. If you want to use this function, you’d probably want to edit that part. See below for typical usage.
+This script will output an array containing the latest items sorted by posted timestamp. If an array is provided in the $outputArray field, the script will push the items from the `$inputArray` into that array, and sort the array on each loop to make sure the output array only contains the latest items. It’s worth to note though, the compare function I wrote for sorting the arrays using the usort function was written for my usage. If you want to use this function, you’d probably want to edit that part. See below for typical usage.
 
 ```php
 /* $nObj, $tObj, $aObj are object arrays */

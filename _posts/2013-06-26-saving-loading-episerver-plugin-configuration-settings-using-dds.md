@@ -91,7 +91,7 @@ namespace MyPlugin.Repositories
 
 I think the code above is pretty much self-explanatory. The repository class has a static property of type DynamicDataStore which has a getter that returns the DynamicDataStore object, that is used in the two methods set up for setting and fetching the plugin settings from the DDS. The LoadSettings() method will try to fetch the plugin settings, and if it doesn't exist, it will create a new entry. The SaveSettings() method will first fetch the settings using the LoadSettings() method, and then overwrites the values using the Save() method.
 
-I'm also using the Singleton design pattern (Thanks <a href="http://www.frederikvig.com/" target="_blank">Frederik Vig</a> for the tip!) to avoid a possible race condition between two threads updating the same object.
+I'm also using the Singleton design pattern (Thanks [Frederik Vig](http://www.frederikvig.com/){:target="_blank"} for the tip!) to avoid a possible race condition between two threads updating the same object.
 
 On the plugin administration page, you can have a checkbox input control (since we're using a boolean in this example) that will represent the value for the Enabled property and we can use the Checked property for that control to define whether the plugin is to be enabled or disabled. The code-behind for the administration page could look something like this:
 

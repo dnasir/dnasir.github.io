@@ -17,7 +17,7 @@ After spending some time googling for a solution, I came across a small guide th
 
 You should be able to install all the drivers for your devices using this method. The only device that failed to install was my "Dell Wireless 375 Bluetooth Module with AMP" but other than that, everything else installed just fine, including my Smartcard reader.
 
-[Reference](http://blogs.technet.com/b/roblarson/archive/2009/05/02/installing-windows-server-2008-r2-on-a-notebook-and-getting-all-those-required-drivers.aspx){:target="_blank"}
+References:[http://blogs.technet.com/b/roblarson/archive/2009/05/02/installing-windows-server-2008-r2-on-a-notebook-and-getting-all-those-required-drivers.aspx](http://blogs.technet.com/b/roblarson/archive/2009/05/02/installing-windows-server-2008-r2-on-a-notebook-and-getting-all-those-required-drivers.aspx){:target="_blank"}
 
 ### DISCLAIMER ###
 

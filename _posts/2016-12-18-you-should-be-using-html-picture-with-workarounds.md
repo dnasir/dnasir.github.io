@@ -50,7 +50,7 @@ Well, sort of. The caveat is that non-compliant browsers will always download th
 
 ### The polyfill approach
 
-A more robust workaround involves the use of JavaScript polyfills. There are quite a few of them around, but I suggest using this one: <a href="http://scottjehl.github.io/picturefill/" target="_blank">Picturefill</a>
+A more robust workaround involves the use of JavaScript polyfills. There are quite a few of them around, but I suggest using this one: [Picturefill](http://scottjehl.github.io/picturefill/ "Picturefill"){:target="_blank"}
 
 The only caveat is that you'll need to replace the ``src`` attribute with ``srcset`` for the ``img`` tag within the picture element. The reason is explained in the project documentation:
 

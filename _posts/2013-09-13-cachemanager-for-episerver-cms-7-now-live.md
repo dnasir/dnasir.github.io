@@ -21,10 +21,10 @@ Geta has just released an updated version of CacheManager for EPiServer CMS 7. I
 
 <h3>Installation</h3>
 <ol>
-<li>Add http://nuget.episerver.com/feed/packages.svc&nbsp;as a NuGet package source.</li>
+<li>Add `http://nuget.episerver.com/feed/packages.svc` as a NuGet package source.</li>
 <li>Install CacheManager for EPiServer via NuGet.</li>
 <li>Rebuild your project.</li>
 <li>Start managing your EPiServer site cache.</li>
 </ol>
 
-Thanks to <a href="http://world.episerver.com/System/Users-and-profiles/Community-Profile-Card/Valdis%20Iljuconoks/" target="_blank">Valdis Iljuconoks</a> for helping out with this release.
+Thanks to [Valdis Iljuconoks](http://world.episerver.com/System/Users-and-profiles/Community-Profile-Card/Valdis%20Iljuconoks/){:target="_blank"} for helping out with this release.

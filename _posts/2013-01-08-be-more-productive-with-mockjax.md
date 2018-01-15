@@ -19,7 +19,7 @@ I don't usually work on the back-end code for the web services that my Ajax modu
 
 So it makes sense then, to find a way to be able to keep working even if the web services are not yet ready.
 
-Enter <a href="https://github.com/appendto/jquery-mockjax">Mockjax</a>, a jQuery plugin that allows you to simulate an Ajax response without the need of external web services.
+Enter [Mockjax](https://github.com/appendto/jquery-mockjax "Mockjax"){:target="_blank"}, a jQuery plugin that allows you to simulate an Ajax response without the need of external web services.
 
 You can set up a client-side "web service" to generate the response you're expecting from the yet-to-be-completed web service, while you continue working on your Ajax module. You can set it up to return strings, HTML, XML, JSON, etc - pretty much anything you can return via a real web service, you can do it here. You can also set how long it takes before the responses arrive, simulating fast/slow internet connections. You can even set it up to return a request time-out, if you need to test your code for that.
 

@@ -49,7 +49,7 @@ As you expand your site for larger resolutions, you'll find that you have more s
 
 The challenge here really is figuring out the best way to build a one-code-fits-all solution for your navigation. Something that works fine as is, and that also works when you collapse it.
 
-In our project, I created a simple collapsible site navigation that turns into a simple navigation when the screen is wide enough. The collapsible menu toggle is shown in mobile and tablet mode, and hidden in desktop mode. This is inspired by the responsive menu found in the <a href="http://twitter.github.io/bootstrap/" target="_blank">Twitter Bootstrap</a> framework.
+In our project, I created a simple collapsible site navigation that turns into a simple navigation when the screen is wide enough. The collapsible menu toggle is shown in mobile and tablet mode, and hidden in desktop mode. This is inspired by the responsive menu found in the [Twitter Bootstrap](http://twitter.github.io/bootstrap/ "Twitter Bootstrap"){:target="_blank"} framework.
 
 <strong>Use native implementation whenever possible.</strong>
 
@@ -78,8 +78,6 @@ Scalable Vector Graphics, or SVGs, are great for responsive websites. Imagine ha
 [caption id="attachment_2029" align="alignleft" width="163"]<a href="http://dnasir.com/wp-content/uploads/2013/05/blown-up-png.jpg" rel="lightbox"><img src="http://dnasir.com/wp-content/uploads/2013/05/blown-up-png.jpg" alt="Blown up PNG logo" width="163" class="size-full wp-image-2029" /></a> Blown up PNG logo[/caption]
 
 [caption id="attachment_2030" align="alignleft" width="163"]<a href="http://dnasir.com/wp-content/uploads/2013/05/blown-up-svg.jpg" rel="lightbox"><img src="http://dnasir.com/wp-content/uploads/2013/05/blown-up-svg.jpg" alt="Blown up SVG logo" width="163" class="size-full wp-image-2030" /></a> Blown up SVG logo[/caption]
-
-<div style="clear: both"></div>
 
 With SVGs, you no longer have to worry about this. Since SVGs are essentially letters and numbers, the browser will do the rendering. Also, depending on how complex the image is, chances are SVG files are more likely to be smaller than your average high definition PNGs.
 

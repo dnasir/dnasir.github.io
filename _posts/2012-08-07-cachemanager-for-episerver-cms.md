@@ -31,8 +31,9 @@ Geta has released yet another open source EPiServer CMS module. This latest modu
 	<li>No paging is implemented yet, so cache entry list loading may be a bit slow when retrieving large cache entry lists.</li>
 </ul>
 <div></div>
-<a href="http://nuget.episerver.com/en/OtherPages/Package/?packageId=Geta.CacheManager" target="_blank">NuGet Package Link</a><a href="https://github.com/Geta/opensource/wiki/CacheManager-for-EPiServer-CMS" target="_blank">
-Documentation
-</a><a href="https://github.com/Geta/opensource/tree/master/Geta.CacheManager" target="_blank">Source</a>
 
-Thanks to <a href="http://world.episerver.com/System/Users-and-profiles/Community-Profile-Card/Valdis%20Iljuconoks/" target="_blank">Valdis Iljuconoks</a> for helping out with this release.
+[NuGet Package Link](http://nuget.episerver.com/en/OtherPages/Package/?packageId=Geta.CacheManager){:target="_blank"}
+[Documentation](https://github.com/Geta/opensource/wiki/CacheManager-for-EPiServer-CMS){:target="_blank"}
+[Source](https://github.com/Geta/opensource/tree/master/Geta.CacheManager){:target="_blank"}
+
+Thanks to [Valdis Iljuconoks](http://world.episerver.com/System/Users-and-profiles/Community-Profile-Card/Valdis%20Iljuconoks/){:target="_blank"} for helping out with this release.

@@ -11,7 +11,7 @@ ASP.NET has provided a way to implement localisation using resource files, and w
 
 One solution would be to create a JavaScript translation file that contains localised text for every language you're planning to support. But since I'm already using resource files, why not leverage that and use them to localise my JavaScript?
 
-Mads Kristensen has posted a very interesting solution for developers who want to use resource files for localising their JavaScript code. You can see it <a title="Localize text in JavaScript files in ASP.NET" href="http://madskristensen.net/post/Localize-text-in-JavaScript-files-in-ASPNET.aspx" target="_blank">here</a>.
+Mads Kristensen has posted a very interesting solution for developers who want to use resource files for localising their JavaScript code. You can see it [here](http://madskristensen.net/post/Localize-text-in-JavaScript-files-in-ASPNET.aspx "Localize text in JavaScript files in ASP.NET"){:target="_blank"}.
 
 <!--more-->
 

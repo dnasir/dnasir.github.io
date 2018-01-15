@@ -10,9 +10,7 @@ I was searching for a simple timepicker directive, much like the one used in Goo
 
 <!--more-->
 
-<a href="https://github.com/dnasir/angular-timepicker" title="Angular Timepicker" target="_blank">Angular Timepicker</a>
-
-<a href="/github/angular-timepicker/demo.html" title="Angular Timepicker Demo" target="_blank">Demo</a>
+[Angular Timepicker](https://github.com/dnasir/angular-timepicker "Angular Timepicker"){:target="_blank"}
 
 This directive creates a simple dropdown style timepicker, like the one used in Google Calendar. You can set the minimum and maximum time for the list of selectable time, as well as the format in which time is displayed. The directive expects the model it is bound to to be a JavaScript Date object, and if it isn't it will generate a new one and replace whatever value is currently stored in that model. It will then proceed to update the time property of the Date object when the user interacts and selects a different time.
 
@@ -22,4 +20,4 @@ It’s free to use, so feel free to download it, use it, even abuse it, as long 
 
 UPDATE 6/12/2013
 
-The project has been moved. <a href="https://github.com/Geta/angular-timepicker" title="Angular Timepicker Directive" target="_blank">Here is the new URL</a>.
+The project has been moved. [Here is the new URL](https://github.com/Geta/angular-timepicker "Angular Timepicker Directive"){:target="_blank"}.

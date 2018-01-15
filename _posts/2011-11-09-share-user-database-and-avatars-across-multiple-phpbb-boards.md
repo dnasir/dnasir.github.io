@@ -7,7 +7,7 @@ categories: [multiple forum installations, PHP, phpBB, phpbb, phpbb3, Programmin
 ---
 I got a request from one of my clients asking me to create a forum for his website. phpBB should work just fine, I thought. But here's the catch. It needs to support three languages, namely Latvian, Russian and English. So I proposed a simple language switcher mod which simply switches the interface language to whichever language the user selects. The main forum page will look the same. But he didn't want all the forums to be on the same page. He wanted the Latvian board to only contain Latvian forums, and the same for Russian and English. His explanation was that if we did what I was proposing we do, the Russian and English forum categories will be pushed to the bottom of the page, and if a Russian or an English-speaking person were to visit the board, he/she would not see the forum in their language, and would immediately leave the site.
 
-So after hours of research, I came across this <a href="http://www.phpbb.com/community/viewtopic.php?f=46&amp;t=562513" target="_blank">topic</a> explaining how to share the user database across multiple phpBB installations. I'm no phpBB guru, so this was a simple enough solution for me. However I did come across a couple of issues while I was working on this, which I will explain in this tutorial.
+So after hours of research, I came across this [topic](http://www.phpbb.com/community/viewtopic.php?f=46&amp;t=562513){:target="_blank"} explaining how to share the user database across multiple phpBB installations. I'm no phpBB guru, so this was a simple enough solution for me. However I did come across a couple of issues while I was working on this, which I will explain in this tutorial.
 
 <!--more-->
 
@@ -15,7 +15,7 @@ Although I'm using multiple boards to accommodate multiple forums for multiple l
 
 <h4>Prerequisites</h4>
 
-In this tutorial I'll be using a modified version of phpBB 3.0.9, specifically the <a title="phpBB SEO Premod V 3.0.9" href="http://downloads.phpbb-seo.com/seo-url-premod-12/phpbb-seo-premod-48.html" target="_blank">phpBB SEO Premod V 3.0.9</a>, but I assume the same steps will work on other phpBB3 versions as well.
+In this tutorial I'll be using a modified version of phpBB 3.0.9, specifically the [phpBB SEO Premod V 3.0.9](href="http://downloads.phpbb-seo.com/seo-url-premod-12/phpbb-seo-premod-48.html "phpBB SEO Premod V 3.0.9"){:target="_blank"}, but I assume the same steps will work on other phpBB3 versions as well.
 
 <h4>Installing the first forum</h4>
 
@@ -178,6 +178,7 @@ Now you need to change all reference to these fields for each phpBB installation
 Of course, this depends entirely on what you name the tables, but for simplicity's sake, I decided to go with numbers as suggested in the forum post mentioned above.
 
 <h4>Cookie settings</h4>
+
 Once you have completed the above instructions, you need to make sure all the forums are using the same cookie settings. Otherwise you'll have to re-authenticate yourself every time you access the different forum installations, thus eliminating the convenience of being able to use one account for all your forums.
 
 By default, phpBB creates a random cookie name during installation for authentication purposes. As such, the cookie name will be different across your phpBB installations. So you need to copy the cookie name from your primary phpBB installation and set it in your other installations.
@@ -188,7 +189,7 @@ In case you have no idea how to do this, open up the <strong>Administration Cont
 
 After that you should be able to work seamlessly across all your forums. No more multiple registrations and authentications. Win-win.
 
-<h4>Field 'user_permissions_1' doesn't have a default value [1364]</h4>
+<h4>Field `user_permissions_1` doesn't have a default value [1364]</h4>
 
 This is one small issue during registration where the above error is displayed when a new user submits the registration form. I couldn't find any solution to this problem, but suffice it to say that it's a pain in the arse if people can't register on your board.
 
@@ -236,7 +237,7 @@ This has been a rather long tutorial, and I do hope it can help anyone else faci
 
 You could have numerous types of boards, such as an automotive themed one as well as a gardening themed one, and your users can all use the same login info for all of them. Each board will look and behave differently, but they all share the same user database.
 
-You can also check out the phpBB board I created for my client on which this tutorial is based on <a href="http://www.dermatologs.com/forum/" target="_blank">here</a>. Click on the language switcher icons located at the top right corner to switch between phpBB installations. You'll notice the language change as well as the different forums on each board.
+You can also check out the phpBB board I created for my client on which this tutorial is based on [here](http://www.dermatologs.com/forum/){:target="_blank"}. Click on the language switcher icons located at the top right corner to switch between phpBB installations. You'll notice the language change as well as the different forums on each board.
 
 Let me know what you think and if you know of a better (simpler) way to achieve similar results in the comments below.
 

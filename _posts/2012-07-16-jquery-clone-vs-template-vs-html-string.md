@@ -25,7 +25,7 @@ I personally never liked this method that much, mainly because it involves addit
 
 Finally, the third method involves string manipulation. It really just involves appending HTML strings that contains all the DIVs, classes and values. It's the least beautiful of the lot, if I'm honest, as it involves mixing JS code with HTML strings. However, if you don't like that, you could always have the HTML code you wish to duplicate somewhere in your markup and use jQuery's .html() method to retrieve the HTML code to be used in your loop.
 
-I've set up a simple test as proof of concept on JSFiddle.net. You can see it here: <a href="http://jsfiddle.net/dzul1983/vB8Fn/2/" target="_blank">http://jsfiddle.net/dzul1983/vB8Fn/2/</a>. A small note, you'll need a browser that supports the console feature.
+I've set up a simple test as proof of concept on JSFiddle.net. You can see it here: [http://jsfiddle.net/dzul1983/vB8Fn/2/](http://jsfiddle.net/dzul1983/vB8Fn/2/){:target="_blank"}. A small note, you'll need a browser that supports the console feature.
 
 Based on the results, string manipulation is the fastest way to duplicate stuff, with jQuery's `.clone()` method being second, and `.template()`/`.tmpl()` method being the slowest of the lot. It goes to show that touching the DOM too often will slow things down. So it's important to keep DOM manipulation to a minimum.
 

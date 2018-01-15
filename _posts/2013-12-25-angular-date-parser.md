@@ -14,12 +14,12 @@ The JavaScript Date constructor accept strings and it tries its best to parse it
 
 So my parser will allow you to enter a string, provide a format, and output a valid Date object. You can use all of the date format strings provided by Angular on the dateFilter documentation page.
 
-<a href="https://github.com/dnasir/angular-dateParser" title="Angular Date Parser" target="_blank">Project Page</a>
+[Project Page](https://github.com/dnasir/angular-dateParser "Angular Date Parser"){:target="_blank"}
 
-<a href="http://dnasir.github.io/angular-dateParser/demo.html" title="Angular Date Parser Demo" target="_blank">Demo</a>
+[Demo](http://dnasir.github.io/angular-dateParser/demo.html "Angular Date Parser Demo"){:target="_blank"}
 
 It’s free to use, so feel free to download it, use it, even abuse it, as long as you keep the copyright info intact.
 
-The parser algorithm was originally created by <a href="http://www.mattkruse.com" target="_blank">Matt Kruse</a>, so kudos to him for his awesome work. You can view his code <a href="http://www.mattkruse.com/javascript/date" target="_blank">here</a>.
+The parser algorithm was originally created by [Matt Kruse](http://www.mattkruse.com){:target="_blank"}, so kudos to him for his awesome work. You can view his code [here](http://www.mattkruse.com/javascript/date){:target="_blank"}.
 
 <em>Wassalam</em>

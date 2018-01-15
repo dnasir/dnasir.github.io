@@ -45,7 +45,7 @@ Next we add a bit of CSS.
 }
 ```
 
-Essentially what we're doing is hiding the file input field, but you can't use visibility: hidden or display: none as this will cause some issues in some browsers. I can't remember which ones, but I think one of them was Firefox.
+Essentially what we're doing is hiding the file input field, but you can't use `visibility: hidden` or `display: none` as this will cause some issues in some browsers. I can't remember which ones, but I think one of them was Firefox.
 
 Now we add a bit of jQuery magic, like so:
 

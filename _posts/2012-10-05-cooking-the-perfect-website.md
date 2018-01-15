@@ -21,7 +21,7 @@ It's easy to lose sight of what you have, and what you actually need. HTML5 temp
 
 For example, let's say you're building a HTML5 website. You start using all the HTML5 tags, and all is well in the kingdom of modern browsers. You start testing your website in older browsers, and lo and behold, it breaks in Internet Explorer 8. That's right, IE8 doesn't support HTMl5 tags. So you do what many developers do, and you include Modernizr in your project.
 
-Think about it. All you needed was for IE8 to understand what HTML5 tags are. You don't need the whole Modernizr library to get that working. I personally use the <a title="HTML5Shiv" href="https://code.google.com/p/html5shiv/" target="_blank">HTML5Shiv</a> for cases like this. The full minified version of the Modernizr script is 15KB, where else the minified HTML5Shiv script is just 4KB.
+Think about it. All you needed was for IE8 to understand what HTML5 tags are. You don't need the whole Modernizr library to get that working. I personally use the [HTML5Shiv](https://code.google.com/p/html5shiv/ "HTML5Shiv"){:target="_blank"} for cases like this. The full minified version of the Modernizr script is 15KB, where else the minified HTML5Shiv script is just 4KB.
 
 It really is a matter of less is more.
 
@@ -33,7 +33,7 @@ If you do decide to support older browsers, and I recommend that you do, determi
 
 In any case, you can find solace in knowing that there are polyfills out there that can help you with this. A combination of conditional comment added CSS and polyfills can make a difference.
 
-I personally use the <a title="HTML5Please" href="http://html5please.com/" target="_blank">HTML5Please</a> website whenever I need to find a polyfill for a HTML5 feature I plan to support on older browsers. You can find a list of polyfills for HTML5 features such as HTML5 form validation and HTML5 elements. It really is a handy little tool, and all developers should have it bookmarked somewhere.
+I personally use the [HTML5Please](http://html5please.com/ "HTML5Please"){:target="_blank"} website whenever I need to find a polyfill for a HTML5 feature I plan to support on older browsers. You can find a list of polyfills for HTML5 features such as HTML5 form validation and HTML5 elements. It really is a handy little tool, and all developers should have it bookmarked somewhere.
 
 <strong>3. Optimize your JavaScript libraries.</strong>
 
@@ -41,7 +41,7 @@ I cannot stress this one enough. One of the worst culprits to website performanc
 
 The more popular libraries such as jQuery UI, and Modernizr, provide the option for developers to create their own custom build of their libraries. So if you for example, only need the autocomplete plugin, you don't need to include the whole jQuery UI library in your project. I seriously recommend doing this, because it really does make a difference.
 
-Also, minify and combine your scripts. You can seriously reduce the number of requests your websites make, and also save a lot of bandwidth in the process. There are plenty of tools out there that can help you do this like the <a title="YUI Compressor" href="http://developer.yahoo.com/yui/compressor/" target="_blank">YUI Compressor</a> and <a title="JSCompress" href="http://jscompress.com/" target="_blank">JSCompress</a> if you prefer an online solution.
+Also, minify and combine your scripts. You can seriously reduce the number of requests your websites make, and also save a lot of bandwidth in the process. There are plenty of tools out there that can help you do this like the [YUI Compressor](http://developer.yahoo.com/yui/compressor/ "YUI Compressor"){:target="_blank"} and [JSCompress](http://jscompress.com/ "JSCompress"){:target="_blank"} if you prefer an online solution.
 
 <strong>4. Use Content Delivery Networks (CDN).</strong>
 
@@ -49,7 +49,7 @@ Modern browsers tend to cache static files such as JavaScript files and CSS styl
 
 When a browser starts downloading your website, it will come across the CDN link to, for example, jQuery, and if it finds that the file already exists in its cache, it will skip downloading and use the cached version. This will greatly reduce the amount of requests your users make when visiting your website.
 
-Additionally, by using popular CDNs like the <a title="Google CDN Guide" href="https://developers.google.com/speed/libraries/devguide" target="_blank">Google CDN</a> and <a title="CDNJS" href="http://cdnjs.com/" target="_blank">CDNJS</a>, your users will be able to download files from the CDN server that is geographically closest to them, thus improving latency and reducing download times, and because they're downloading from an external server, you get to keep your bandwidth.
+Additionally, by using popular CDNs like the [Google CDN](https://developers.google.com/speed/libraries/devguide "Google CDN Guide"){:target="_blank"} and [CDNJS](http://cdnjs.com/ "CDNJS"){:target="_blank"}, your users will be able to download files from the CDN server that is geographically closest to them, thus improving latency and reducing download times, and because they're downloading from an external server, you get to keep your bandwidth.
 
 So use CDNs whenever possible and remember, for every redundant request your website makes, a baby unicorn dies.
 

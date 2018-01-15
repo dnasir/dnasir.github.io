@@ -95,7 +95,7 @@ Since the `peopleList` object doesn't exist in the child scope, the code is forc
 
 This is pretty much what I've learnt so far about Angular scope inheritance. It's probably just the tip of the iceberg, and there's a lot more to learn, but as with everything, it's important to take things one step at a time, and take the time to really understand the branch you're sitting on before you start exploring the rest of the tree.
 
-For a more detailed explanation on this topic, here's <a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes" target="_blank">an excellent article by Mark Rajcok</a>.
+For a more detailed explanation on this topic, here's [an excellent article by Mark Rajcok](https://github.com/angular/angular.js/wiki/Understanding-Scopes){:target="_blank"}.
 
 Happy coding!
 

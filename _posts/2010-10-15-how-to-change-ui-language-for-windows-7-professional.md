@@ -38,7 +38,8 @@ remove the key of the current language (in my case, jp-JP)
 
 Reboot and you should boot up in the language of your choice.
 
-[Reference](http://www.winmatrix.com/forums/index.php?/topic/25539-how-to-enable-mui-language-pack-in-windows-7-professional/){:target="_blank"}
+References:
+[http://www.winmatrix.com/forums/index.php?/topic/25539-how-to-enable-mui-language-pack-in-windows-7-professional/](http://www.winmatrix.com/forums/index.php?/topic/25539-how-to-enable-mui-language-pack-in-windows-7-professional/){:target="_blank"}
 
 ### DISCLAIMER ###
 

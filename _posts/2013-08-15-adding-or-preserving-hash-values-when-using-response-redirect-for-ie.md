@@ -21,7 +21,7 @@ Safari? Check.
 
 Then came the moment of truth. IE? The hash values were missing!
 
-A quick search on the Almighty Google brought me to this page on StackOverflow: <a href="http://stackoverflow.com/questions/2286402/url-fragment-and-302-redirects" target="_blank">http://stackoverflow.com/questions/2286402/url-fragment-and-302-redirects</a>
+A quick search on the Almighty Google brought me to this page on StackOverflow: [http://stackoverflow.com/questions/2286402/url-fragment-and-302-redirects](http://stackoverflow.com/questions/2286402/url-fragment-and-302-redirects){:target="_blank"}
 
 Regular browsers, such as Chrome and Firefox have no problems preserving URI fragments. IE, on the other hand, discards them on 302 HTTP Redirect requests. This explains why the hash values in my URL were missing in IE.
 

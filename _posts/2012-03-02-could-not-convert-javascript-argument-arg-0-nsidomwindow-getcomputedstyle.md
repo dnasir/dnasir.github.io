@@ -5,7 +5,7 @@ date: 2012-03-02 20:24
 comments: true
 categories: [beforeremove, "Could not convert JavaScript argument arg 0 [nsIDOMWindow.getComputedStyle]", JavaScript, javascript, jquery, jQuery, KnockoutJS, knockoutjs, Web Development]
 ---
-I'm working on a small project at work using <a title="KnockoutJS" href="http://knockoutjs.com/" target="_blank">KnockoutJS </a>(which is awesome by the way) and I ran into a problem which seems to only occur on Firefox. I'm using the `beforeRemove` method for my template that is supposed to use jQuery's `fadeOut` method to fade the element out before removing it from the DOM. While this works on Chrome, and even Internet Explorer (!!!), I am greeted with the following error on Firefox (Firebug).
+I'm working on a small project at work using [KnockoutJS](http://knockoutjs.com/ "KnockoutJS"){:target="_blank"} (which is awesome by the way) and I ran into a problem which seems to only occur on Firefox. I'm using the `beforeRemove` method for my template that is supposed to use jQuery's `fadeOut` method to fade the element out before removing it from the DOM. While this works on Chrome, and even Internet Explorer (!!!), I am greeted with the following error on Firefox (Firebug).
 
 ```shell
 Could not convert JavaScript argument arg 0 [nsIDOMWindow.getComputedStyle]

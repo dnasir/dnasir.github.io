@@ -13,7 +13,7 @@ Anyway, after "installing" LESS into my project, I ran some tests. I opened up R
 
 <!--more-->
 
-Hmm. I was perplexed. Line NULL?? I wasn't even sure where I'd start debugging. Fortunately, a quick search on Google led me to this forum topic: <a href="https://github.com/duncansmart/less.js-windows/issues/12">https://github.com/duncansmart/less.js-windows/issues/12</a>
+Hmm. I was perplexed. Line NULL?? I wasn't even sure where I'd start debugging. Fortunately, a quick search on Google led me to this forum topic: [https://github.com/duncansmart/less.js-windows/issues/12](https://github.com/duncansmart/less.js-windows/issues/12){:target="_blank"}
 
 The forum folks suggested that LESS 1.3.0 was failing to properly parse the mixin definitions, and is the root cause for this ordeal. A user suggested a quick fix, which doesn't seem to make sense at first (and still doesn't), where you add a random property, or even a comment line, to the `.ie7-inline-block()` property in the `mixins.less` file.
 

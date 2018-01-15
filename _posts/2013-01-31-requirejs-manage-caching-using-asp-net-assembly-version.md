@@ -13,7 +13,7 @@ However, the problem with dynamically loading JavaScript files is that they have
 
 If you have your web server set up so that it tells browsers to cache JavaScript files for a certain amount of time, unless your users know how to clear their caches, they will continue using the cached version of said files.
 
-Fortunately, RequireJS has a parameter called <a href="http://requirejs.org/docs/api.html#config-urlArgs" target="_blank">urlArgs</a> that you can use to append arguments to your script requests. The RequireJS documentation also states that this parameter can also be used to set some cache-busting values, such as the current time, to every script request. This will force the browser to re-download all required files on every request.
+Fortunately, RequireJS has a parameter called [urlArgs](http://requirejs.org/docs/api.html#config-urlArgs "urlArgs"){:target="_blank"} that you can use to append arguments to your script requests. The RequireJS documentation also states that this parameter can also be used to set some cache-busting values, such as the current time, to every script request. This will force the browser to re-download all required files on every request.
 
 But doesn't that mean your JavaScripts won't ever be cached? Depends. If you use a non-static value, like the time at which the request was being made, then the value will always differ on every request. But if you used a static value instead, then all this becomes pointless, because the browser will detect that nothing has changed and continues to use the cached files instead.
 
