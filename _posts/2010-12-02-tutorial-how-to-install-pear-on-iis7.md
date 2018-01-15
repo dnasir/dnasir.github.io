@@ -18,7 +18,9 @@ Once  you have installed PHP, navigate to the folder in which PHP is installed,
 I ran into some problems while trying to get PEAR working. Firstly, I kept getting an error telling me that there was a syntax error.
 <p style="text-align:center;"><a href="http://subject9.files.wordpress.com/2011/08/pear-run-error2.png"><img class="size-full wp-image-623 aligncenter" title="pear-run-error2" src="http://subject9.files.wordpress.com/2011/08/pear-run-error2.png" alt="" /></a></p>
 
-`Syntax error, unexpected '(' in Unknown on line 14.`
+```shell
+Syntax error, unexpected '(' in Unknown on line 14.
+```
 
 This usually means it's a script error, and it's usually a simple "misunderstanding" where PHP "incorrectly" processes a line.
 

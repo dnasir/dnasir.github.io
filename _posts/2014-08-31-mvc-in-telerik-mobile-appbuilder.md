@@ -8,11 +8,11 @@ categories: [Mobile App Development, mvc, requirejs, telerik appbuilder]
 ---
 Recently I started playing around with the <a href="http://www.telerik.com/appbuilder">Telerik Platform Mobile Appbuilder</a> and tried my hand at building mobile apps. It's an awesome tool, and despite its flaws, most of which are negligible, it does provide developers a viable avenue to quickly build mobile apps. The best part is, I get to code in HTML5 and JavaScript.
 
-<!--more-->
-
 For the most parts, I was working with <a href="http://www.telerik.com/kendo-ui">Kendo UI</a>, Telerik's own front-end UI framework. It took some time to work out what's what, but since it was all HTML and JavaScript, I was up and running in no time.
 
 I started experimenting, and tried to implement an ASP.NET MVC approach to building my project.
+
+<!--more-->
 
 Firstly, I structured my project similar to that found in a standard ASP.NET MVC project. So I have the models, views and controllers folders, which contains the appropriate modules.
 
@@ -88,9 +88,7 @@ define([
         })
     };
 
-<pre><code>uiHelper.InitModule('main', template, model);
-</code></pre>
-
+    uiHelper.InitModule('main', template, model);
 });
 ```
 

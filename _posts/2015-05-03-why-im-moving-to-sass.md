@@ -12,7 +12,7 @@ As a front-end developer, I've had my fair share of working with CSS preprocesso
 
 <h2>Variable declaration</h2>
 
-Less uses <code>@</code>, and Sass uses <code>$</code>. Technically, it doesn't really matter which symbol is used, but personally I don't agree with the Less approach. Why? Well, the <code>$</code> symbol has no special meaning in CSS, but <code>@</code> is used for declaring stuff like fonts and media queries.
+Less uses `@`, and Sass uses `$`. Technically, it doesn't really matter which symbol is used, but personally I don't agree with the Less approach. Why? Well, the `$` symbol has no special meaning in CSS, but `@` is used for declaring stuff like fonts and media queries.
 
 ```less
 // Less
@@ -217,7 +217,7 @@ While both output the same result, I find the Sass approach to be much more eleg
 
 Again, not so elegant.
 
-Sass also comes with a <code>for</code> loop function, but I haven't yet found a situation where I'd been needing it. However, when that time comes, I can rest easy knowing Sass has got me covered.
+Sass also comes with a `for` loop function, but I haven't yet found a situation where I'd been needing it. However, when that time comes, I can rest easy knowing Sass has got me covered.
 
 <h2>Bootstrap support</h2>
 

@@ -18,7 +18,7 @@ This post is a simple guide on how we achieved this.
 
 <h2>Export data</h2>
 
-Since we want to migrate content from the existing site to the new one, we start off by exporting all the data we need. This is easily done via the built-in export tool that comes pre-installed with all EPiServer sites located at <code>CMS &gt; Admin &gt; Tools &gt; Export data</code>.
+Since we want to migrate content from the existing site to the new one, we start off by exporting all the data we need. This is easily done via the built-in export tool that comes pre-installed with all EPiServer sites located at `CMS > Admin > Tools > Export data`.
 
 <h2>Create a new database</h2>
 
@@ -30,19 +30,20 @@ We use SQL Server for all our sites, and the following steps are for this set-up
 <li>Fire up SQL Management Studio, and log into the local, or remote, SQL Server instance.</li>
 <li>Create a new empty database.</li>
 <li>Assign a user and password. This step is optional, as you may also use Windows authentication.</li>
-<li>Update the <code>connectionStrings.config</code> to point to this new database, and set the relevant credentials.</li>
-<li>Open the NuGet Package Manager Console in Visual Studio, and type the following command: <code>Initialize-EpiDatabase</code></li>
+<li>Update the `connectionStrings.config` to point to this new database, and set the relevant credentials.</li>
+<li>Open the NuGet Package Manager Console in Visual Studio, and type the following command: `Initialize-EpiDatabase`</li>
 <li>We now have a new EPiServer database.</li>
 </ol>
 
-<strong>Note</strong> When deploying the site to production, it's highly likely that you're not going to have access to a Visual Studio installation on the production machine. This means that you won't be able to run that cmdlet to initialize a new EPiServer database. To solve this, simply follow steps 1 through 4, and instead of running the cmdlet, add <code>createDatabaseSchema="true"</code> to the <code>&lt;episerver.framework&gt;</code> element of the project <code>episerverFramework.config</code> file. This will tell EPiServer to check whether the correct database schema exists, and to create it if it doesn't.
+<strong>Note</strong> When deploying the site to production, it's highly likely that you're not going to have access to a Visual Studio installation on the production machine. This means that you won't be able to run that cmdlet to initialize a new EPiServer database. To solve this, simply follow steps 1 through 4, and instead of running the cmdlet, add `createDatabaseSchema="true"` to the `<episerver.framework>` element of the project `episerverFramework.config` file. This will tell EPiServer to check whether the correct database schema exists, and to create it if it doesn't.
 
 Sample episerver.framework configuration
 
-<pre><code class="xml">&lt;episerver.framework createDatabaseSchema="true"&gt;
+```xml
+<episerver.framework createDatabaseSchema="true">
   ...
-&lt;/episerver.framework&gt;
-</code></pre>
+</episerver.framework>
+```
 
 <h2>Create new EPiServer CMS project</h2>
 
@@ -70,11 +71,11 @@ Build the project and make sure everything is OK.
 
 Once you get everything working, and you're able to access the CMS UI, you can import the data from your old site to the new one.
 
-Navigate to <code>CMS &gt; Admin</code>, and in the <code>Admin</code> tab, under <code>Tools</code>, select <code>Import data</code>, and upload the file you got when you exported the data from the old site.
+Navigate to `CMS > Admin`, and in the `Admin` tab, under `Tools`, select `Import data`, and upload the file you got when you exported the data from the old site.
 
 <h2>Refactor everything - second run</h2>
 
-This part is entirely optional. In our project all the campaign pages had a <code>Campaign</code> prefix to the content type class names, and we wanted to clean them up by removing them in the new project.
+This part is entirely optional. In our project all the campaign pages had a `Campaign` prefix to the content type class names, and we wanted to clean them up by removing them in the new project.
 
 Once you have successfully imported the data from the old site, you're free to rename your content types, provided you retain the content type GUID.
 

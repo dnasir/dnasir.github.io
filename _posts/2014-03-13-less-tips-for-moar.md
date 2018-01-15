@@ -142,7 +142,7 @@ a {
 
 <h2>Compile and cache server-side.</h2>
 
-<p>As mentioned before, LESS needs to be compiled before it becomes useable. The easiest way to do this is by including the <code>less.js</code> client-side compiler script on your site and voila, instant CSS. The problem with this is that it increases the amount of time required to load the page, as the browser has to first parse <code>less.js</code> itself, and then have it process your LESS files.</p>
+<p>As mentioned before, LESS needs to be compiled before it becomes useable. The easiest way to do this is by including the `less.js` client-side compiler script on your site and voila, instant CSS. The problem with this is that it increases the amount of time required to load the page, as the browser has to first parse `less.js` itself, and then have it process your LESS files.</p>
 
 <p>Stylesheets are typically static files, so it makes sense to have it compiled and cached on the server rather than repeatedly compiling it on every page load.</p>
 
@@ -154,7 +154,7 @@ a {
 
 <p>Source maps can help you get around this problem. Developer tools, such as the one built into Google Chrome, can parse source maps and make it appear as though you're running the raw unminified/uncombined files. The source map parsing feature in Google Chrome was originally designed for JavaScript debugging, but its functionality has been extended to process LESS source maps as well.</p>
 
-<p>You can generate source maps using the <code>lessc</code> command line tool, or through some of the development tools mentioned above.</p>
+<p>You can generate source maps using the `lessc` command line tool, or through some of the development tools mentioned above.</p>
 
 <p><a href="http://www.dnasir.com/wp-content/uploads/2014/03/less-sourcemap-examplejpg.jpg" rel="lightbox"><img src="http://www.dnasir.com/wp-content/uploads/2014/03/less-sourcemap-examplejpg.jpg" alt="less-sourcemap-examplejpg" width="327" height="252" class="alignnone size-full wp-image-2165" /></a></p>
 

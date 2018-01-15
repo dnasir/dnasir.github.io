@@ -16,13 +16,13 @@ So I did what Visual Studio asked me to, but that didn't seem to do much. Instea
 
 <a href="http://www.dnasir.com/wp-content/uploads/2015/09/sql-instance-not-installed.png" rel="lightbox"><img src="http://www.dnasir.com/wp-content/uploads/2015/09/sql-instance-not-installed.png" alt="sql-instance-not-installed" width="544" height="254" class="alignnone size-full wp-image-2307" /></a>
 
-I thought that updating the connection string from <code>v11.0</code> to <code>v12.0</code> would solve my problem, but it didn't.
+I thought that updating the connection string from `v11.0` to `v12.0` would solve my problem, but it didn't.
 
 After a couple of hours Googling, I finally came across this little gem:
 
 According to <a href="https://connect.microsoft.com/SQLServer/feedback/details/845278/sql-server-2014-express-localdb-does-not-create-automatic-instance-v12-0" target="_blank">Microsoft</a>
 
-<blockquote>In SQL14, we moved away from the numbering/versioning for the automatic instance and named it "MSSQLLocalDB" instead of "v12.0".</blockquote>
+> In SQL14, we moved away from the numbering/versioning for the automatic instance and named it "MSSQLLocalDB" instead of "v12.0".
 
 And just like that, everything started working again.
 

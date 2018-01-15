@@ -41,7 +41,7 @@ Spreading things out also allows me to set up specific build configurations for 
 
 The root `gulpfile.js` is what I run whenever I need to rebuild the entire project. Otherwise I simply run component-specific gulp tasks.
 
-The easiest method to run the default gulp task for all my components is to use [gulp-chug](https://www.npmjs.com/package/gulp-chug). This plugin allows me to pass in a glob containing the path to the <code>gulpfile.js</code> for all my components and run them from my main <code>gulpfile.js</code>.
+The easiest method to run the default gulp task for all my components is to use [gulp-chug](https://www.npmjs.com/package/gulp-chug). This plugin allows me to pass in a glob containing the path to the `gulpfile.js` for all my components and run them from my main `gulpfile.js`.
 
 <ul>
 <li>Use gulp-chug to run nested gulpfile</li>

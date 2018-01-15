@@ -67,9 +67,9 @@ PeopleService.getPeople().then(function(response) {
 
 The code now works, and the list gets updated with the names of people retrieved from our async service.
 
-This works because the object <code>people</code> did not exist in the child scope, and this triggers JavaScript to consult the prototype chain. The object is found in the parent scope, and the values are pushed into it. Note that no new objects are created in the child scope, because JavaScript was able to find the relevant object.
+This works because the object `people` did not exist in the child scope, and this triggers JavaScript to consult the prototype chain. The object is found in the parent scope, and the values are pushed into it. Note that no new objects are created in the child scope, because JavaScript was able to find the relevant object.
 
-Of course, because Angular keeps track of the parent-child relationship within scopes, you can also use the <code>$parent</code> property to update a parent object inside the child scope, but this method is not recommended, as it makes the code dependent on some other code, which in turn makes it less testable.
+Of course, because Angular keeps track of the parent-child relationship within scopes, you can also use the `$parent` property to update a parent object inside the child scope, but this method is not recommended, as it makes the code dependent on some other code, which in turn makes it less testable.
 
 The recommended way is to instead use an object when defining a variable within the parent scope that you know is going to require "two-way binding". Something like this:
 
@@ -91,7 +91,7 @@ angular.module('myApp', [])
     })
 ```
 
-Since the <code>peopleList</code> object doesn't exist in the child scope, the code is forced to consult the prototype chain to find it.
+Since the `peopleList` object doesn't exist in the child scope, the code is forced to consult the prototype chain to find it.
 
 This is pretty much what I've learnt so far about Angular scope inheritance. It's probably just the tip of the iceberg, and there's a lot more to learn, but as with everything, it's important to take things one step at a time, and take the time to really understand the branch you're sitting on before you start exploring the rest of the tree.
 
