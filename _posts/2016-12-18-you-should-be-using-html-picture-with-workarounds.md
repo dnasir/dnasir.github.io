@@ -6,11 +6,11 @@ date: 2016-12-18 00:02
 comments: true
 categories: [HTML, html5, picture, Web Development]
 ---
-**Note**: I started writing this piece quite a while back, and forgot all about it until recently. Better late than never, I guess.
-
 One of the biggest culprit to website data traffic, if not the biggest, is images. Due to the increase in the number of devices with high resolution display, content creators have started using high resolution images to improve the look and feel of their websites. This results in large amounts of data needing to be downloaded by everyone, including those not using hi-res displays.
 
 HTML picture is an extension for the image element that allows us to add multiple image sources based on predetermined rules.
+
+<!--more-->
 
 ## The syntax
 

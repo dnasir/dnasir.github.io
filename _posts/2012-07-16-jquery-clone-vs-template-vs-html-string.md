@@ -9,13 +9,15 @@ Every now and again I get into this situation where I have a list, and some JS f
 
 So the question I normally get asked is, "What's the best way to display the new list items in this kind of situation?".
 
-There are a couple of ways to do this, and in most cases they all output the same stuff. The only difference is the speed in which the job gets done. 
+There are a couple of ways to do this, and in most cases they all output the same stuff. The only difference is the speed in which the job gets done.
+
+<!--more-->
 
 I'm not going to go into detail on how each method works. I'm sure there are plenty of resources you can find on the subject.
 
-The first method involves the use of jQuery's .clone() method. It makes sense. The list item already exists, why not just clone it and replace the values with the new ones, right? You'll need to supply a candidate for cloning though.
+The first method involves the use of jQuery's `.clone()` method. It makes sense. The list item already exists, why not just clone it and replace the values with the new ones, right? You'll need to supply a candidate for cloning though.
 
-I like the .clone() method mainly because it's very simple to use, keeps my code clean and doesn't require any additional code to work. And because it returns a jQuery object, you can immediately use it in your jQuery method chain.
+I like the `.clone()` method mainly because it's very simple to use, keeps my code clean and doesn't require any additional code to work. And because it returns a jQuery object, you can immediately use it in your jQuery method chain.
 
 The second method uses the jQuery Template plugin that involves us setting up a template and inserting the values during the iteration. You can set up multiple templates in your markup and define them in your JS code. You can then fetch these templates later in your code and just outfit them with the necessary values.
 
@@ -25,7 +27,7 @@ Finally, the third method involves string manipulation. It really just involves 
 
 I've set up a simple test as proof of concept on JSFiddle.net. You can see it here: <a href="http://jsfiddle.net/dzul1983/vB8Fn/2/" target="_blank">http://jsfiddle.net/dzul1983/vB8Fn/2/</a>. A small note, you'll need a browser that supports the console feature.
 
-Based on the results, string manipulation is the fastest way to duplicate stuff, with jQuery's .clone() method being second, and .template()/.tmpl() method being the slowest of the lot. It goes to show that touching the DOM too often will slow things down. So it's important to keep DOM manipulation to a minimum.
+Based on the results, string manipulation is the fastest way to duplicate stuff, with jQuery's `.clone()` method being second, and `.template()`/`.tmpl()` method being the slowest of the lot. It goes to show that touching the DOM too often will slow things down. So it's important to keep DOM manipulation to a minimum.
 
 That said, there's really little chance you will ever need to display 500+ items in any single page. It's just bad UI design, and I would definitely recommend implementing some kind of paging system for this sort of situation. In which case, the speed difference between all three method is reduced to such a small number that it really doesn't matter which method you use. I mean, who can really tell the difference between 16ms and 1ms?
 

@@ -8,6 +8,8 @@ categories: [AngularJS, angularjs, dateparser, directive, JavaScript, Web Develo
 ---
 Lately I've been working a lot with date and time pickers, and it got me thinking, "Why doesn't Angular come with some form of date and time parser that converts strings into a JavaScript Date object." I mean, you could already convert Date objects into formatted strings using the Angular dateFilter, so why not the other way around? Wouldn't it be cool to be able to convert strings into Date objects using a particular format, and in many cases for us in Europe, locale.
 
+<!--more-->
+
 The JavaScript Date constructor accept strings and it tries its best to parse it, but it usually fails when given a format other than the RFC2822 or ISO 8601 date formats. So if you're in Norway, for instance, entering '25.12.2013' is going to generate an Invalid Date object.
 
 So my parser will allow you to enter a string, provide a format, and output a valid Date object. You can use all of the date format strings provided by Angular on the dateFilter documentation page.

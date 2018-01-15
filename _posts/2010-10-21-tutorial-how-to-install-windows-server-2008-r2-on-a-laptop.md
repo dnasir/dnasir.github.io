@@ -9,6 +9,8 @@ OK, so installing Windows Server 2008 on a laptop isn't such a big feat, but get
 
 After spending some time googling for a solution, I came across a small guide that helped me solve the problem. However, this guide requires you to have a copy of Windows already installed on a separate partition. Since my Dell laptop already came with Windows 7 Professional, and I already installed Windows Server 2008 R2 on a separate partition, my laptop fitted the profile. So here's how to do it;
 
+<!--more-->
+
 1. Open the Device Manager. You should see a bunch of devices with the yellow exclamation mark next to it. This tells us that the device is not working properly, most probably because the correct drivers are not yet installed.
 2. Now right-click on a device and click "Update Driver Software..". Select "Browse my computer for driver software" and point the folder location to X:WindowsSystem32DriverStoreFileRepository while replacing the X with the drive letter of the partition on which your Windows 7 installation is located.
 3. Repeat for the remaining devices.

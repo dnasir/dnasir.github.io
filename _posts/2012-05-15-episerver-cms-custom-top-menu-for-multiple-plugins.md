@@ -9,6 +9,8 @@ I've been working on this small plugin for EPiServer CMS 6, and I wanted to add 
 
 Unfortunately, after a lot of time Googling and forum crawling, I came to the conclusion that it was just not possible to append an item to a top menu dynamically. I didn't bother looking at solutions that involved me editing the project's web.config file, which may have helped, since the other plugin already had some code which adds a top menu item to the top menu bar. So I figured I should probably try to use that instead.
 
+<!--more-->
+
 This is what I started with;
 
 ```csharp

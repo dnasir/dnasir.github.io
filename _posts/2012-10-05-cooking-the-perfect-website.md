@@ -11,6 +11,8 @@ It's important to think about what you actually need as it's very easy to get lo
 
 I have compiled a list of guidelines that I personally use when starting a new project.
 
+<!--more-->
+
 <strong>1. Start small.</strong>
 
 It's always better to add features to your website rather than trying to slim it down later on. There are plenty of these pre-built templates such as the popular "HTML5 Boilerplate" that can help you quickly build a HTML5 website, but you should ask yourself one thing - Do you actually need all the features that come with the template?

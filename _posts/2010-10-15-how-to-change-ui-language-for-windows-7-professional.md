@@ -7,30 +7,32 @@ categories: [change ui language, Tutorials, Windows 7, windows 7, windows 7 prof
 ---
 By default, the ability to change the UI language is only found in the Ultimate version of Windows 7. Those with the misfortune of buying a PC preinstalled with Windows 7 Professional, me included, did not have this ability. I decided that I had to replace the Japanese UI with an English one, and the only way was to hack it. Here's how I did it;
 
+<!--more-->
+
 Download the language pack that you want to install from [here](http://www.vista123.net/content/download-windows-7-mui-language-packs-official-32-bit-and-64-bit-direct-download-links){:target="_blank"}
 
 Run CMD as administrator and type:
-```
+```shell
 DISM /Online /Add-Package /PackagePath:[path to lp.cab];
 ```
 
 eg. `C:\DISM /Online /Add-Package /PackagePath:C:DocumentsDownloadslp.cab`
 
 then:
-```
+```shell
 bcdedit /set {current} locale (your new locale)
 ```
 eg. `C:\bcdedit /set {current} locale en-US`
 
 and:
-```
+```shell
 bcdboot %WinDir% /l (your new locale)
 ```
 eg. `C:\bcdboot %WinDir% /l en-US`
 
 Then in registry:
 
-`HKEY_LOCAL_MACHINESYSTEMCurrentControlSetControlMUIUILanguages`
+`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MUI\UILanguages`
 
 remove the key of the current language (in my case, jp-JP)
 

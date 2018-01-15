@@ -11,6 +11,8 @@ There are several approaches to developing for mobile users. You could provide d
 
 EPiServer has included a neat feature, called Display Channels, that does exactly. All you, as a developer, have to do is include the necessary templates, and you're all set to serve your mobile users.
 
+<!--more-->
+
 The problem with this approach is that your users will be stuck with whichever mode their devices support. For instance, users on higher resolution devices, such as the Retina display-equipped iPhones or the 1080p display-equipped Xperia Z, will be stuck with the mobile version of the website, despite having the capability to view higher resolution images as well as having ample space for additional content.
 
 Another issue with this approach is fragmentation, since developers will obviously have to take care of the regular website, as well as the mobile version. This reduces maintainability because the developers will have to take care of two sets of code, instead of just one.
@@ -83,9 +85,9 @@ With SVGs, you no longer have to worry about this. Since SVGs are essentially le
 
 Of course, let us not forget about those of us who are less fortunate, and have to use older browsers that don't support SVGs. You should always provide a fallback for such scenarios. A simple one-liner such as the one below will do.
 
-[html]
+```html
 <img src="site-logo.svg" alt="Site logo" onerror="this.onerror=null;this.src='site-logo.png';" />
-[/html]
+```
 
 You can also do the same for background images, using CSS of course.
 

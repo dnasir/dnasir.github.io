@@ -10,6 +10,8 @@ New OS means fresh install, which is exactly what I did. I installed the latest 
 
 <a href="http://www.dnasir.com/wp-content/uploads/2015/09/sql-2012-not-installed-error.png" rel="lightbox"><img src="http://www.dnasir.com/wp-content/uploads/2015/09/sql-2012-not-installed-error.png" alt="sql-2012-not-installed-error" width="609" height="339" class="alignnone size-full wp-image-2306" /></a>
 
+<!--more-->
+
 So I did what Visual Studio asked me to, but that didn't seem to do much. Instead I got another error:
 
 <a href="http://www.dnasir.com/wp-content/uploads/2015/09/sql-instance-not-installed.png" rel="lightbox"><img src="http://www.dnasir.com/wp-content/uploads/2015/09/sql-instance-not-installed.png" alt="sql-instance-not-installed" width="544" height="254" class="alignnone size-full wp-image-2307" /></a>

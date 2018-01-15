@@ -7,6 +7,8 @@ categories: [iis 7, installation, Internet Information Services (IIS), PHP, php,
 ---
 Recently I've been assigned to work with servers for a new project that started last month. My supervisor told me to document all the stuff I did so that in the event they need to train a new server administrator in the future, he/she can refer to my documentations and we can get things done quicker. I decided it would be easier for everyone if I made the documentations available on my Wordpress blog, instead of some Word file saved somewhere on the company's network. At least this way, nothing would get lost.
 
+<!--more-->
+
 So here's how to set up PHP on IIS. At the time of writing, the server is running Windows Server 2008 R2 Enterprise which came pre-installed with IIS 7.5.
 <ol>
 	<li>Make sure you have the Internet Information Service (IIS) installed and configured properly. This means you have to be able to see the IIS Welcome page when you access the server via web browser.</li>
@@ -45,9 +47,13 @@ So here's how to set up PHP on IIS. At the time of writing, the server is runnin
 	<li>Restart IIS.</li>
 	<li>Test PHP by putting a PHP file in the wwwroot folder and accessing it via a browser. I just created a file called phpinfo.php and wrote the following lines into the file.</li>
 </ol>
-<pre>&lt;?php
+
+```php
+<?php
    echo phpinfo();
-?&gt;</pre>
+?>
+```
+
 That's it. That's all you have to do to get PHP working on IIS. As much as I am used to working with LAMP servers, I think Windows Server may not be so bad after all. Have fun.
 
 Til next time, wassalam.

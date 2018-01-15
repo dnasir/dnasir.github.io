@@ -5,11 +5,14 @@ date: 2011-10-22 15:50
 comments: true
 categories: [drupal, Drupal 7, drupal 7, tutorial, Web Development]
 ---
-<h4>Introduction</h4>
 Recently I've been trying to remake a website I previously built for a Malaysian company using Drupal. When I first made that website, I created a small content management system from scratch using PHP. It was part of a technical exercise for me, and it was only after that that I realised how faster and easier it would have been if I had built it using ready-made content management systems (CMS) like Drupal or Joomla.
 
 For this particular website, I needed to recreate a slideshow which is displayed on the front page. I googled for tutorials and found that the easiest way to achieve this is through the use of the Views module, in particular the Slideshow sub-module. Unfortunately, the tutorials and how-tos I came across for setting up a simple slideshow were poorly written and very difficult to understand. After I finally got my slideshow up and running, I decided that it was best for me to write this small tutorial for others who want to do the same, and also for myself as a reference note for future use in case I ever need it.
+
+<!--more-->
+
 <h4>Prerequisites</h4>
+
 In this tutorial, I'm using Drupal 7.8, although this should work with all versions of Drupal 7. If you're running an older version of Drupal, this tutorial is most likely not for you.
 
 Then you need to install the following modules;

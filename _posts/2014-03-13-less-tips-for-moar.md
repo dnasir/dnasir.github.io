@@ -8,13 +8,16 @@ categories: [CSS, LESS, less, lesscss, tips, Web Development]
 ---
 <p>I've used LESS for a little over two years now, and I just thought I'd share the things I've learnt about LESS that has helped me be more efficient and productive when working on the front-end.</p>
 
+<!--more-->
+
 <h2>If you don't need to nest, don't.</h2>
 
 <p>Nesting is a neat feature in LESS that allows for better code readability and maintenance. But keep in mind not to go overboard with it. After all, LESS is still essentially CSS, and all rules applied to CSS should also be applicable when working with LESS.</p>
 
 <p>Take this code sample for instance,</p>
 
-<pre class="lang:less decode:true " >nav {
+```less
+nav {
     ul {
         /* Some styles */
 
@@ -26,11 +29,13 @@ categories: [CSS, LESS, less, lesscss, tips, Web Development]
             }
         }
     }
-}</pre>
+}
+```
 
 <p>You should really be doing something like this instead,</p>
 
-<pre class="lang:less decode:true " >nav {
+```less
+nav {
     ul {
         /* Some styles */
     }
@@ -42,7 +47,8 @@ categories: [CSS, LESS, less, lesscss, tips, Web Development]
     a {
         /* Some styles */
     }
-}</pre>
+}
+```
 
 <p>It's important to find a balance between nesting for convinience, and nesting for function. <a href="http://csswizardry.com/2012/05/keep-your-css-selectors-short/">Here's a great article about why you should keep your CSS selectors short.</a></p>
 
@@ -50,10 +56,12 @@ categories: [CSS, LESS, less, lesscss, tips, Web Development]
 
 <p>One more neat LESS feature is the ampersand (&amp;), which refers to the parent selector from inside a nested selector. Using this feature for the different states of an element helps keep your code small, and much more readable.</p>
 
-<pre class="lang:less decode:true " >a {
+```less
+a {
     &:hover, &:focus { text-decoration: underline }
     &:active { color: grey }
-}</pre>
+}
+```
 
 <h2>Use mixins.</h2>
 
@@ -61,7 +69,8 @@ categories: [CSS, LESS, less, lesscss, tips, Web Development]
 
 <p>Take the following example,</p>
 
-<pre class="lang:less decode:true " >.highlight {
+```less
+.highlight {
     border: 1px solid #cecece;
     background-color: #f1f1f1;
     border-radius: 5px;
@@ -71,11 +80,13 @@ categories: [CSS, LESS, less, lesscss, tips, Web Development]
     border: 1px solid #cecece;
     background-color: #f2f2f2;
     border-radius: 5px;
-}</pre>
+}
+```
 
 <p>You could create a mixin for this that looks something like this,</p>
 
-<pre class="lang:less decode:true " >.rounded-box(@background-color, @border-color, @border-radius) {
+```less
+.rounded-box(@background-color, @border-color, @border-radius) {
     border: 1px solid @border-color;
     background-color: @background-color;
     border-radius: @border-radius;
@@ -87,15 +98,18 @@ categories: [CSS, LESS, less, lesscss, tips, Web Development]
 
 .well {
     .rounded-box(#f2f2f2, #cecece, 5px);
-}</pre>
+}
+```
 
 <p>And remember those pesky vendor-specific prefixes? You can take care of those too.</p>
 
-<pre class="lang:less decode:true " >.rounded(@radius: 5px) {
+```less
+.rounded(@radius: 5px) {
     -webkit-border-radius: @radius;
     -moz-border-radius: @radius;
     border-radius: @radius;
-}</pre>
+}
+```
 
 <p>There are plenty of mixin collections that you can use. Here's a list of the more popular ones.</p>
 

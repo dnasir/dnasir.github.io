@@ -8,24 +8,29 @@ categories: [CSS, css preprocessors, less, sass, Web Development]
 ---
 As a front-end developer, I've had my fair share of working with CSS preprocessors. Two of the most prominent preprocessors I've had the pleasure of working with are Sass and Less. They're both great, and I still use both of them, but here's why I'm leaving Less for Sass.
 
+<!--more-->
+
 <h2>Variable declaration</h2>
 
 Less uses <code>@</code>, and Sass uses <code>$</code>. Technically, it doesn't really matter which symbol is used, but personally I don't agree with the Less approach. Why? Well, the <code>$</code> symbol has no special meaning in CSS, but <code>@</code> is used for declaring stuff like fonts and media queries.
 
-<pre><code class="css">// Less
+```less
+// Less
 @my-variable: 35px;
 @font-face {
   font-family: 'My Awesome Font';
   src: url('my-awesome-font.woff');
 }
+```
 
+```scss
 // Sass
 $my-variable: 35px;
 @font-face {
   font-family: 'My Awesome Font';
   src: url('my-awesome-font.woff');
 }
-</code></pre>
+```
 
 I prefer having standard CSS stuff being used for standard CSS stuff, and everything else should use their own stuff.
 
@@ -33,7 +38,8 @@ I prefer having standard CSS stuff being used for standard CSS stuff, and everyt
 
 In line with my previous point, Less mixins are declared in the same way classes are declared, with the exception of the parameter field where applicable. Again, I'm not too fond of how this works, and the reason can be demonstrated in the code below:
 
-<pre><code class="css">// just a mixin I'm using as a template
+```less
+// just a mixin I'm using as a template
 .my-icons() {
   display: inline-block;
   width: 16px;
@@ -64,13 +70,14 @@ In line with my previous point, Less mixins are declared in the same way classes
   height: 16px;
   display: block;
 }
-</code></pre>
+```
 
 Firstly, you probably shouldn't be doing this. Secondly, this isn't what I wanted. Because Less mixins are declared the same way CSS classes are, it's more susceptible to confusion that may result in unpredictable code.
 
 Now let's try the same thing in Sass.
 
-<pre><code class="css">// just a mixin I'm using as a template
+```scss
+// just a mixin I'm using as a template
 @mixin my-icons() {
   display: inline-block;
   width: 16px;
@@ -101,7 +108,7 @@ Now let's try the same thing in Sass.
   width: 16px;
   height: 16px;
 }
-</code></pre>
+```
 
 This is much better. There's a clear distinction between a Sass mixin and regular CSS classes, and this helps avoid the confusion I was talking about earlier.
 
@@ -109,7 +116,8 @@ This is much better. There's a clear distinction between a Sass mixin and regula
 
 I ran into this issue some time ago, and I had hoped that the Less community had fixed the bug by now. Unfortunately, that hasn't been the case. The issue was, if you're calculating two or more values with different units, Less will assume the first unit is the one you want, and it will ignore all subsequent units. This is weird and not at all how I expected calculations to work.
 
-<pre><code class="css">.navbar {
+```less
+.navbar {
   height: 200px + 2em + 45pc;
 }
 
@@ -117,7 +125,7 @@ I ran into this issue some time ago, and I had hoped that the Less community had
 .navbar {
   height: 247px;
 }
-</code></pre>
+```
 
 Running the above code in a Sass compiler will simply result in an error, which in my humble opinion is probably the better option.
 
@@ -125,7 +133,8 @@ Running the above code in a Sass compiler will simply result in an error, which 
 
 This is an awesome feature in Sass that is not available in Less. Granted, there's a way around this, but it's not as simple and elegant as how it's done in Sass.
 
-<pre><code class="css">.special-button (@size) when (@size &gt; 10px){
+```less
+.special-button (@size) when (@size &gt; 10px){
   padding: 10px 15px;
   background-color: #f2f2f2;
   display: inline-block;
@@ -145,11 +154,12 @@ This is an awesome feature in Sass that is not available in Less. Granted, there
 .button2 {
   .special-button(15px);
 }
-</code></pre>
+```
 
 Let's see how it would look like written in Sass.
 
-<pre><code class="css">@mixin special-button ($size: 5px) {
+```scss
+@mixin special-button ($size: 5px) {
   @if($size &gt; 10px) {
     padding: 10px 15px;
     background-color: #f2f2f2;
@@ -169,9 +179,10 @@ Let's see how it would look like written in Sass.
 .button2 {
   @include special-button(15px);
 }
-</code></pre>
+```
 
-<pre><code class="css">// Result for both Less and Sass
+```css
+/* Result for both Less and Sass */
 .button1 {
   padding: 2px 5px;
   display: inline-block;
@@ -184,11 +195,12 @@ Let's see how it would look like written in Sass.
   display: inline-block;
   vertical-align: middle;
 }
-</code></pre>
+```
 
 While both output the same result, I find the Sass approach to be much more elegant compared to how it's done in Less. Then there's the issue of duplicate code in the Less code, which can be solved by doing something like this:
 
-<pre><code class="css">.special-button (@size) {
+```less
+.special-button (@size) {
   display: inline-block;
   vertical-align: middle;
 }
@@ -201,7 +213,7 @@ While both output the same result, I find the Sass approach to be much more eleg
 .special-button (@size) when (@size &lt;= 10px) {
   padding: 2px 5px;
 }
-</code></pre>
+```
 
 Again, not so elegant.
 

@@ -5,13 +5,16 @@ date: 2011-10-22 15:39
 comments: true
 categories: [ckeditor, Drupal 7, drupal 7, howto, imce, imce wysiwyg bridge, tutorial, Tutorials, Web Development, wysiwyg]
 ---
-<h3>Introduction</h3>
 Once you've set up your Drupal installation, you will undoubtedly want to start adding contents. The Filtered HTML format works for the most parts, but what if you wanted to add tables or images into your content? Well, that where the Full HTML format comes in handy. But let's face it, not everyone is a coder, and HTML is pretty much Greek to them (unless you are Greek, of course).
 
 This is where What You See Is What You Get (Wysiwyg) editors come in handy. Wysiwyg editors allow users to write content as they would on any word processor such as Word. You can set the text format, font size and colour of the content and see how it would look like once it's published. You can also insert tables and images and position them anywhere you'd like within your content (to a certain degree), and you don't even need to know any HTML to achieve this. The Wysiwyg editor does that for you.
 
-Unfortunately, Drupal 7 does not come with a Wysiwyg editor as standard like, for example, Wordpress does. But that's OK, because I'm going to show you how to quickly get a Wysiwyg editor up and running in Drupal. This tutorial will also cover instructions on how to set up a file manager to use with your Wysiwyg editor.<!--more-->
+Unfortunately, Drupal 7 does not come with a Wysiwyg editor as standard like, for example, Wordpress does. But that's OK, because I'm going to show you how to quickly get a Wysiwyg editor up and running in Drupal. This tutorial will also cover instructions on how to set up a file manager to use with your Wysiwyg editor.
+
+<!--more-->
+
 <h3>Prerequisites</h3>
+
 In this tutorial, I will be using Drupal 7.8, although it should also work with any version of Drupal 7. If you're using an older version of Drupal, like Drupal 6 or earlier, this tutorial is not for you.
 
 These are the modules you will need to get started;

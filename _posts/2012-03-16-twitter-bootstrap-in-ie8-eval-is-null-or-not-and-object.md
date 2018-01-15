@@ -11,11 +11,13 @@ Anyway, after "installing" LESS into my project, I ran some tests. I opened up R
 
 <a href="http://www.dnasir.com/wp-content/uploads/2012/04/bootstrap-less-error.png"><img class="alignnone size-full wp-image-1774" title="bootstrap-less-error" src="http://www.dnasir.com/wp-content/uploads/2012/04/bootstrap-less-error.png" alt="" width="810" height="140" /></a>
 
+<!--more-->
+
 Hmm. I was perplexed. Line NULL?? I wasn't even sure where I'd start debugging. Fortunately, a quick search on Google led me to this forum topic: <a href="https://github.com/duncansmart/less.js-windows/issues/12">https://github.com/duncansmart/less.js-windows/issues/12</a>
 
-The forum folks suggested that LESS 1.3.0 was failing to properly parse the mixin definitions, and is the root cause for this ordeal. A user suggested a quick fix, which doesn't seem to make sense at first (and still doesn't), where you add a random property, or even a comment line, to the <strong>.ie7-inline-block() </strong>property in the <strong>mixins.less </strong>file.
+The forum folks suggested that LESS 1.3.0 was failing to properly parse the mixin definitions, and is the root cause for this ordeal. A user suggested a quick fix, which doesn't seem to make sense at first (and still doesn't), where you add a random property, or even a comment line, to the `.ie7-inline-block()` property in the `mixins.less` file.
 
-So your <strong>.ie7-inline-block() </strong>should look like this when you're done:
+So your `.ie7-inline-block()` should look like this when you're done:
 
 ```css
 .ie7-inline-block() {

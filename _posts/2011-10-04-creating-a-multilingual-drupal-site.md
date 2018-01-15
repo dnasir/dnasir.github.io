@@ -5,14 +5,16 @@ date: 2011-10-04 00:41
 comments: true
 categories: [drupal, Drupal 7, howto, i18n, internationalization, multilingual, tutorial, Tutorials, Web Development]
 ---
-<h4>Introduction</h4>
 Recently I've been working a lot with MODX, and in case you don't know what MODX is, it's a great content management system designed with PHP developers, such as myself, in mind. You can check it out here.
 
 The projects I have been working on using MODX are mostly multilingual sites. MODX Evolution has a great multilingual module called YAMS (Yet Another Multilingual Solution) and it allows me to create a page with multiple resources in multiple languages. Did that sound right? Well, basically you can have a page in multiple languages, and you can switch between languages by modifying the URL - usually by adding a two-letter combination of the language you want (eg. en for English, fr for French, ru for Russian). This is great, because all the pages can use the same template so they all look the same, but by adding a language tag to the URL visitors can view the same page in different languages.
 
 Then I wanted to make the same thing work in Drupal. I got to know that there's also a multilingual solution for Drupal, namely the Internationalization module. I went through a few tutorials that explained how to set this up, which was fine, but it was until I found <a title="Drupal 7: Cracking the multilingual front page nut" href="http://bengoodyear.com/article/drupal-7-cracking-the-multilingual-front-page-nut" target="_blank">this</a> tutorial that I managed to get a multilingual front page up and running.
 
-So in this tutorial, I'll be showing you how to set up a multilingual site with a fully functioning multilingual front page and nice clean URL paths to boot.<!--more-->
+So in this tutorial, I'll be showing you how to set up a multilingual site with a fully functioning multilingual front page and nice clean URL paths to boot.
+
+<!--more-->
+
 <h4>Prerequisites</h4>
 In this tutorial, I'll be using Drupal 7.8, but this should work with pretty much all Drupal 7 versions.
 

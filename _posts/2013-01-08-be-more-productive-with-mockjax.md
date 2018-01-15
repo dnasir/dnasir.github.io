@@ -13,6 +13,8 @@ But sometimes, due to unforeseen problems, the tasks don't get done in time, and
 
 I work with a lot of Ajax stuff, and this means sending data to web services, getting a response, and reacting based on said response. Pretty standard stuff.
 
+<!--more-->
+
 I don't usually work on the back-end code for the web services that my Ajax modules are dependent upon. The other people in my team are more suited for the task. But even so, there are times when we just have to spend that extra hour or two getting a web service ready for testing, and I get stuck with one less task. In some cases, the absence of a particular web service becomes a major show stopper.
 
 So it makes sense then, to find a way to be able to keep working even if the web services are not yet ready.

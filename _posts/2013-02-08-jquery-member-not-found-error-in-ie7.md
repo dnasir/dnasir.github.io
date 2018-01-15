@@ -9,6 +9,8 @@ Recently I've been working with a jQuery dropdown plugin called <a href="http://
 
 <img class="size-full wp-image-1986 alignnone" title="Member not found" alt="member-not-found-ie7-error" src="http://dnasir.com/wp-content/uploads/2013/02/member-not-found-ie7-error.png" width="438" height="288" />
 
+<!--more-->
+
 It turns out that this bug has been reported, and you can see the details here: <a href="http://bugs.jquery.com/ticket/12577" target="_blank">http://bugs.jquery.com/ticket/12577</a>. However, it seems like this bug is yet to be fixed. So a suitable workaround is in order.
 
 After an hour of debugging using the IE Developer Tool, and let's be honest - it's the most useless developer tool ever, I've traced the problem down to a line in the code where jQuery's .attr() method is invoked to set a number of properties to a dynamically generated element.

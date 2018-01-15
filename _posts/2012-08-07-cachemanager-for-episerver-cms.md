@@ -13,6 +13,9 @@ Geta has released yet another open source EPiServer CMS module. This latest modu
 	<li><strong>Cache entry value display</strong> - View the contents of cache entries.</li>
 	<li><strong>Multiple server support</strong> - Manage cache for multiple servers from a single node.</li>
 </ul>
+
+<!--more-->
+
 <h3>Screenshots</h3>
 [gallery link="file" columns="4"]
 <h3>Installation</h3>

@@ -5,8 +5,6 @@ date: 2013-09-13 10:43
 comments: true
 categories: [cachemanager, EPiServer, episerver, EPiServer 7, episerver 7, nuget, Web Development]
 ---
-<img src="http://www.dnasir.com/wp-content/uploads/2013/09/episerverNuGetBlue.png" alt="EPiServer NuGet" width="284" height="36" class="alignnone size-full wp-image-2107" />
-
 Geta has just released an updated version of CacheManager for EPiServer CMS 7. It has been rebuilt from scratch to take advantage of ASP.NET MVC, now fully supported by EPiServer CMS.
 
 <h3>Features</h3>
@@ -15,6 +13,8 @@ Geta has just released an updated version of CacheManager for EPiServer CMS 7. I
 <li><strong>Selective cache entry deletion</strong> – Select and delete individual cache entries.</li>
 <li><strong>Cache entry value display</strong> – View a string representation of cache entries.</li>
 </ul>
+
+<!--more-->
 
 <h3>Screenshots</h3>
 <a href="http://www.dnasir.com/wp-content/uploads/2013/09/Geta-CacheManager-Screenshot.png" rel="lightbox"><img src="http://www.dnasir.com/wp-content/uploads/2013/09/Geta-CacheManager-Screenshot-300x182.png" alt="Main page" width="300" height="182" class="alignnone size-medium wp-image-2104" /></a>

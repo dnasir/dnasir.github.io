@@ -273,5 +273,6 @@ sass:
 # feed:
 #   path:                atom.xml
 
-remote_theme: "qwtel/hydejack"
+remote_theme:          "qwtel/hydejack"
 # theme: jekyll-material-theme
+excerpt_separator:     <!--more-->

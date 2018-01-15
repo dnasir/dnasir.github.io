@@ -6,6 +6,9 @@ comments: true
 categories: [iis 7, installation, Internet Information Services (IIS), MySQL, mysql, Windows Server, windows server]
 ---
 This is the next tutorial in my line of IIS Tutorials for work. Unfortunately, there's a large possibility the company might not use MySQL, and use MS SQL Server 2008 instead. Well, I've already installed MySQL on one of the virtual IIS servers, so here's how I did it just in case they decide to use MySQL for other projects.
+
+<!--more-->
+
 <ol>
 	<li>Download MySQL installer from [http://dev.mysql.com/downloads/mysql/](http://dev.mysql.com/downloads/mysql/){:target="_blank"}</li>
 	<li>Run the installer.

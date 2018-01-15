@@ -9,6 +9,8 @@ I recently ran into a small problem in one of my projects. I have some code that
 
 One of the tasks assigned to me needed me to redirect the user to the same page, but with the login UI activated, when they want to do something that required them to be authenticated. Naturally, I went ahead and used the Response.Redirect() method and appended the hash parameters to the end of the current URL. Then I ran my usual tests.
 
+<!--more-->
+
 Chrome? Check.
 
 Firefox? Check.
@@ -27,13 +29,13 @@ While the selected answer on StackOverflow suggests that I use the Location head
 
 A far simpler solution for me was to <strong>replace the hash, or pound, symbol with its URL-encoded counterpart</strong>, which is '%23'. And guess what? That fixed it. It's now working on all the browsers I've tested it on, including IE.
 
-[csharp]
-    // Before
-    Response.Redirect(Request.RawUrl + "#login");
+```csharp
+// Before
+Response.Redirect(Request.RawUrl + "#login");
 
-    // After
-    Response.Redirect(Request.RawUrl + "%23login");
-[/csharp]
+// After
+Response.Redirect(Request.RawUrl + "%23login");
+```
 
 So if you want to avoid messing around with the HTTP headers, just encode the URL.
 

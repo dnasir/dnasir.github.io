@@ -9,9 +9,11 @@ I'm currently working on a small EPiServer plugin that requires the site admin t
 
 Fortunately, you can easily do this using EPiServer's Dynamic Data Store (DDS), and it beats having to implement PlugInSettings that uses DataSets, which is just awfully painful to work with.
 
+<!--more-->
+
 Firstly, you'll need to decorate the model class that you want to store. For example, if you want to store some plugin settings like feature enable/disable flags, you'll want to create a model class that looks something like this:
 
-[csharp]
+```csharp
 using EPiServer.Data;
 using EPiServer.Data.Dynamic;
 
@@ -25,7 +27,7 @@ namespace MyPlugin.Models
         public bool Enabled { get; set; }
     }
 }
-[/csharp]
+```
 
 The decoration we've applied to this class tells EPiServer to automatically check and update the Type if it doesn't match, which should help when changing property types, and to automatically create the store if it doesn't already exist.
 
@@ -33,7 +35,7 @@ One other thing you'll need to include in the class is an Identity type property
 
 Next, you need to create a repository that will handle all CRUD operation. Something like this:
 
-[csharp]
+```csharp
 using System;
 using System.Linq;
 using EPiServer.Data.Dynamic;
@@ -85,7 +87,7 @@ namespace MyPlugin.Repositories
         }
     }
 }
-[/csharp]
+```
 
 I think the code above is pretty much self-explanatory. The repository class has a static property of type DynamicDataStore which has a getter that returns the DynamicDataStore object, that is used in the two methods set up for setting and fetching the plugin settings from the DDS. The LoadSettings() method will try to fetch the plugin settings, and if it doesn't exist, it will create a new entry. The SaveSettings() method will first fetch the settings using the LoadSettings() method, and then overwrites the values using the Save() method.
 
@@ -93,7 +95,7 @@ I'm also using the Singleton design pattern (Thanks <a href="http://www.frederik
 
 On the plugin administration page, you can have a checkbox input control (since we're using a boolean in this example) that will represent the value for the Enabled property and we can use the Checked property for that control to define whether the plugin is to be enabled or disabled. The code-behind for the administration page could look something like this:
 
-[csharp]
+```csharp
 using System;
 using EPiServer;
 using MyPlugin.Repositories;
@@ -128,7 +130,7 @@ namespace MyPlugin.Admin
         }
     }
 }
-[/csharp]
+```
 
 In the code above, we have an OnLoad event handler that loads up the currently saved settings, and sets them to the relevant controls. In this case, the boolean value is being applied to the checkbox input control.
 

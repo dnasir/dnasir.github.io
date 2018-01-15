@@ -9,6 +9,8 @@ RequireJS is a great library for dynamically loading JavaScript modules. It's gr
 
 However, the problem with dynamically loading JavaScript files is that they have a tendency to get cached. While this is good for your visitors, because you don't want them to have to repeatedly download the same JavaScript files, the problem is when you update your files.
 
+<!--more-->
+
 If you have your web server set up so that it tells browsers to cache JavaScript files for a certain amount of time, unless your users know how to clear their caches, they will continue using the cached version of said files.
 
 Fortunately, RequireJS has a parameter called <a href="http://requirejs.org/docs/api.html#config-urlArgs" target="_blank">urlArgs</a> that you can use to append arguments to your script requests. The RequireJS documentation also states that this parameter can also be used to set some cache-busting values, such as the current time, to every script request. This will force the browser to re-download all required files on every request.

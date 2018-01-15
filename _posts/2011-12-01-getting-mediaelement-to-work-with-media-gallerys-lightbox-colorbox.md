@@ -9,14 +9,18 @@ OK, here's a quick one for you. Say you're setting up a media gallery in Drupal 
 
 Well, if you're reading this, that means you're facing the same problem as I did a few hours ago. The player just fails to load, and you're left with something that looks like this;
 
-<a href="http://www.dnasir.com/wp-content/uploads/2011/12/mediaelement-player-load-fail.png"><img class="size-full wp-image-1628 alignnone" title="MediaElement Player Load Fail" src="http://www.dnasir.com/wp-content/uploads/2011/12/mediaelement-player-load-fail.png" alt="" width="590" height="417" /></a><!--more-->
+<a href="http://www.dnasir.com/wp-content/uploads/2011/12/mediaelement-player-load-fail.png"><img class="size-full wp-image-1628 alignnone" title="MediaElement Player Load Fail" src="http://www.dnasir.com/wp-content/uploads/2011/12/mediaelement-player-load-fail.png" alt="" width="590" height="417" /></a>
+
+<!--more-->
 
 This is because Media Gallery's lightbox (which is really Colorbox) loads the video via Ajax, and only when the user requests it. So it's a dynamically loaded element, which is not picked up by MediaElement's jQuery module as it only scans the page during page load.
 
 Solution? Customized JavaScript, of course.
 
 Create a new JavaScript file called colorbox-behaviour.js. Naturally, the file name can be anything you want. Now you need to add the following code in your new script.
-<pre>(function ($) {
+
+```javascript
+(function ($) {
     Drupal.behaviors.initColorboxDefaultStyle = {
         attach: function (context, settings) {
             $(document).bind('cbox_complete', function () {
@@ -34,13 +38,19 @@ Create a new JavaScript file called colorbox-behaviour.js. Naturally, the file n
             });
         }
     };
-})(jQuery);</pre>
-Now you need to include this script in your theme's <strong>template.php</strong> file under the <strong>theme_preprocess_page</strong> function, like so.
-<pre>function isl_preprocess_page(&amp;$variables, $hook) {
+})(jQuery);
+```
+
+Now you need to include this script in your theme's `template.php` file under the `theme_preprocess_page` function, like so.
+
+```php
+function isl_preprocess_page(&$variables, $hook) {
     /* Add custom Colorbox script */
     drupal_add_js(drupal_get_path('theme', 'THEMENAME') . '/js/colorbox-behaviour.js', array('group' =&gt; 'JS_THEME', 'type' =&gt; 'file'));
-}</pre>
-Remember to replace <strong>THEMENAME</strong> with your theme's name.
+}
+```
+
+Remember to replace `THEMENAME` with your theme's name.
 
 That should be it. Your MediaElement player should now load in your Media Gallery's lightbox.
 

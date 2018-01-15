@@ -1,28 +1,26 @@
 ---
 layout: post
-title: My approach to component-based development
+title: "My approach to feature-driven development"
 date: 2016-12-17 22:46
-
 comments: true
-categories: [cbd, component-based development, CSS, Front-end Development, HTML, JavaScript, Web Development]
+categories: [Front-end Development, HTML, JavaScript, Web Development]
 ---
-I've been experimenting with a few approaches to
+I've been experimenting with a few approaches to modularizing my projects, so I started looking at them as simply a collection of features and components.
 
-I started looking at web projects as simply a set of features and components, and with this in mind, I started to
+Everything my components need should exist within their own respective domain. This will make it easier later on down the line when I need to make changes, or fix bugs, where I won't have to go through several separate folders to find what I need.
 
-Everything my component needs should exist inside its own domain. This will make it easier later down the line, when I need to make changes, or fix a bug, and I don't need to go through several folders to find what I need.
-
-For example, I need to update how my carousel works, as well as fix a few visual bugs. In a traditional set-up, I would be looking for the JS file inside a folder where all my JS files are located, and the same goes for the CSS file, as well as my template files.
+For example, I need to update my carousel module, in order to fix a few visual bugs. In a traditional set-up, I would be looking for the JS file inside a folder where all my JS files are located, and the same goes for the CSS file, as well as my template files.
 
 In a feature-driven development scenario, all the code for my component is located in one place, and I don't have to traverse through several folders to find what I'm looking for.
 
 Ideally, the components should be isolated enough that they can be added and removed without breaking unrelated code, or at least with minimal fuss. That was my goal when I started walking down this path.
 
-<h2>Project file structure</h2>
+## Project file structure
 
 This is a simplified version of what my project structure looks like:
 
-<pre><code>MyProject
+```
+MyProject
 |- components
 |  |- carousel
 |     |- scss
@@ -33,17 +31,17 @@ This is a simplified version of what my project structure looks like:
 gulpfile.js
 package.json
 tsconfig.json
-</code></pre>
+```
 
-As you have probably noticed, my component folder has its own <code>gulpfile.js</code>. The reason for this is really to spread out the gulp task definitions. At one point I had over a dozen separate gulp tasks in a single <code>gulpfile.js</code> and the file just got a bit too large for my liking.
+As you have probably noticed, my component folder has its own `gulpfile.js`. The reason for this is really to spread out the gulp task definitions. At one point I had over a dozen separate gulp tasks in a single `gulpfile.js` and the file just got a bit too large for my liking.
 
 Spreading things out also allows me to set up specific build configurations for my components. Granted, this can often result in code duplication, but it gives me full control over how my components are built. I can also run component-specific tasks individually without running the entire project build.
 
-<h2>Setting up the task runner</h2>
+## Setting up the task runner
 
-The root <code>gulpfile.js</code> is what I run whenever I need to rebuild the entire project. Otherwise I simply run component-specific gulp tasks.
+The root `gulpfile.js` is what I run whenever I need to rebuild the entire project. Otherwise I simply run component-specific gulp tasks.
 
-The easiest method to run the default gulp task for all my components is to use <a href="https://www.npmjs.com/package/gulp-chug">gulp-chug</a>. This plugin allows me to pass in a glob containing the path to the <code>gulpfile.js</code> for all my components and run them from my main <code>gulpfile.js</code>.
+The easiest method to run the default gulp task for all my components is to use [gulp-chug](https://www.npmjs.com/package/gulp-chug). This plugin allows me to pass in a glob containing the path to the <code>gulpfile.js</code> for all my components and run them from my main <code>gulpfile.js</code>.
 
 <ul>
 <li>Use gulp-chug to run nested gulpfile</li>

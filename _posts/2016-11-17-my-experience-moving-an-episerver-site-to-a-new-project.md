@@ -10,6 +10,8 @@ Every now and again we get sites that have grown so huge that it becomes necessa
 
 Typically the simplest way to solve this little scenario is to simply move the section to the Root node of the EPiServer site, and assign it its own URL in the website configuration tool. But what if you wanted to extract that section out of the project altogether and recreate it as an entirely new project?
 
+<!--more-->
+
 One of our clients asked us to do exactly that. They wanted us to extract a whole section of their existing EPiServer website and recreate it as a new EPiServer CMS project, but at the same time keeping all existing content.
 
 This post is a simple guide on how we achieved this.

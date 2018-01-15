@@ -10,9 +10,11 @@ As I continue my journey into the Angular world, I come across many new and awes
 
 Scope inheritance in Angular works very much like JavaScript's prototypal inheritance. Child scopes have access to their respective parent scopes, changes in the parent scope can trigger event listeners in the child scope, so on and so forth. It's pretty straight forward, up until the moment you need to do some "two-way binding" from within the child scope.
 
+<!--more-->
+
 Let's look at an example. Say you have code that looks something like this:
 
-[html]
+```html
 <section ng-controller="MainCtrl">
     <div ng-controller="FilterCtrl">
         <input type="text" ng-model="criteria" />
@@ -24,9 +26,9 @@ Let's look at an example. Say you have code that looks something like this:
         </li>
     </ul>
 </section>
-[/html]
+```
 
-[javascript]
+```javascript
 angular.module('myApp', [])
     .controller('MainCtrl', function($scope) {
         $scope.people = [];
@@ -40,7 +42,7 @@ angular.module('myApp', [])
             });
         }
     })
-[/javascript]
+```
 
 Clicking the Apply filter button will send an async request that returns a list of people based on the provided criteria, and the list gets updated.
 
@@ -54,16 +56,14 @@ In the above example, the async request was actually executed, but because we're
 
 However, if we were to do something like this:
 
-[javascript]
-...
-        PeopleService.getPeople().then(function(response) {
-            var people = response.data.people;
-            for(var i = 0; i < people.length; i++) {
-                $scope.people.push(people[i]);
-            }
-        });
-...
-[/javascript]
+```javascript
+PeopleService.getPeople().then(function(response) {
+    var people = response.data.people;
+    for(var i = 0; i < people.length; i++) {
+        $scope.people.push(people[i]);
+    }
+});
+```
 
 The code now works, and the list gets updated with the names of people retrieved from our async service.
 
@@ -73,7 +73,7 @@ Of course, because Angular keeps track of the parent-child relationship within s
 
 The recommended way is to instead use an object when defining a variable within the parent scope that you know is going to require "two-way binding". Something like this:
 
-[javascript]
+```javascript
 angular.module('myApp', [])
     .controller('MainCtrl', function($scope) {
         $scope.peopleList = {
@@ -89,7 +89,7 @@ angular.module('myApp', [])
             });
         }
     })
-[/javascript]
+```
 
 Since the <code>peopleList</code> object doesn't exist in the child scope, the code is forced to consult the prototype chain to find it.
 

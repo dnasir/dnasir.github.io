@@ -9,8 +9,12 @@ I was working on a small filtering script for a GMaps project, and I needed to c
 
 So obviously I can write a separate method for all the types of filter material required. Every method will grab all the markers on the map, iterate through them, filter out the irrelevant markers, and return the results. But that would result in code duplication, and that's not how I roll. So instead, I created a single function that handles the filtering, and one method that allows you to get property of nested objects using their property path.
 
-It essentially allows you to grab the nested property of an object using its property path, eg. Object.InnerObject.SecondLevelObject.PropertyName, or Object['InnerObject'][SecondLevelObject']['PropertyName']. It returns false if the property doesn't not exist or is undefined.
-<pre>function getObjectProperty(obj, propertyPath) {
+<!--more-->
+
+It essentially allows you to grab the nested property of an object using its property path, eg. `Object.InnerObject.SecondLevelObject.PropertyName`, or `Object['InnerObject'][SecondLevelObject']['PropertyName']`. It returns `false` if the property doesn't not exist or is undefined.
+
+```javascript
+function getObjectProperty(obj, propertyPath) {
     var o = obj;
 
     if (typeof (o) != 'object') return false;
@@ -34,7 +38,9 @@ It essentially allows you to grab the nested property of an object using its pro
             return o[c];
         }
     }
-}</pre>
+}
+```
+
 I guess some people will look at this and think it's a bit pointless. I could have just used the property path for each object property in my filters. But imagine this - you have about a thousand markers, each with its own properties. Then you have a filter that filters the markers - in my case - by their respective store names, store types, store locations, so and so forth. It would make sense to create a function that can iterate through the markers and find what you're looking for instead of creating a new function to deal with each and every situation.
 
 I hope someone else will find this useful. As usual, there are countless ways to achieve what I was trying to achieve, and this is just one of them.

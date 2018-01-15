@@ -13,13 +13,15 @@ One solution would be to create a JavaScript translation file that contains loca
 
 Mads Kristensen has posted a very interesting solution for developers who want to use resource files for localising their JavaScript code. You can see it <a title="Localize text in JavaScript files in ASP.NET" href="http://madskristensen.net/post/Localize-text-in-JavaScript-files-in-ASPNET.aspx" target="_blank">here</a>.
 
+<!--more-->
+
 I simply modified his idea to work with an MVC project I was working on. So, while Mads' solution works on the idea that the appropriate language be applied based on the user's browser language, I've extended his idea to allow the handler to accept a language code parameter which determines the language I want my JavaScript to be translated into.
 
 Here's what my code looks like. The rest is pretty much the same as Mads' solution.
 
 Feel free to use and abuse.
 
-[csharp]
+```csharp
 using System;
 using System.Globalization;
 using System.IO;
@@ -173,4 +175,4 @@ public class ScriptLocalisation : IHttpHandler
         context.Response.AppendHeader("Content-encoding", encoding);
     }
 }
-[/csharp]
+```

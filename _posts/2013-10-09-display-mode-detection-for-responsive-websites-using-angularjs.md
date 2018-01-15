@@ -10,7 +10,9 @@ I've recently started using AngularJS in a project I'm currently working on. So 
 
 Here's one I'm using to determine the current display mode for responsive websites.
 
-[javascript]
+<!--more-->
+
+```javascript
 angular.module('myApp', [])
     .directive('dnDisplayMode', function($window) {
         return {
@@ -51,11 +53,11 @@ angular.module('myApp', [])
             }
         };
     });
-[/javascript]
+```
 
 And here's the CSS you'll need to get this working.
 
-[css]
+```css
 .display-mode {
   height: 0;
   margin: 0;
@@ -100,20 +102,19 @@ And here's the CSS you'll need to get this working.
     display: none;
   }
 }
-[/css]
+```
 
 And here's how you would use it.
 
-[html]
-
+```html
 <html ng-app="myApp">
   ...
   <body ng-controller="MainCtrl">
     <div class="display-mode" dn-display-mode="displayMode"></div>
     ...
-[/html]
+```
 
-[javascript]
+```javascript
 angular.module('myApp')
     .controller('MainCtrl', function($scope) {
         $scope.displayMode = 'mobile'; // default value
@@ -128,7 +129,7 @@ angular.module('myApp')
             }
         });
     });
-[/javascript]
+```
 
 As you can see, I'm not doing any calculations in determining the current display mode. I figured that it was far simpler to just use CSS and media queries to show or hide the elements I've dynamically added to the DOM. The directive just checks to see which element is visible whenever the window is resized, and sets the model value accordingly.
 

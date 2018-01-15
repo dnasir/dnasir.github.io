@@ -7,9 +7,13 @@ categories: [for in loop, IE, internet explorer, JavaScript, Object doesn't supp
 ---
 I've recently encountered a problem in Internet Explorer when I was using a for-in loop in one of my scripts. It was a simple loop too.
 
-[javascript]for (item in data) {
+```javascript
+for (item in data) {
     $row.data(item, data[item]);
-}[/javascript]
+}
+```
+
+<!--more-->
 
 This piece of code will attach a data property for each JSON object it receives from an Ajax request. Simple, right? This works in every other browser I've tested it on, EXCEPT Internet Explorer.
 
@@ -17,17 +21,21 @@ Turned out the word <strong>item</strong> is <del datetime="2012-05-11T06:25:17+
 
 So something like this:
 
-[javascript]for (_item in data) {
+```javascript
+for (_item in data) {
     $row.data(_item, data[_item]);
-}[/javascript]
+}
+```
 
 and this:
 
-[javascript]for (j in data) {
+```javascript
+for (j in data) {
     $row.data(j, data[j]);
-}[/javascript]
+}
+```
 
-will work. But using <strong>item</strong>, without declaring what <strong>item</strong> is, will not.
+will work. But using `item`, without declaring what `item` is, will not.
 
 Just in case someone else runs into this problem ;-)
 

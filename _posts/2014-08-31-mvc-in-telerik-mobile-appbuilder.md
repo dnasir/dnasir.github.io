@@ -8,6 +8,8 @@ categories: [Mobile App Development, mvc, requirejs, telerik appbuilder]
 ---
 Recently I started playing around with the <a href="http://www.telerik.com/appbuilder">Telerik Platform Mobile Appbuilder</a> and tried my hand at building mobile apps. It's an awesome tool, and despite its flaws, most of which are negligible, it does provide developers a viable avenue to quickly build mobile apps. The best part is, I get to code in HTML5 and JavaScript.
 
+<!--more-->
+
 For the most parts, I was working with <a href="http://www.telerik.com/kendo-ui">Kendo UI</a>, Telerik's own front-end UI framework. It took some time to work out what's what, but since it was all HTML and JavaScript, I was up and running in no time.
 
 I started experimenting, and tried to implement an ASP.NET MVC approach to building my project.
@@ -20,7 +22,7 @@ I'm using <a href="http://requirejs.org">RequireJS</a> in my project to dynamica
 
 Now, let's have a look at how I set up my models. I define my models in individual files, just like I would in ASP.NET MVC, and using RequireJS, I can set it up as a dependency for any modules that uses it.
 
-[javascript]
+```javascript
 // User model
 define([], function() {
     return kendo.data.Model.define({
@@ -35,13 +37,13 @@ define([], function() {
         }
     });
 })
-[/javascript]
+```
 
 As you can see, all this module does is returning a Kendo model. That's it.
 
 At this point, you might be wondering, what about nested models? At least I was. Here's how I did it.
 
-[javascript]
+```javascript
 // Comment model
 define([
     'models/user'
@@ -59,11 +61,11 @@ define([
         }
     });
 });
-[/javascript]
+```
 
 Next, let's have a look at how I'm using these models that I've created. In my demo project, I'm using my models as schemas in my service calls. It will ensure that the data I'm fetching is mapped according to the structure and property types defined in the model.
 
-[javascript]
+```javascript
 // Main controller
 define([
     'uiHelper',
@@ -90,12 +92,11 @@ define([
 </code></pre>
 
 });
-[/javascript]
+```
 
 If you remember how I had set up the Comment model, it has a property that is of type User. Kendo should automatically map the author values to the appropriate property fields. To demonstrate this, let's have a look at the view.
 
-[html]
-
+```html
 <div data-role="view" id="main" data-init="APP.main.init">
     <ul data-role="listview" data-source="APP.main.model.comments" data-template="commentTmpl"></ul>
 </div>
@@ -106,8 +107,7 @@ If you remember how I had set up the Comment model, it has a property that is of
         Posted: ${posted} by ${author.name} (${author.age})
     </div>
 </script>
-
-[/html]
+```
 
 It's all pretty self-explanatory. I have a ListView that I want filled with comments from my datasource, and rendered using the provided template.
 

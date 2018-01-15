@@ -8,6 +8,8 @@ categories: [AngularJS, angularjs, dropdown, JavaScript, timepicker, Web Develop
 ---
 I was searching for a simple timepicker directive, much like the one used in Google Calendar, for one of my projects. I couldn't find any, so I built my own.
 
+<!--more-->
+
 <a href="https://github.com/dnasir/angular-timepicker" title="Angular Timepicker" target="_blank">Angular Timepicker</a>
 
 <a href="/github/angular-timepicker/demo.html" title="Angular Timepicker Demo" target="_blank">Demo</a>
