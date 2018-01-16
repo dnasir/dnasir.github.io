@@ -6,7 +6,7 @@ github:                [metadata]
 # IMPORTANT: Set the URL of your site.
 # Set to https://<username>.github.io when hosting on GitHub Pages
 # (unless you are using a custom domain).
-url:                   https://domain.tld
+url:                   https://www.dnasir.com
 
 # IMPORTANT: Set The "base URL" of your site.
 #
@@ -29,14 +29,11 @@ title:                 Dzulqarnain Nasir
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  A Jekyll theme with JavaScript powers. "Best Theme by a Mile".
-  Combines the best of static sites and modern web apps.
-  Open `_config.yml` to edit this text.
+  Development blog of Dzulqarnain Nasir - full-stack developer, and EPiServer Certified Developer
 
 # A shorter description for the sidebar.
 tagline:               >
-  A Jekyll theme with JavaScript powers.
-  Open `_config.yml` to edit this text.
+  Full-stack developer, EPiServer Certified Developer
 
 # A list of keywords for your blog
 keywords:              []
