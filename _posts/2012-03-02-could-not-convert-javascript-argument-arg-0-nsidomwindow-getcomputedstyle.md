@@ -29,4 +29,4 @@ So I've decided to avoid using the `beforeRemove` method, at least until the Kno
 
 I'd like to hear from you guys about other solutions you guys came up with. Preferably something that would allow me to use the `beforeRemove` method.
 
-<em>Wassalam</em>
+*Wassalam*

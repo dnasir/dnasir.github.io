@@ -55,4 +55,5 @@ Open up the Server Manager and navigate to the IIS Manager. Click on your Applic
 Open up the drop down menu and navigate through the following; `system.webServer` > `security` > `requestFiltering`. Click on that and it will show you the current requestFiltering settings for your Application. Scroll down and until you find requestLimits. Expand it and there you should see maxAllowedContentLength. You can now change this value to any value you wish to set. Once you're done, click Apply and that's it.
 
 Here's a picture showing you where and what to change. At this moment, I only have the Japanese version of Windows Server available to take screenshots from, but I'm sure you get the idea.
-<a href="http://subject9.files.wordpress.com/2011/08/28.png"><img class="size-full wp-image-778 aligncenter" title="28" src="http://subject9.files.wordpress.com/2011/08/28.png" alt="" width="578" height="379" /></a>
+
+![Image of IIS server manager]({{ "/assets/img/2011/08/28.png" | absolute_url }})

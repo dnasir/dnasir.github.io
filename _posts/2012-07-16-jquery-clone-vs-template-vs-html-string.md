@@ -23,7 +23,7 @@ The second method uses the jQuery Template plugin that involves us setting up a 
 
 I personally never liked this method that much, mainly because it involves additional code. It is obviously very useful, just not very pretty. The project never got past the Beta stage, and has now been discontinued. But you can still find it on the jQuery website, and it's still floating around on various CDN providers.
 
-Finally, the third method involves string manipulation. It really just involves appending HTML strings that contains all the DIVs, classes and values. It's the least beautiful of the lot, if I'm honest, as it involves mixing JS code with HTML strings. However, if you don't like that, you could always have the HTML code you wish to duplicate somewhere in your markup and use jQuery's .html() method to retrieve the HTML code to be used in your loop.
+Finally, the third method involves string manipulation. It really just involves appending HTML strings that contains all the DIVs, classes and values. It's the least beautiful of the lot, if I'm honest, as it involves mixing JS code with HTML strings. However, if you don't like that, you could always have the HTML code you wish to duplicate somewhere in your markup and use jQuery's `.html()` method to retrieve the HTML code to be used in your loop.
 
 I've set up a simple test as proof of concept on JSFiddle.net. You can see it here: [http://jsfiddle.net/dzul1983/vB8Fn/2/](http://jsfiddle.net/dzul1983/vB8Fn/2/){:target="_blank"}. A small note, you'll need a browser that supports the console feature.
 
@@ -31,4 +31,4 @@ Based on the results, string manipulation is the fastest way to duplicate stuff,
 
 That said, there's really little chance you will ever need to display 500+ items in any single page. It's just bad UI design, and I would definitely recommend implementing some kind of paging system for this sort of situation. In which case, the speed difference between all three method is reduced to such a small number that it really doesn't matter which method you use. I mean, who can really tell the difference between 16ms and 1ms?
 
-<em>Wassalam</em>
+*Wassalam*

@@ -10,7 +10,7 @@ As a front-end developer, I've had my fair share of working with CSS preprocesso
 
 <!--more-->
 
-<h2>Variable declaration</h2>
+## Variable declaration
 
 Less uses `@`, and Sass uses `$`. Technically, it doesn't really matter which symbol is used, but personally I don't agree with the Less approach. Why? Well, the `$` symbol has no special meaning in CSS, but `@` is used for declaring stuff like fonts and media queries.
 
@@ -34,7 +34,7 @@ $my-variable: 35px;
 
 I prefer having standard CSS stuff being used for standard CSS stuff, and everything else should use their own stuff.
 
-<h2>Mixin declaration</h2>
+## Mixin declaration
 
 In line with my previous point, Less mixins are declared in the same way classes are declared, with the exception of the parameter field where applicable. Again, I'm not too fond of how this works, and the reason can be demonstrated in the code below:
 
@@ -112,7 +112,7 @@ Now let's try the same thing in Sass.
 
 This is much better. There's a clear distinction between a Sass mixin and regular CSS classes, and this helps avoid the confusion I was talking about earlier.
 
-<h2>Math calculations</h2>
+## Math calculations
 
 I ran into this issue some time ago, and I had hoped that the Less community had fixed the bug by now. Unfortunately, that hasn't been the case. The issue was, if you're calculating two or more values with different units, Less will assume the first unit is the one you want, and it will ignore all subsequent units. This is weird and not at all how I expected calculations to work.
 
@@ -129,7 +129,7 @@ I ran into this issue some time ago, and I had hoped that the Less community had
 
 Running the above code in a Sass compiler will simply result in an error, which in my humble opinion is probably the better option.
 
-<h2>Conditionals</h2>
+## Conditionals
 
 This is an awesome feature in Sass that is not available in Less. Granted, there's a way around this, but it's not as simple and elegant as how it's done in Sass.
 
@@ -219,7 +219,7 @@ Again, not so elegant.
 
 Sass also comes with a `for` loop function, but I haven't yet found a situation where I'd been needing it. However, when that time comes, I can rest easy knowing Sass has got me covered.
 
-<h2>Bootstrap support</h2>
+## Bootstrap support
 
 When I started using CSS preprocessors, I started with Less. The main reason being Bootstrap, the most popular CSS framework at the time, was built using Less. I worked a lot with Bootstrap, which meant I worked a lot with Less.
 
@@ -227,4 +227,4 @@ Now that Bootstrap has an official Sass port, I've decided to use this in all my
 
 So, there you have it. My reasons for switching to Sass. Did I miss something? Let me know in the comments below.
 
-<em>Wassalam</em>
+*Wassalam*

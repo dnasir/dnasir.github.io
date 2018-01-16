@@ -64,4 +64,4 @@ My suggestion is when IE is detected, just hide the button link, set overflow to
 
 Have a go, and let me know what you think. If you have any suggestions, please leave a comment.
 
-<em>Wassalam.</em>
+*Wassalam*

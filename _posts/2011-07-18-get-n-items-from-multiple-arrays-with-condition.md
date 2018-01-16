@@ -12,29 +12,29 @@ I googled around hoping that there would be some simple solution to my needs –
 <!--more-->
 
 ```php
-function getItemsFromArray($n,$inputArray,$outputArray=null){
-     if(!function_exists("cmp")){
-         function cmp($a,$b){ // function to sort by posted date, you can change this to your needs
-             if($a->$posted ==  $b->$posted ) return 0 ; // if equals do nothing
-             return ($a->$posted > $b->$posted) ? -1 : 1; // latest comes first
-         }
-     }
-     // make sure the input array is not empty
-     if(!empty($inputArray)){
-         $tempArray = $inputArray;
-         if(!$outputArray) $outputArray = array();
-         // sort items before processing to make sure the latest is at the start
-         usort($tempArray,'cmp');
-         for($i=0; $i<sizeof($inputArray) &&$ $i<$n; $i++){
-             // push into output array
-             array_push($outputArray,$inputArray[$i]);
-             // sort the output array to keep the latest items at the start of the array
-             usort($outputArray,'cmp');
-             // only keep first n items, discard the rest
-             array_splice($outputArray,$n);
-         }
-     }
-     return $outputArray; // return result array
+function getItemsFromArray($n, $inputArray, $outputArray = null) {
+    if (!function_exists("cmp")) {
+        function cmp($a, $b) { // function to sort by posted date, you can change this to your needs
+            if ($a -> $posted ==  $b -> $posted) return 0; // if equals do nothing
+            return ($a -> $posted > $b -> $posted) ? -1 : 1; // latest comes first
+        }
+    }
+    // make sure the input array is not empty
+    if (!empty($inputArray)) {
+        $tempArray = $inputArray;
+        if (!$outputArray) $outputArray = array();
+        // sort items before processing to make sure the latest is at the start
+        usort($tempArray, 'cmp');
+        for ($i = 0; $i < sizeof($inputArray) && $ $i < $n; $i++) {
+            // push into output array
+            array_push($outputArray, $inputArray[$i]);
+            // sort the output array to keep the latest items at the start of the array
+            usort($outputArray, 'cmp');
+            // only keep first n items, discard the rest
+            array_splice($outputArray, $n);
+        }
+    }
+    return $outputArray; // return result array
 }
 ```
 
@@ -43,11 +43,11 @@ This script will output an array containing the latest items sorted by posted ti
 ```php
 /* $nObj, $tObj, $aObj are object arrays */
 $news = array();
-$news = getItemsFromArray(5,$nObj,$news);
-$news = getItemsFromArray(5,$tObj,$news);
-$news = getItemsFromArray(5,$aObj,$news);
+$news = getItemsFromArray(5, $nObj, $news);
+$news = getItemsFromArray(5, $tObj, $news);
+$news = getItemsFromArray(5, $aObj, $news);
 ```
 
 I hope this helps someone else facing a similar situation. I’m sure there are numerous other ways to go about this, and I’d like to hear from you guys.
 
-Wassalam.
+*Wassalam*

@@ -13,7 +13,7 @@ This is fine if you're implementing Web API into your main project, but not if y
 
 Whenever someone installs your module into their project, it should just work. Granted, there are instances where your users are required to make minor changes to their project files to get certain features to work. But your module should have an out-of-the-box experience that just works without additional set-up.
 
-Similarly, your module shouldn't have to edit your project's Global.asax file to register its own Web API routes. I don't know if that's even possible, but then again I'm still an ASP.NET noob. In any case, we're kinda stuck. We need the module to register its Web API routes, but we don't want to have the users manually edit the Global.asax file.
+Similarly, your module shouldn't have to edit your project's `Global.asax` file to register its own Web API routes. I don't know if that's even possible, but then again I'm still an ASP.NET noob. In any case, we're kinda stuck. We need the module to register its Web API routes, but we don't want to have the users manually edit the `Global.asax` file.
 
 Enter [WebActivator](http://nuget.org/packages/WebActivator "WebActivator NuGet page"){:target="_blank"}. This module allows you to run start up codes in your web applications. You can even choose to run your start up code before the application starts, or after. Pretty cool, huh?
 
@@ -38,8 +38,8 @@ namespace MyModule
 
 That's it. That's all it takes to get Web API working in your NuGet module.
 
-It's worth to mention though, that you should set the appropriate path for your route. You could use something like mymodule/api as the root path, so you know that requests made to this path are routed to your controller. It helps to avoid any potential conflicts.
+It's worth to mention though, that you should set the appropriate path for your route. You could use something like `mymodule/api` as the root path, so you know that requests made to this path are routed to your controller. It helps to avoid any potential conflicts.
 
 I hope this helps someone wanting to do something similar. It's been an interesting learning experience for an ASP.NET noob such as myself.
 
-<em>Wassalam.</em>
+*Wassalam*

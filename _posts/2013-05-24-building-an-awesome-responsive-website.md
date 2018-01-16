@@ -23,7 +23,7 @@ Responsive web design is nothing new, but it is increasing in popularity, especi
 
 Here are my tips on building a good responsive website based on my experience.
 
-<strong>Start small. Literally.</strong>
+## Start small. Literally.
 
 You should start off with the lowest resolution you're supporting, such as the ones found on mobile phones. Set a minimum width, in pixels, and use that as your baseline. You can then set up a number of break points, slowly moving up towards the highest resolution, i.e. the desktop. This is called the mobile-first approach.
 
@@ -37,7 +37,7 @@ As you start to work with higher resolutions, you will want to display more and 
 
 In our project, I decided to set up four break points for four different display modes - mobile, tablet portrait and landscape, and desktop. I also decided to hide all non-crucial sections of the site using CSS3 media queries. As for images, I've opted for a JavaScript solution that would load the images as they become necessary, also known as lazy loading.
 
-<strong>Build a good responsive navigation.</strong>
+## Build a good responsive navigation.
 
 Never underestimate the importance of a good navigation. I have found myself navigating away from a website simply because I found the site navigation poorly constructed and confusing to use.
 
@@ -49,9 +49,9 @@ As you expand your site for larger resolutions, you'll find that you have more s
 
 The challenge here really is figuring out the best way to build a one-code-fits-all solution for your navigation. Something that works fine as is, and that also works when you collapse it.
 
-In our project, I created a simple collapsible site navigation that turns into a simple navigation when the screen is wide enough. The collapsible menu toggle is shown in mobile and tablet mode, and hidden in desktop mode. This is inspired by the responsive menu found in the [Twitter Bootstrap](http://twitter.github.io/bootstrap/ "Twitter Bootstrap"){:target="_blank"} framework.
+In our project, I created a simple collapsible site navigation that turns into a simple navigation when the screen is wide enough. The collapsible menu toggle is shown in mobile and tablet mode, and hidden in desktop mode. This is inspired by the responsive menu found in the [Twitter Bootstrap](http://twitter.github.io/bootstrap/ "Link to Twitter Bootstrap"){:target="_blank"} framework.
 
-<strong>Use native implementation whenever possible.</strong>
+## Use native implementation whenever possible.
 
 There will be instances where you'll need to implement a form on your website, such as a simple feedback form, and you need to enter something like an email, date, or time. Back in the days, you'll be presented with a standard text input field, where you'll have to enter a data, or time, and have some validation tell you it's the wrong format.
 
@@ -61,23 +61,31 @@ Unfortunately, native implementation is not available across all browsers, and s
 
 In our project, we tried to leverage the native implementations for date and time fields, but while this looks and works great on mobile browsers, it was rather inconsistent across desktop browsers. Chrome and Opera had proper native implementations which included a nice popup calendar for the date field, but while Safari was detected as having support for the date input type, its implementation was less than useful. In Firefox, support for the date and time input types was missing altogether.
 
-[caption id="attachment_2045" align="alignleft" width="163"]<a href="http://dnasir.com/wp-content/uploads/2013/05/chrome-date-input.jpg" rel="lightbox"><img src="http://dnasir.com/wp-content/uploads/2013/05/chrome-date-input.jpg" alt="Chrome date picker" width="163" class="size-full wp-image-2045" /></a> Chrome date picker[/caption]
+### Chrome datepicker
 
-[caption id="attachment_2046" align="alignleft" width="163"]<a href="http://dnasir.com/wp-content/uploads/2013/05/opera-date-input.jpg" rel="lightbox"><img src="http://dnasir.com/wp-content/uploads/2013/05/opera-date-input.jpg" alt="Opera date picker" width="163" class="size-full wp-image-2046" /></a> Opera date picker[/caption]
+![Image of the Chrome datepicker]({{ "/assets/img/2013/05/chrome-date-input.jpg" | absolute_url }})
 
-[caption id="attachment_2047" align="alignleft" width="163"]<a href="http://dnasir.com/wp-content/uploads/2013/05/safari-date-input.jpg" rel="lightbox"><img src="http://dnasir.com/wp-content/uploads/2013/05/safari-date-input.jpg" alt="Safari has no date picker" width="163" class="size-full wp-image-2047" /></a> Safari has no date picker[/caption]
+### Opera datepicker
 
-<div style="clear: both"></div>
+![Image of the Opera datepicker]({{ "/assets/img/2013/05/opera-date-input.jpg" | absolute_url }})
+
+### Safari has no datepicker
+
+![Image of the Safari datepicker]({{ "/assets/img/2013/05/safari-date-input.jpg" | absolute_url }})
 
 So I did what any decent front-end developer would do in this situation, I ditched it and went with a JavaScript implementation. It's sad, but I'm a big believer in creating cross-browser-ly consistent UIs.
 
-<strong>Use Scalable Vector Graphic (SVG) whenever possible.</strong>
+## Use Scalable Vector Graphic (SVG) whenever possible.
 
 Scalable Vector Graphics, or SVGs, are great for responsive websites. Imagine having to create a separate image for every mode your site is supporting, and then discovering that it still looks horrible on Retina display-equipped devices.
 
-[caption id="attachment_2029" align="alignleft" width="163"]<a href="http://dnasir.com/wp-content/uploads/2013/05/blown-up-png.jpg" rel="lightbox"><img src="http://dnasir.com/wp-content/uploads/2013/05/blown-up-png.jpg" alt="Blown up PNG logo" width="163" class="size-full wp-image-2029" /></a> Blown up PNG logo[/caption]
+### Blown up PNG logo
 
-[caption id="attachment_2030" align="alignleft" width="163"]<a href="http://dnasir.com/wp-content/uploads/2013/05/blown-up-svg.jpg" rel="lightbox"><img src="http://dnasir.com/wp-content/uploads/2013/05/blown-up-svg.jpg" alt="Blown up SVG logo" width="163" class="size-full wp-image-2030" /></a> Blown up SVG logo[/caption]
+![Image of a blown up PNG logo]({{ "/assets/img/2013/05/blown-up-png.jpg" | absolute_url }})
+
+### Blown up SVG logo
+
+![Image of a blown up SVG logo]({{ "/assets/img/2013/05/blown-up-svg.jpg" | absolute_url }})
 
 With SVGs, you no longer have to worry about this. Since SVGs are essentially letters and numbers, the browser will do the rendering. Also, depending on how complex the image is, chances are SVG files are more likely to be smaller than your average high definition PNGs.
 
@@ -91,6 +99,8 @@ You can also do the same for background images, using CSS of course.
 
 In our project, we used SVG for any images that needs to be scaled, such as the site logo, menu icons, and the search icon. We're currently using the PNG images for static decorators, but slowly moving towards converting them to SVGs as well.
 
+## Drawbacks
+
 There are, of course, drawbacks to responsive design. They're not that significant, and can safely be ignored given the right approach, but they are still drawbacks.
 
 1. Contents meant for larger displays are simply "turned off" using CSS. They're still there, just hidden away. This causes unnecessary downloads. But as I've already mentioned in this post, you can over come this using some form of JavaScript lazy loading, at least for the images.
@@ -99,4 +109,4 @@ There are, of course, drawbacks to responsive design. They're not that significa
 
 Finally, the points I've mentioned here are really stuff I've come across. They are by no means the one and only way to building an awesome responsive website, as I'm sure there are many other great tutorials on this topic. Take it with a pinch of salt, and have fun building your responsive website.
 
-<em>Wassalam</em>
+*Wassalam*

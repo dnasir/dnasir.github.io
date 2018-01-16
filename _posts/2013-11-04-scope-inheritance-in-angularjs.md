@@ -99,4 +99,4 @@ For a more detailed explanation on this topic, here's [an excellent article by M
 
 Happy coding!
 
-<em>Wassalam</em>
+*Wassalam*

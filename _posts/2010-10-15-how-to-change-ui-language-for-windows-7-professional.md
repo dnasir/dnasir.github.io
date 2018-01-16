@@ -16,7 +16,7 @@ Run CMD as administrator and type:
 DISM /Online /Add-Package /PackagePath:[path to lp.cab];
 ```
 
-eg. `C:\DISM /Online /Add-Package /PackagePath:C:DocumentsDownloadslp.cab`
+eg. `C:\DISM /Online /Add-Package /PackagePath:C:\Documents\Downloads\lp.cab`
 
 then:
 ```shell
@@ -34,7 +34,7 @@ Then in registry:
 
 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MUI\UILanguages`
 
-remove the key of the current language (in my case, jp-JP)
+remove the key of the current language (in my case, `jp-JP`)
 
 Reboot and you should boot up in the language of your choice.
 

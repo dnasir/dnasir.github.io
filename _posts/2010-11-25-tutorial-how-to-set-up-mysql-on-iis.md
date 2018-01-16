@@ -9,32 +9,22 @@ This is the next tutorial in my line of IIS Tutorials for work. Unfortunately, t
 
 <!--more-->
 
-<ol>
-	<li>Download MySQL installer from [http://dev.mysql.com/downloads/mysql/](http://dev.mysql.com/downloads/mysql/){:target="_blank"}</li>
-	<li>Run the installer.
-<ul>
-	<li>Select Custom Install and set the install path to something easy to remember/use (eg. c:mysql). This really does not matter because it's not that difficult to find where you installed MySQL anyway.</li>
-	<li>Select the modules you require. This depends on what you need. Personally, I would just install everything.</li>
-</ul>
-</li>
-	<li>Click Next until the installation is done. Leave Configure the MySQL Server now checked and go through the Detailed Configuration.</li>
-	<li>Select Server Machine as server type, and Multifunctional Database usage. You can also set this according to your needs.</li>
-	<li>Leave everything else on default until Windows Option, then check Include BIN directory in Windows Path.</li>
-	<li>Set the root password, and click Finish.</li>
-	<li>To set PHP5 to access MySQL server,
-<ol>
-	<li>Open the php.ini</li>
-	<li>Uncomment the following;
-<ul>
-	<li>extension=php_mysqli.dll</li>
-	<li>extension=php_mbstring.dll</li>
-	<li>extension=php_mcrypt.dll</li>
-</ul>
-</li>
-</ol>
-</li>
-	<li>Finally, Restart the IIS service to apply changes.</li>
-</ol>
+1. Download MySQL installer from [http://dev.mysql.com/downloads/mysql/](http://dev.mysql.com/downloads/mysql/){:target="_blank"}
+2. Run the installer.
+	* Select Custom Install and set the install path to something easy to remember/use (eg. c:mysql). This really does not matter because it's not that difficult to find where you installed MySQL anyway.
+	* Select the modules you require. This depends on what you need. Personally, I would just install everything.
+3. Click Next until the installation is done. Leave Configure the MySQL Server now checked and go through the Detailed Configuration.
+4. Select Server Machine as server type, and Multifunctional Database usage. You can also set this according to your needs.
+5. Leave everything else on default until Windows Option, then check Include BIN directory in Windows Path.
+6. Set the root password, and click Finish.
+7. To set PHP5 to access MySQL server,
+	1. Open the php.ini
+	2. Uncomment the following;
+		* `extension=php_mysqli.dll`
+		* `extension=php_mbstring.dll`
+		* `extension=php_mcrypt.dll`
+8. Finally, Restart the IIS service to apply changes.
+
 That's it. It's actually easier than the Linux people say it is, me included.
 
 Til next time, wassalam.

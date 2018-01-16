@@ -48,7 +48,7 @@ public virtual string TransportTypes { get; set; }
 
 And you'll end up with something like this:
 
-<a href="http://www.dnasir.com/wp-content/uploads/2013/09/custom-checkboxlist-property.png" rel="lightbox"><img src="http://www.dnasir.com/wp-content/uploads/2013/09/custom-checkboxlist-property.png" alt="Custom checkboxlist property" width="800" height="202" class="alignnone size-full wp-image-2114" /></a>
+![Image of a custom checkboxlist property]({{ "/assets/img/2013/09/custom-checkboxlist-property.png" | absolute_url }})
 
 <strong>Note to CMS 7.1 developers!</strong>
 

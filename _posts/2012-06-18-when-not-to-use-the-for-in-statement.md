@@ -33,7 +33,7 @@ This will actually result in JavaScript rendering the below;
 NaN
 ```
 
-So where's the problem? Well, firstly the for...in statement is a loop method to be used when iterating through <strong>object properties</strong>. So to use it for iterating through an array is abuse in itself, and if it produces unexpected results, well, that's to be expected.
+So where's the problem? Well, firstly the for...in statement is a loop method to be used when iterating through **object properties**. So to use it for iterating through an array is abuse in itself, and if it produces unexpected results, well, that's to be expected.
 
 Now take this example;
 
@@ -90,7 +90,7 @@ for(var j = 0; j < arrayObj.length; j++){
 
 I hope this helps clear some stuff up.
 
-<em>Wassalam</em>
+*Wassalam*
 
 UPDATE:
 

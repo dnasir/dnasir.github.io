@@ -7,7 +7,7 @@ categories: [crud, dds, EPiServer, EPiServer 6, episerver plugin, Web Developmen
 ---
 I'm currently working on a small EPiServer plugin that requires the site admin to be able to save/load configuration settings from the Admin page.
 
-Fortunately, you can easily do this using EPiServer's Dynamic Data Store (DDS), and it beats having to implement PlugInSettings that uses DataSets, which is just awfully painful to work with.
+Fortunately, you can easily do this using EPiServer's Dynamic Data Store (DDS), and it beats having to implement `PlugInSettings` that uses `DataSet`s, which is just awfully painful to work with.
 
 <!--more-->
 
@@ -31,7 +31,7 @@ namespace MyPlugin.Models
 
 The decoration we've applied to this class tells EPiServer to automatically check and update the Type if it doesn't match, which should help when changing property types, and to automatically create the store if it doesn't already exist.
 
-One other thing you'll need to include in the class is an Identity type property. This is required, and it won't work without it.
+One other thing you'll need to include in the class is an `Identity` type property. This is required, and it won't work without it.
 
 Next, you need to create a repository that will handle all CRUD operation. Something like this:
 
@@ -89,11 +89,11 @@ namespace MyPlugin.Repositories
 }
 ```
 
-I think the code above is pretty much self-explanatory. The repository class has a static property of type DynamicDataStore which has a getter that returns the DynamicDataStore object, that is used in the two methods set up for setting and fetching the plugin settings from the DDS. The LoadSettings() method will try to fetch the plugin settings, and if it doesn't exist, it will create a new entry. The SaveSettings() method will first fetch the settings using the LoadSettings() method, and then overwrites the values using the Save() method.
+I think the code above is pretty much self-explanatory. The repository class has a static property of type `DynamicDataStore` which has a getter that returns the `DynamicDataStore` object, that is used in the two methods set up for setting and fetching the plugin settings from the DDS. The `LoadSettings()` method will try to fetch the plugin settings, and if it doesn't exist, it will create a new entry. The `SaveSettings()` method will first fetch the settings using the `LoadSettings()` method, and then overwrites the values using the `Save()` method.
 
 I'm also using the Singleton design pattern (Thanks [Frederik Vig](http://www.frederikvig.com/){:target="_blank"} for the tip!) to avoid a possible race condition between two threads updating the same object.
 
-On the plugin administration page, you can have a checkbox input control (since we're using a boolean in this example) that will represent the value for the Enabled property and we can use the Checked property for that control to define whether the plugin is to be enabled or disabled. The code-behind for the administration page could look something like this:
+On the plugin administration page, you can have a checkbox input control (since we're using a boolean in this example) that will represent the value for the `Enabled` property and we can use the `Checked` property for that control to define whether the plugin is to be enabled or disabled. The code-behind for the administration page could look something like this:
 
 ```csharp
 using System;
@@ -140,4 +140,4 @@ So there you have it. A simple way to save and load configuration settings for E
 
 I should mention that this method was aimed at EPiServer 6, but it should also work in EPiServer 7, seeing as how the DDS implementation hasn't changed that much from version 6 to 7. I'll update this post when I find the time to verify.
 
-Until next time, <em>wassalam</em>.
+Until next time, *wassalam*.

@@ -123,4 +123,4 @@ Essentially what this does is simply checking whether the MyTopMenuIsSet variabl
 
 I hope this helps anyone else facing this issue. If you've solved this issue using a different method, I'm interested to know how you did it.
 
-<em>Wassalam</em>
+*Wassalam*

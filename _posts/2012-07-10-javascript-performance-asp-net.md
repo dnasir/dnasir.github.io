@@ -19,4 +19,4 @@ However, if you're planning to work with multiple libraries, maybe even your cus
 
 As for me, I think that if you're starting a new project, or have the time to modify your existing projects, give RequireJS a go. It's actually pretty easy to work with. Otherwise, Colin's method may just be what you're looking for.
 
-<em>Wassalam.</em>
+*Wassalam*

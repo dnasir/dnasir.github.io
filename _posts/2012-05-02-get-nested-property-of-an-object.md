@@ -45,4 +45,4 @@ I guess some people will look at this and think it's a bit pointless. I could ha
 
 I hope someone else will find this useful. As usual, there are countless ways to achieve what I was trying to achieve, and this is just one of them.
 
-<em>Wassalam.</em>
+*Wassalam*

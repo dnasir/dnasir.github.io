@@ -12,7 +12,7 @@ After spending some time googling for a solution, I came across a small guide th
 <!--more-->
 
 1. Open the Device Manager. You should see a bunch of devices with the yellow exclamation mark next to it. This tells us that the device is not working properly, most probably because the correct drivers are not yet installed.
-2. Now right-click on a device and click "Update Driver Software..". Select "Browse my computer for driver software" and point the folder location to X:WindowsSystem32DriverStoreFileRepository while replacing the X with the drive letter of the partition on which your Windows 7 installation is located.
+2. Now right-click on a device and click "Update Driver Software..". Select "Browse my computer for driver software" and point the folder location to `X:\Windows\System32\DriverStore\FileRepository` while replacing the X with the drive letter of the partition on which your Windows 7 installation is located.
 3. Repeat for the remaining devices.
 
 You should be able to install all the drivers for your devices using this method. The only device that failed to install was my "Dell Wireless 375 Bluetooth Module with AMP" but other than that, everything else installed just fine, including my Smartcard reader.

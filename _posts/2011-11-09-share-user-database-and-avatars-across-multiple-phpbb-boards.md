@@ -13,46 +13,45 @@ So after hours of research, I came across this [topic](http://www.phpbb.com/comm
 
 Although I'm using multiple boards to accommodate multiple forums for multiple languages, you can use the same steps for multiple boards of any kind. For example, if you own two gaming website forums, you may want your users to be able to access both forums without them having to register twice, because we all know how annoying it is having to register for anything. Especially in some cases where you need to register just to view forum topics. Bloody annoying!
 
-<h4>Prerequisites</h4>
+## Prerequisites
 
 In this tutorial I'll be using a modified version of phpBB 3.0.9, specifically the [phpBB SEO Premod V 3.0.9](href="http://downloads.phpbb-seo.com/seo-url-premod-12/phpbb-seo-premod-48.html "phpBB SEO Premod V 3.0.9"){:target="_blank"}, but I assume the same steps will work on other phpBB3 versions as well.
 
-<h4>Installing the first forum</h4>
+## Installing the first forum
 
 First thing you have to do is install phpBB. This will be your primary installation. Pretty much a straightforward installation, with the only requirement being that you should set a prefix for the phpBB tables. This is because you will be using the same database for all other installations.
 
-<h4>Editing the phpBB database</h4>
+## Editing the phpBB database
 
 Next comes the part where you edit the board's database. It would be useful at this point if your host has something like phpMyAdmin installed. Otherwise I'm assuming you know how to make these changes via MySQL (or whatever database system you're using) command line.
 
 Remove the prefix for all of the below tables;
-<ul>
-	<li>banlist</li>
-	<li>bbcodes</li>
-	<li>disallow</li>
-	<li>groups</li>
-	<li>lang</li>
-	<li>privmsgs</li>
-	<li>privmsgs_folder</li>
-	<li>privmsgs_rules</li>
-	<li>privmsgs_to</li>
-	<li>ranks</li>
-	<li>sessions</li>
-	<li>sessions_keys</li>
-	<li>smilies</li>
-	<li>styles</li>
-	<li>styles_imageset</li>
-	<li>styles_imageset_data</li>
-	<li>styles_template</li>
-	<li>styles_template_data</li>
-	<li>styles_theme</li>
-	<li>users</li>
-	<li>user_group</li>
-	<li>warnings</li>
-	<li>words</li>
-</ul>
 
-<h4>Pointing phpBB in the right direction, er.. tables</h4>
+* `banlist`
+* `bbcodes`
+* `disallow`
+* `groups`
+* `lang`
+* `privmsgs`
+* `privmsgs_folder`
+* `privmsgs_rules`
+* `privmsgs_to`
+* `ranks`
+* `sessions`
+* `sessions_keys`
+* `smilies`
+* `styles`
+* `styles_imageset`
+* `styles_imageset_data`
+* `styles_template`
+* `styles_template_data`
+* `styles_theme`
+* `users`
+* `user_group`
+* `warnings`
+* `words`
+
+## Pointing phpBB in the right direction, er.. tables
 
 Now we need to tell phpBB to use the tables we have just modified. Fire up your favourite text editor. I'm using Notepad++ for this. Open `includes/constants.php` located inside your phpBB directory, and locate the part where the tables are defined. It should look something like this;
 
@@ -128,10 +127,10 @@ Now you need to remove the `$table_prefix` variable for the tables we have just 
 ```php
 // Table names
 ...
-define('BANLIST_TABLE',				'banlist');
-define('BBCODES_TABLE',           	'bbcodes');
+define('BANLIST_TABLE',             'banlist');
+define('BBCODES_TABLE',             'bbcodes');
 ...
-define('DISALLOW_TABLE',            'disallow');
+define('DISALLOW_TABLE',            'disallow');
 ...
 define('GROUPS_TABLE',              'groups');
 ...
@@ -163,11 +162,11 @@ define('WORDS_TABLE',               'words');
 
 Save the file and let's move on.
 
-<h4>Installing additional phpBB forums</h4>
+## Installing additional phpBB forums
 
-The steps for installing additional phpBB forums are exactly the same as for the first installation, with one exception, <strong>you do not need to rename the database tables for additional installations</strong>. All you have to do is edit the `includes/constants.php` file to tell your new phpBB installation to use the shared tables.
+The steps for installing additional phpBB forums are exactly the same as for the first installation, with one exception, **you do not need to rename the database tables for additional installations**. All you have to do is edit the `includes/constants.php` file to tell your new phpBB installation to use the shared tables.
 
-<h4>The tricky part</h4>
+## The tricky part
 
 Next comes the tricky stuff. phpBB uses a kind of system where it caches the user permission for each board into the users table. I'm not entirely sure how the system works, but suffice it to say that each board needs its own cache. So you will need to add additional columns to the `users` table, specifically the `user_permissions` and the `user_perm_from` fields.
 
@@ -177,19 +176,19 @@ Now you need to change all reference to these fields for each phpBB installation
 
 Of course, this depends entirely on what you name the tables, but for simplicity's sake, I decided to go with numbers as suggested in the forum post mentioned above.
 
-<h4>Cookie settings</h4>
+## Cookie settings
 
 Once you have completed the above instructions, you need to make sure all the forums are using the same cookie settings. Otherwise you'll have to re-authenticate yourself every time you access the different forum installations, thus eliminating the convenience of being able to use one account for all your forums.
 
 By default, phpBB creates a random cookie name during installation for authentication purposes. As such, the cookie name will be different across your phpBB installations. So you need to copy the cookie name from your primary phpBB installation and set it in your other installations.
 
-In case you have no idea how to do this, open up the <strong>Administration Control Panel (ACP)</strong> and you should see Cookie settings under Server configuration in the General tab. Click on that and locate Cookie name. Edit the value to match the one used by your primary phpBB installation, click Submit and you're done.
+In case you have no idea how to do this, open up the **Administration Control Panel (ACP)** and you should see Cookie settings under Server configuration in the General tab. Click on that and locate Cookie name. Edit the value to match the one used by your primary phpBB installation, click Submit and you're done.
 
-<a href="http://www.dnasir.com/wp-content/uploads/2011/11/cookie-settings-2011-11-08-15-14-32.png"><img class="aligncenter size-full wp-image-1605" title="Cookie settings 2011-11-08 15-14-32" src="http://www.dnasir.com/wp-content/uploads/2011/11/cookie-settings-2011-11-08-15-14-32.png" alt="" width="590" height="284" /></a>
+![Image of the cookies settings]({{ "/assets/img/2011/11/cookie-settings-2011-11-08-15-14-32.png" | absolute_url }})
 
 After that you should be able to work seamlessly across all your forums. No more multiple registrations and authentications. Win-win.
 
-<h4>Field `user_permissions_1` doesn't have a default value [1364]</h4>
+## Field `user_permissions_1` doesn't have a default value [1364]
 
 This is one small issue during registration where the above error is displayed when a new user submits the registration form. I couldn't find any solution to this problem, but suffice it to say that it's a pain in the arse if people can't register on your board.
 
@@ -197,13 +196,13 @@ I found a solution after taking the time to dissect the phpBB codes, and giving 
 
 Open up phpMyAdmin or any database manager, and locate the shared `users` table. Select all the `user_permissions` and `user_perm_from` tables and click Edit.
 
-For the `user_permissions` fields, set the Default field to <strong>As defined</strong>, and leave the input box <strong>blank</strong>.
+For the `user_permissions` fields, set the Default field to **As defined**, and leave the input box **blank**.
 
-For the `user_perm_from` fields, set the Default field to <strong>As defined</strong>, and enter <strong>0 (zero)</strong> in the input box.
+For the `user_perm_from` fields, set the Default field to **As defined**, and enter **0 (zero)** in the input box.
 
 Save it and test. It should now allow new users to register without any problems. If it doesn't work for you, well I guess the problem lies elsewhere. This worked for me, so I stopped searching for a different solution there and then.
 
-<h4>Shared avatar directory</h4>
+## Shared avatar directory
 
 Now that you have a shared user database for all your forums, it makes sense to also have a shared avatar directory. Otherwise your users will have to upload their avatar to every forum, and if you're already sharing the user database, why not also share the avatar directory, right? Of course, this step is completely optional. I just thought that maybe I should mention how I achieved this part, especially since I couldn't find any tutorials on this.
 
@@ -215,7 +214,7 @@ So let's say you've decided that the first phpBB installation is going to hold t
 
 Next, configure all your phpBB installations to use `images/avatars/upload` for uploading avatars and `images/avatars/gallery` for the avatar gallery using the ACP. These paths are set by default on a fresh phpBB installation, so if you haven't been messing around with them, you shouldn't have to modify them.
 
-<a href="http://www.dnasir.com/wp-content/uploads/2011/11/avatar-settings-2011-11-09-01-42-50.png"><img class="aligncenter size-full wp-image-1610" title="Avatar settings 2011-11-09 01-42-50" src="http://www.dnasir.com/wp-content/uploads/2011/11/avatar-settings-2011-11-09-01-42-50.png" alt="" width="590" height="284" /></a>
+![Image of avatar settings]({{ "/assets/img/2011/11/avatar-settings-2011-11-09-01-42-50.png" | absolute_url }})
 
 Repeat for all other phpBB installations.
 
@@ -225,13 +224,13 @@ phpBB's avatar upload system generates a hash kinda name for all uploaded avatar
 
 So what you need to do now is fire up phpMyAdmin once again, and open the `config` table for your primary phpBB installation, and find the `config_name` called `avatar_salt`. Copy this value.
 
-<a href="http://www.dnasir.com/wp-content/uploads/2011/11/dzul-ubuntu-localhost-dermatologs_phpbb3-phpbben_config-phpmyadmin-3-3-10deb1-2011-11-09-01-49-52.png"><img class="aligncenter size-full wp-image-1609" title="Config table" src="http://www.dnasir.com/wp-content/uploads/2011/11/dzul-ubuntu-localhost-dermatologs_phpbb3-phpbben_config-phpmyadmin-3-3-10deb1-2011-11-09-01-49-52.png" alt="" width="590" height="280" /></a>
+![Image of the config table]({{ "/assets/img/2011/11/dzul-ubuntu-localhost-dermatologs_phpbb3-phpbben_config-phpmyadmin-3-3-10deb1-2011-11-09-01-49-52.png" | absolute_url }})
 
 Next, open up the config table for your secondary phpBB installation and locate the same entry called `avatar_salt`, and update it with the value you copied from the primary phpBB table.
 
 Repeat for all other phpBB installations, and you're done.
 
-<h4>Final words</h4>
+## Final words
 
 This has been a rather long tutorial, and I do hope it can help anyone else facing the same issue. I'm sure there are other ways around this, but considering my lack of expertise in dealing with phpBB, I figured that this was the simplest solution. Besides, I'm pretty sure this method has its merits, such as separate designs and configurations for each forums.
 
@@ -241,4 +240,4 @@ You can also check out the phpBB board I created for my client on which this tut
 
 Let me know what you think and if you know of a better (simpler) way to achieve similar results in the comments below.
 
-<em>Wassalam.</em>
+*Wassalam*

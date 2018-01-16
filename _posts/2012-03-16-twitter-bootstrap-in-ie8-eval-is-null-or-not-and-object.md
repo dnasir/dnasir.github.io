@@ -9,7 +9,7 @@ I've recently decided to move onto LESS for my current and future projects, afte
 
 Anyway, after "installing" LESS into my project, I ran some tests. I opened up Rockmelt, my default browser, and lo and behold everything worked just like it did using standard CSS. Then I opened the same project using Internet Explorer 8 (I seem to be the only one at the office who still uses IE8) and I was greeted with this error.
 
-<a href="http://www.dnasir.com/wp-content/uploads/2012/04/bootstrap-less-error.png"><img class="alignnone size-full wp-image-1774" title="bootstrap-less-error" src="http://www.dnasir.com/wp-content/uploads/2012/04/bootstrap-less-error.png" alt="" width="810" height="140" /></a>
+![Image of the error]({{ "/assets/img/2012/04/bootstrap-less-error.png" | absolute_url }})
 
 <!--more-->
 
@@ -30,4 +30,4 @@ The final comment line made the LESS version of Twitter Bootstrap work in IE8, a
 
 I hope this helps someone else facing the same issue.
 
-<em>Wassalam.</em>
+*Wassalam*

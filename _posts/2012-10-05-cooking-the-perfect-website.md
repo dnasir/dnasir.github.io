@@ -13,7 +13,7 @@ I have compiled a list of guidelines that I personally use when starting a new p
 
 <!--more-->
 
-<strong>1. Start small.</strong>
+## Start small
 
 It's always better to add features to your website rather than trying to slim it down later on. There are plenty of these pre-built templates such as the popular "HTML5 Boilerplate" that can help you quickly build a HTML5 website, but you should ask yourself one thing - Do you actually need all the features that come with the template?
 
@@ -25,7 +25,7 @@ Think about it. All you needed was for IE8 to understand what HTML5 tags are. Yo
 
 It really is a matter of less is more.
 
-<strong>2. Work backwards.</strong>
+## Work backwards
 
 Build for the latest browsers, using the latest standards, and work your way backwards in providing support for older browsers. Technology is progressing so quickly that at the current rate, older browsers such as Internet Explorer 8 will quickly be killed off and support dropped.
 
@@ -35,7 +35,7 @@ In any case, you can find solace in knowing that there are polyfills out there t
 
 I personally use the [HTML5Please](http://html5please.com/ "HTML5Please"){:target="_blank"} website whenever I need to find a polyfill for a HTML5 feature I plan to support on older browsers. You can find a list of polyfills for HTML5 features such as HTML5 form validation and HTML5 elements. It really is a handy little tool, and all developers should have it bookmarked somewhere.
 
-<strong>3. Optimize your JavaScript libraries.</strong>
+## Optimize your JavaScript libraries
 
 I cannot stress this one enough. One of the worst culprits to website performance is JavaScript libraries. I have one too many times come across developers who include a whole JavaScript library in their projects just so they can use one or two of its features. Unfortunately, I have also made the same mistake during my early development years.
 
@@ -43,7 +43,7 @@ The more popular libraries such as jQuery UI, and Modernizr, provide the option 
 
 Also, minify and combine your scripts. You can seriously reduce the number of requests your websites make, and also save a lot of bandwidth in the process. There are plenty of tools out there that can help you do this like the [YUI Compressor](http://developer.yahoo.com/yui/compressor/ "YUI Compressor"){:target="_blank"} and [JSCompress](http://jscompress.com/ "JSCompress"){:target="_blank"} if you prefer an online solution.
 
-<strong>4. Use Content Delivery Networks (CDN).</strong>
+## Use Content Delivery Networks (CDN)
 
 Modern browsers tend to cache static files such as JavaScript files and CSS stylesheets. So if your users are regular web surfing people, like most web users nowadays, it's highly likely they already have a copy of jQuery or Modernizr cached somewhere on their machine.
 
@@ -55,4 +55,4 @@ So use CDNs whenever possible and remember, for every redundant request your web
 
 As a general rule of thumb, keep things simple and don't try to solve problems you don't yet have. Build for modern browsers, and if your company policy includes support for older browsers, add support for those browsers as you go, keeping in mind to only add what you need and nothing more. You don't want to ruin a perfectly good dish by over-garnishing it.
 
-<em>Wassalam</em>
+*Wassalam*

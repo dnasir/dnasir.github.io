@@ -42,4 +42,4 @@ So every time you rebuild your project, it will cause the assembly version numbe
 
 This solution is ideal for ASP.NET projects mainly because it generates a different assembly version number on every build, but I'm sure there are ways to getting it working in other types of projects as well.
 
-<em>Wassalam.</em>
+*Wassalam*

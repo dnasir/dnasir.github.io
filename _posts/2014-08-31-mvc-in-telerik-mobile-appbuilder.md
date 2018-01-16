@@ -6,9 +6,9 @@ date: 2014-08-31 23:25
 comments: true
 categories: [Mobile App Development, mvc, requirejs, telerik appbuilder]
 ---
-Recently I started playing around with the [Telerik Platform Mobile Appbuilder](http://www.telerik.com/appbuilder "Telerik Platform Mobile Appbuilder}){:target="_blank"} and tried my hand at building mobile apps. It's an awesome tool, and despite its flaws, most of which are negligible, it does provide developers a viable avenue to quickly build mobile apps. The best part is, I get to code in HTML5 and JavaScript.
+Recently I started playing around with the [Telerik Platform Mobile Appbuilder](http://www.telerik.com/appbuilder "Link to Telerik Platform Mobile Appbuilder"){:target="_blank"} and tried my hand at building mobile apps. It's an awesome tool, and despite its flaws, most of which are negligible, it does provide developers a viable avenue to quickly build mobile apps. The best part is, I get to code in HTML5 and JavaScript.
 
-For the most parts, I was working with [Kendo UI](http://www.telerik.com/kendo-ui "Kendo UI}){:target="blank"}, Telerik's own front-end UI framework. It took some time to work out what's what, but since it was all HTML and JavaScript, I was up and running in no time.
+For the most parts, I was working with [Kendo UI](http://www.telerik.com/kendo-ui "Link to Kendo UI"){:target="blank"}, Telerik's own front-end UI framework. It took some time to work out what's what, but since it was all HTML and JavaScript, I was up and running in no time.
 
 I started experimenting, and tried to implement an ASP.NET MVC approach to building my project.
 
@@ -16,9 +16,9 @@ I started experimenting, and tried to implement an ASP.NET MVC approach to build
 
 Firstly, I structured my project similar to that found in a standard ASP.NET MVC project. So I have the models, views and controllers folders, which contains the appropriate modules.
 
-<a href="http://www.dnasir.com/wp-content/uploads/2014/08/project-structure.png" rel="lightbox"><img src="http://www.dnasir.com/wp-content/uploads/2014/08/project-structure.png" alt="Appbuilder project structure" width="1260" height="720" class="alignnone size-full wp-image-2241" /></a>
+![Appbuilder project structure]({{ "/assets/img/2014/08/project-structure.png" | absolute_url }})
 
-I'm using [RequireJS](http://requirejs.org "RequireJS"){:target="blank"} in my project to dynamically add HTML and JavaScript code as required. It also allows me to define dependencies for my modules, so that when I'm loading the main view, I don't have to load the code for the Settings page, for instance.
+I'm using [RequireJS](http://requirejs.org "Link to RequireJS"){:target="blank"} in my project to dynamically add HTML and JavaScript code as required. It also allows me to define dependencies for my modules, so that when I'm loading the main view, I don't have to load the code for the Settings page, for instance.
 
 Now, let's have a look at how I set up my models. I define my models in individual files, just like I would in ASP.NET MVC, and using RequireJS, I can set it up as a dependency for any modules that uses it.
 
@@ -111,12 +111,12 @@ It's all pretty self-explanatory. I have a ListView that I want filled with comm
 
 Running the project in the simulator produced this:
 
-<a href="http://www.dnasir.com/wp-content/uploads/2014/08/project-simulator.png" rel="lightbox"><img src="http://www.dnasir.com/wp-content/uploads/2014/08/project-simulator.png" alt="Appbuilder simulator" width="1124" height="853" class="alignnone size-full wp-image-2255" /></a>
+![Appbuilder simulator]({{ "/assets/img/2014/08/project-simulator.png" | absolute_url }})
 
 As you can see, everything is working as expected. However, I'd like to point out that even though I've defined what the property type should be, it seems like Kendo is completely ignoring this during mapping. I was expecting it to show some sort of error in the console, but it didn't. Maybe I'm doing something wrong.
 
 As always, there are other ways to set up an Appbuilder project. This is just my take on it. I like how ASP.NET MVC projects are structured, and I didn't see why it couldn't be implemented in other languages.
 
-You can find my demo app [here](https://bitbucket.org/dzul1983/telerik-mobile-appbuilder-app-base){:target="_blank"}.  I'll be improving it as I continue my journey into mobile app building using the Telerik Mobile Appbuilder.
+You can find my demo app [here](https://bitbucket.org/dzul1983/telerik-mobile-appbuilder-app-base "Link to demo app repo"){:target="_blank"}.  I'll be improving it as I continue my journey into mobile app building using the Telerik Mobile Appbuilder.
 
-<em>Wassalam</em>
+*Wassalam*

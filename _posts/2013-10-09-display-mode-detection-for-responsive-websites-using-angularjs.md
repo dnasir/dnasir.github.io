@@ -137,4 +137,4 @@ This is pretty useful if you have widgets, like the site navigation, that operat
 
 Hopefully someone will find this useful.
 
-<em>Wassalam</em>
+*Wassalam*

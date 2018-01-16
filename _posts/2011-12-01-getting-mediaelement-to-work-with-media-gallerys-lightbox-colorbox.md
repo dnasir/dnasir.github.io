@@ -9,7 +9,7 @@ OK, here's a quick one for you. Say you're setting up a media gallery in Drupal 
 
 Well, if you're reading this, that means you're facing the same problem as I did a few hours ago. The player just fails to load, and you're left with something that looks like this;
 
-<a href="http://www.dnasir.com/wp-content/uploads/2011/12/mediaelement-player-load-fail.png"><img class="size-full wp-image-1628 alignnone" title="MediaElement Player Load Fail" src="http://www.dnasir.com/wp-content/uploads/2011/12/mediaelement-player-load-fail.png" alt="" width="590" height="417" /></a>
+![Image of the mediaelement player failing to load]({{ "/assets/img/2011/12/mediaelement-player-load-fail.png" | absolute_url }})
 
 <!--more-->
 
@@ -54,6 +54,6 @@ Remember to replace `THEMENAME` with your theme's name.
 
 That should be it. Your MediaElement player should now load in your Media Gallery's lightbox.
 
-<a href="http://www.dnasir.com/wp-content/uploads/2011/12/mediaelement-player-load-success.png"><img class="alignnone size-full wp-image-1629" title="MediaElement Player Load Success" src="http://www.dnasir.com/wp-content/uploads/2011/12/mediaelement-player-load-success.png" alt="" width="590" height="402" /></a>
+![Image of the mediaelement player successfully loading]({{ "/assets/img/2011/12/mediaelement-player-load-success.png" | absolute_url }})
 
-Happy coding, and <em>wassalam.</em>
+Happy coding, and *wassalam*.

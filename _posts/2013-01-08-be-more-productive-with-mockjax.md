@@ -27,4 +27,4 @@ The best part is, once the real web service is ready, you only need to remove th
 
 This is one of those plugins that I wish I had found sooner.
 
-<em>Wassalam</em>
+*Wassalam*
