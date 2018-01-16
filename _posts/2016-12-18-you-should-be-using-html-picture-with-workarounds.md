@@ -54,7 +54,7 @@ A more robust workaround involves the use of JavaScript polyfills. There are qui
 
 The only caveat is that you'll need to replace the ``src`` attribute with ``srcset`` for the ``img`` tag within the picture element. The reason is explained in the project documentation:
 
-| Trying to use the src attribute in a browser that doesn't support picture natively can result in a double download. To avoid this, don't use the src attribute on the img tag
+> Trying to use the src attribute in a browser that doesn't support picture natively can result in a double download. To avoid this, don't use the src attribute on the img tag
 
 The upside is that ``srcset`` is a supported attribute for the image element, so everything should be fine on browsers that do support the picture element.
 
