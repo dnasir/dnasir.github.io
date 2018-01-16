@@ -65,7 +65,7 @@ copyright:             © 2017. All rights reserved.
 #     href:              /cookies-policy/
 
 # Format of the permalinks
-permalink:             /:year/:month/:day/:title.html
+permalink:             /:year/:month/:day/:title/
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              5
