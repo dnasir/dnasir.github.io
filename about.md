@@ -2,9 +2,6 @@
 layout: page
 title: About me
 date: 2011-08-02 02:24
-
-comments: true
-categories: []
 ---
 Hi! I'm Dzul - it's short for Dzulqarnain, and depending on where you're from, it might be a mouthful to pronounce.
 
