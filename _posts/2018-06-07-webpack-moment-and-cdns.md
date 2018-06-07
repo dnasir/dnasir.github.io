@@ -20,6 +20,8 @@ Five hundred kilobytes! What on earth..
 Turns out the moment I imported a MomentJS locale file into one of my files, for some bizzare reason webpack decided to include the entire
 MomentJS library, **AND ALL THE LOCALE FILES.**
 
+<!--more-->
+
 Upon inspection, I've discovered that every single locale file starts with the following mantra:
 
 ```js
