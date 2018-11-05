@@ -182,7 +182,7 @@ include:
 # ========================================================================================
 
 plugins:
-  # - jekyll-avatar
+  - jekyll-avatar
   # - jekyll-default-layout
   - jekyll-feed
   # - jekyll-gist
@@ -273,3 +273,5 @@ sass:
 remote_theme:          "qwtel/hydejack"
 # theme: jekyll-material-theme
 excerpt_separator:     <!--more-->
+
+github_username:      dnasir
