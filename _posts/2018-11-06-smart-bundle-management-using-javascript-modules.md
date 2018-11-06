@@ -15,7 +15,7 @@ the same results with less code. Unfortunately, legacy browsers such as Internet
 for most, if not all, of ES6, forcing developers to include workarounds and polyfills just to get things
 working, resulting in larger bundle files.
 
-The author suggested creating separate bundles for each platform, and employing server-side browser 
+In the article, the author suggested creating separate bundles for each platform, and employing server-side browser 
 sniffing to serve the appropriate bundle to users.
 
 While this method works, there are [numerous reasons why browser sniffing is bad][3].
