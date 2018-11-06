@@ -29,14 +29,14 @@ title:                 Dzulqarnain Nasir
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Development blog of Dzulqarnain Nasir - full-stack developer, and EPiServer Certified Developer
+  Development blog of Dzulqarnain Nasir - full-stack developer, MCSA, and EPiServer CMS Certified Developer
 
 # A shorter description for the sidebar.
 tagline:               >
-  Full-stack developer, EPiServer Certified Developer
+  Full-stack developer, MCSA, EPiServer CMS Certified Developer
 
 # A list of keywords for your blog
-keywords:              [web development, javascript, js, html, html5, ecmascript, es6, asp.net, c#, episerver]
+keywords:              [web development, javascript, js, html, html5, ecmascript, es6, asp.net, c#, episerver, vuejs, vue]
 
 # Used by jekyll-seo-tag...
 logo:                  /assets/icons/icon.png
@@ -270,8 +270,15 @@ sass:
 # feed:
 #   path:                atom.xml
 
-remote_theme:          "qwtel/hydejack"
+remote_theme:          "brianmaierjr/long-haul"
 # theme: jekyll-material-theme
 excerpt_separator:     <!--more-->
 
-github_username:      dnasir
+navigation:
+  - title: Home
+    url: index.html
+  - title: About
+    url: /about
+  - title: GitHub
+    url: https://github.com/dnasir
+    external: true
