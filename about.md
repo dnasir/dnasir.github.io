@@ -16,15 +16,21 @@ I also enjoy meeting new people, especially those with similar interests, so don
 ## Skillset
 
 ### Languages
+
 * JavaScript
 * C#
 
 ### Frameworks
+
 * VueJS
-* jQuery
 * AngularJS
-* Bootstrap
+* jQuery
 * ASP.NET MVC
+
+### Platforms
+
+* Microsoft Azure
+* Google Firebase
 
 ## Qualifications
 
