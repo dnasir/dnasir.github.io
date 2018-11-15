@@ -60,16 +60,6 @@ as demonstrated in the screenshot below.
 So JS modules will not help you reduce the overall download size, at least not on IE. In which case,
 the original suggestion to use browser sniffing to serve the correct bundle makes more sense.
 
-Alternatively, you can always just transpile your code to ES5, and provide polyfills in a separate
-bundle for legacy browsers using the `nomodule` attribute. Just make sure that the polyfills come first,
-to avoid any potential issues during parsing.
-
-```html
-<script nomodule src="polyfills.js"></script>
-<script src="bundle.js"></script>
-```
-
-
 [1]: https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/
 [2]: https://caniuse.com/#feat=es6-module
 [3]: https://css-tricks.com/browser-detection-is-bad/
