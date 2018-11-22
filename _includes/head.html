@@ -7,6 +7,9 @@
   {% else %}
     <meta name="description" content="{{ site.description }}">
   {% endif %}
+  {% if page.tags %}
+    <meta name="keywords" content="{{ page.tags | join: ',' }}">
+  {% endif %}
   <title>{{ page.title }} | {{ site.title }}</title>
 
   <!-- Open Graph Meta -->
