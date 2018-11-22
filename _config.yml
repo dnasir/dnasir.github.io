@@ -68,24 +68,6 @@ permalink:             /:year/:month/:day/:title/
 paginate:              5
 paginate_path:         /page-:num/
 
-
-# Customizaton
-# ========================================================================================
-
-# Sidebar image and theme color of the site.
-accent_image:          /assets/img/sidebar-bg.jpg
-accent_color:          '#4fb1ba'
-
-# The string encoding which fonts to fetch from Google Fonts.
-# See: <https://qwtel.com/hydejack/docs/configuration/>
-google_fonts:          Roboto+Slab:700|Noto+Sans:400,400i,700,700i
-
-# The text font. Expects a string that is a valid CSS font-family value.
-font:                  Noto Sans, Helvetica, Arial, sans-serif
-
-# The font used for headings. Expects a string that is a valid CSS font-family value.
-font_heading:          Roboto Slab, Helvetica, Arial, sans-serif
-
 # 3rd Party Integrations
 # ----------------------------------------------------------------------------------------
 
@@ -99,53 +81,6 @@ disqus:                dzulqarnainnasir
 
 # Setting a tinyletter username will enable the newsletter subscription box.
 # tinyletter:            <tinyletter_username>
-
-# Hydejack Settings
-# ----------------------------------------------------------------------------------------
-# These settings are specific to Hydejack.
-
-hydejack:
-  # Configure the order of complementary content on blog posts
-  post_addons:         [about, newsletter, related]
-
-  # Configure the order of complementary content on project pages
-  project_addons:      [about, newsletter, other]
-
-  # If you do not use Google Fonts, set to `true`.
-  no_google_fonts:     false
-
-  # Set to `true` if you don't want to show an icon indicating external links
-  no_mark_external:    false
-
-  # Set to `true` if third party plugins fail to work with dynamically loaded pages
-  no_push_state:       false
-
-  # Set to `true` if you want to disable the drawer
-  no_drawer:           false
-
-  # Set to `true` if you do not want parts of the css inlined in <head/>
-  # This *may* be benefitial when serving the site over HTTP/2.
-  no_inline_css:       false
-
-  # Code blocks and tables "break" the layout by spanning the full available width.
-  # Set this to true if you want them to be the same width as other content.
-  no_break_layout:     false
-
-  # Set to `true` if you do not want to expose your resume and projects
-  # in machine-readable formats.
-  no_structured_data:  false
-
-  # You can set this to `true` if you don't want to set the `theme-color` meta tag,
-  # This only affects the meta tag, not the color specified in the app manifest.
-  no_theme_color:      false
-
-  # Set to `true` when building with the `--lsi` option
-  use_lsi:             false
-
-  # When using Google Analytics, set to `true` to display a cookie notice banner.
-  # When enabled, no user-related data will be stored until the user gives consent.
-  cookies_banner:      false
-
 
 # Collections
 # ========================================================================================
@@ -199,8 +134,7 @@ plugins:
 # Theme
 # ---------------------------------------------------------------------------------------
 
-# theme: jekyll-theme-hydejack
-# remote_theme: qwtel/hydejack@gem
+remote_theme:          "brianmaierjr/long-haul"
 
 # SEO Tag
 # ---------------------------------------------------------------------------------------
@@ -225,8 +159,10 @@ google_site_verification: 1UPmBlY2j-b6aBUZ7XylQvcre5uTNF99I3snEfyGlNM
 #   admins:              <id>
 
 # Used on index and about sites
-# social:
-#   name:                <firstname> <lastname>
+social:
+  name:                Dzulqarnain Nasir
+  github:              dnasir
+  twitter:             dzul1983
 #   links:
 #     - https://twitter.com/<username>
 #     - https://github.com/<username>
@@ -265,13 +201,6 @@ compress_html:
 sass:
   style:               compressed
 
-# If you are upgrading form v5 (or earlier), uncomment the lines below,
-# so that the location of the feed XML stays the same.
-# feed:
-#   path:                atom.xml
-
-remote_theme:          "brianmaierjr/long-haul"
-# theme: jekyll-material-theme
 excerpt_separator:     <!--more-->
 
 navigation:
@@ -282,3 +211,14 @@ navigation:
   - title: GitHub
     url: https://github.com/dnasir
     external: true
+
+future: false
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
