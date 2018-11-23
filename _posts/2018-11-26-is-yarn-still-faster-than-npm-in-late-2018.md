@@ -1,5 +1,6 @@
 ---
 title: "Is Yarn still faster than NPM in late 2018?"
+description: "A speed comparison between NPM 6.4.1 and Yarn 1.12.3."
 date: "2018-11-26 10:00:00 +2"
 tags: [yarn, npm, 'package managers']
 ---
