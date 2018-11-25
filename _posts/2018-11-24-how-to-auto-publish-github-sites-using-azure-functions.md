@@ -17,7 +17,7 @@ GitHub Pages requires you to manually add posts to the master branch of the repo
 
 So I decided to use Azure Functions to call GitHub's API to instruct it to build my GitHub Pages project, which should automatically publish my posts based on their publish time.
 
-<!-- more -->
+<!--more-->
 
 ## The setup
 
