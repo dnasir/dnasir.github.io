@@ -1,6 +1,5 @@
 ---
 title: "How To Auto-publish GitHub Pages Using Azure Functions"
-date: "2018-11-24 10:00:00 +2"
 description: "A guide on how to automatically publish GitHub Pages using Azure Functions."
 tags: 
   - github
@@ -69,17 +68,18 @@ const options = {
     }
 };
 
-module.exports = async (context, myTimer) => new Promise((resolve, reject) => {
-    https
-        .request(options, (res) => {
-            context.log.info(`${res.statusCode} ${res.statusMessage}`);
-            resolve();
-        })
-        .on('error', (e) => {
-            context.log.error(`Problem with request: ${e.message}`);
-            reject();
-        })
-        .end();
+module.exports = async (context, myTimer) => 
+    new Promise((resolve, reject) => {
+        https
+            .request(options, (res) => {
+                context.log.info(`${res.statusCode} ${res.statusMessage}`);
+                resolve();
+            })
+            .on('error', (e) => {
+                context.log.error(`Problem with request: ${e.message}`);
+                reject();
+            })
+            .end();
 });
 ```
 
