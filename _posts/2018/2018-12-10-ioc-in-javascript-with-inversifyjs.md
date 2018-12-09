@@ -1,6 +1,6 @@
 ---
-title: "Dependency Injection in JavaScript with InversifyJS"
-description: "A description of how I implemented dependency injection in my TypeScript project using InversifyJS."
+title: "IoC in JavaScript with InversifyJS"
+description: "A description of how I implemented IoC in my TypeScript project using InversifyJS."
 tags:
   - js
   - javascript
@@ -15,15 +15,15 @@ tags:
 
 In C#, interfaces are used to set up a definition that classes can implement. Any class that implements an interface must adhere to the definition declared by the interface.
 
-Think of them as a sort of menu you'd find at a typical *mamak* stall. They all claim to sell *nasi goreng*, or fried rice.
+Think of them as a sort of menu you'd find at a typical pizzeria. The menu says they serve Margherita pizza.
 
-Then you have the classes that implement the interfaces - i.e. the cooks that prepare the *nasi goreng* mentioned in the menu.
+Then you have the classes that implement the interfaces - i.e. the cooks that prepare the pizza mentioned in the menu.
 
-Regardless of which cook is on duty, the stall will always serve *nasi goreng*. However, the cooks may differ in the way they prepare the dish. One cook may use more onions, and another may put in less salt, but the resulting product is still *nasi goreng*.
+The pizzeria may have multiple cooks, and the cooks may differ in the way they prepare the dish - i.e. one cook may use more cheese, and another may use less salt in the dough. Regardless, the resulting product will still be served as Margherita pizza.
 
-Similarly, the consumers of your modules should only be made aware of the "menu", without having to worry about how the *nasi goreng* is prepared. This way, you can swap out the "cook" whenever you want, without the consumers being any the wiser.
+Similarly, the consumers of your modules should only be made aware of the "menu", without having to worry about how the pizza is prepared. This way, you can swap out the "cook" whenever you want, without the consumers being any the wiser.
 
-This is something I've been taking for grant in .NET development, and while there have been some efforts in bringing this concept to JavaScript, the implementation has not been that great - until now.
+This is something I've been taking for granted in .NET development, and while there have been some efforts in bringing this concept to JavaScript, the implementation has not been that great - until now.
 
 <!--more-->
 
@@ -140,10 +140,10 @@ app.init();
 
 ## Final words
 
-C# and JavaScript are two very different languages, but as a fullstack developer who works with both, it makes me very happy whenever I come across a way to write code that bridges the gap between the two.
+C# and JavaScript are two fundamentally different languages, but as a fullstack developer who work with both, it makes me very happy whenever I come across a way to write code that bridges the gap between the two.
 
 With InversifyJS, I can now write front-end code in a manner that is familiar to my back-end colleagues, and by doing so I can save time explaining the differences between the two.
 
-Have you used InversifyJS? What are the challenges you've come across? Is this the way to go? Let me know what you think in the comments below.
+Do you use IoC in your apps? Have you used InversifyJS? Is this the way to go? Let me know what you think in the comments below.
 
 [1]: http://inversify.io
