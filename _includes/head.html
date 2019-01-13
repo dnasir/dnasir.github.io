@@ -9,8 +9,10 @@
   {% endif %}
   {% if page.tags %}
     <meta name="keywords" content="{{ page.tags | join: ',' }}">
+  {% else %}
+    <meta name="keywords" content="{{ site.keywords | join: ',' }}">
   {% endif %}
-  <title>{{ page.title }} | {{ site.title }}</title>
+  <title>{{ page.title }}</title>
 
   <!-- Open Graph Meta -->
   <meta content="{{ site.title }}" property="og:site_name">

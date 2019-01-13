@@ -29,11 +29,7 @@ title:                 Dzulqarnain Nasir
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Development blog of Dzulqarnain Nasir - full-stack developer, MCSA, and EPiServer CMS Certified Developer
-
-# A shorter description for the sidebar.
-tagline:               >
-  Full-stack developer, MCSA, EPiServer CMS Certified Developer
+  Blog of Dzulqarnain Nasir - full-stack web developer, MCSA, and EPiServer CMS Certified Developer
 
 # A list of keywords for your blog
 keywords:              [web development, javascript, js, html, html5, ecmascript, es6, asp.net, c#, episerver, vuejs, vue]
@@ -51,15 +47,7 @@ author:
   github:              dnasir
 
 # This text will appear in a `<small>` tag in the footer of every page.
-copyright:             © 2017. All rights reserved.
-
-# Add links to the footer.
-# Typically you'll want to link to your impress, cookies or privacy policy, etc.
-# legal:
-#   - title:             Impress
-#     href:              /impress/
-#   - title:             Cookies Policy
-#     href:              /cookies-policy/
+copyright:             © 2019. All rights reserved.
 
 # Format of the permalinks
 permalink:             /:year/:month/:day/:title/
@@ -78,26 +66,6 @@ google_analytics:      UA-31378875-1
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
 disqus:                dzulqarnainnasir
-
-# Setting a tinyletter username will enable the newsletter subscription box.
-# tinyletter:            <tinyletter_username>
-
-# Collections
-# ========================================================================================
-
-# collections:
-#   featured_categories:
-#     permalink:         /category/:name/
-#     output:            true
-
-#   featured_tags:
-#     permalink:         /tag/:name/
-#     output:            true
-
-#   projects:
-#     permalink:         /projects/:path/
-#     output:            true
-
 
 # File inclusion/exclusion
 # ========================================================================================
@@ -141,22 +109,6 @@ remote_theme:          "brianmaierjr/long-haul"
 
 # Where you proof that you own this site (used by jekyll-seo-tag)
 google_site_verification: 1UPmBlY2j-b6aBUZ7XylQvcre5uTNF99I3snEfyGlNM
-# -- or --
-# webmaster_verifications:
-#   google:              <verification-id>
-#   bing:                <verification-id>
-#   alexa:               <verification-id>
-#   yandex:              <verification-id>
-
-# Used for Twitter cards
-# twitter:
-#   username:            dzul1983
-
-# Used for Facebook open graph
-# facebook:
-#   app_id:              <id>
-#   publisher:           <id>
-#   admins:              <id>
 
 # Used on index and about sites
 social:
