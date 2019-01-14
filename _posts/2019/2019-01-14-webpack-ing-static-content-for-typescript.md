@@ -61,16 +61,18 @@ Cannot find module '@/static/pickup-icon.svg'.
 Cannot find module '@/static/dropoff-icon.svg'.
 ```
 
-Fortunately, the solution is quite simple.
+TypeScript assumes that everything we import are modules, and if it cannot determine this to be the case, it will log an error. The definition of a module can either be determined by the imported TypeScript (`.ts`/`.tsx`) file, or by a type declaration file (`.d.ts`) that the code depends on. [[Reference]][1]
 
-Add a type declaration file (`d.ts.`), and declare the image files you're planning to use in your project as a module.
+So, the solution is quite simple. We just have to tell TypeScript about our image files by adding a type declaration file (`d.ts.`), and declare the image files we're using in our project as a module.
 
 ```typescript
 // images.d.ts
 
 declare module '*.svg';
+// duplicate for other image file extensions
 ```
 
 Et voilà. Problem solved.
 
 [0]: https://github.com/webpack-contrib/file-loader
+[1]: https://www.typescriptlang.org/docs/handbook/module-resolution.html
