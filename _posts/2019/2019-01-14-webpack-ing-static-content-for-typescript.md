@@ -56,7 +56,7 @@ get centerOverlayStyle() {
 
 Unfortunately, while this works for regular JavaScript, TypeScript sees this as a problem.
 
-```console
+```
 Cannot find module '@/static/pickup-icon.svg'.
 Cannot find module '@/static/dropoff-icon.svg'.
 ```
