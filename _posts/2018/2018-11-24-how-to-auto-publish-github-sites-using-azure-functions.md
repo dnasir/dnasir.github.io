@@ -91,7 +91,7 @@ I'm running my Function under the Consumption plan, and according to their [pric
 
 However, the documentation also states that standard storage rates still apply. I'll update this post when I get my first bill next month, although it has to be noted that I'm currently on the Free Trial plan ;)
 
-# Update (21-Jan-2019)
+## Update (21-Jan-2019)
 
 According to the Azure portal, my bills have amounted to 0 EUR so far. It looks like my usage has not yet exceed the free service limit provided by Microsoft.
 
