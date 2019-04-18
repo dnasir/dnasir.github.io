@@ -1,6 +1,6 @@
 ---
 title: "Azure Functions + Node.js + TypeScript + Webpack"
-description: "My experience setting up an Azure Functions App project for Node.js in TypeScript using Webpack."
+description: "My experience setting up an Azure Functions App project for Node.js in TypeScript using Webpack. I'll describe the steps I undertook to get my Functions App up and running, and the various gotcha's I came across during the process."
 tags:
   - azure functions
   - node
@@ -149,10 +149,41 @@ It should be noted that in order for the changes to be picked up by the runtime,
 
 Now every time Webpack rebuilds the code and updates the files in the `dist` folder, the Azure Functions runtime will detect this, and proceeds to restart the Functions app.
 
-Stay tuned for the next part, where I'll describe my experiment with deploying the Azure Functions App I've created using this method.
+## Deployment
+
+There are a number of ways you could go about deploying your Functions App to Azure, as described in the [official Azure Functions documentation][5], under How-to Guides > Deploy. I went with the [Continuous Deployment][6] option from GitHub.
+
+After setting up my deployment configuration, Azure automatically ran the deployment job. Awesome.
+
+Unfortunately, at the end of the deployment process, I found myself with an Azure Functions App that had no defined jobs.
+
+What gives, Azure?
+
+Turns out that while the documentation states that [`npm install` will be triggered when a `package.json` file is found][7], Azure does not automatically run the build job. According to their documentation, [transpilation is done before the host is initialized and during the deployment process][8].
+
+Solution? NPM scripts.
+
+While I haven't found a way to manually invoke an NPM command during the deployment process, I do know that [NPM has multiple events][9] I can hook into when `npm install` is called. So I decided to hook onto the `postinstall` event to call my build task.
+
+```json
+{
+  "scripts": {
+    "postinstall": "npm run build",
+    "build": "webpack --mode=production"
+  }
+}
+```
+
+This ensures the project is built during deployment, and sure enough, I now see my new Azure Functions listed under the Functions list.
+
 
 [0]: https://github.com/Microsoft/TypeScript/issues/10866
 [1]: https://www.npmjs.com/package/webpack
 [2]: https://www.npmjs.com/package/ts-loader
 [3]: https://www.npmjs.com/package/axios
 [4]: https://www.npmjs.com/package/tsconfig-paths-webpack-plugin
+[5]: https://docs.microsoft.com/en-us/azure/azure-functions/
+[6]: https://docs.microsoft.com/en-us/azure/azure-functions/functions-continuous-deployment
+[7]: https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node#dependency-management
+[8]: https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node#typescript
+[9]: https://docs.npmjs.com/misc/scripts
