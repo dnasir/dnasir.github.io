@@ -46,7 +46,7 @@ Solution?
 
 ## Webpack All The Things!
 
-![Meme image of Webpack All The Things!]({{ "/assets/img/2019/webpack-all-the-things.jpg" | absolute_url }} "Webpack All The Things!")
+![Meme image of Webpack All The Things!](/assets/img/2019/webpack-all-the-things.jpg | absolute_url)
 
 You can use other bundlers too, if you want. I just like Webpack, so I'm going to use that for this project.
 
