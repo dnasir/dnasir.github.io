@@ -46,7 +46,7 @@ Solution?
 
 ## Webpack All The Things!
 
-![Meme image of Webpack All The Things!](/assets/img/2019/webpack-all-the-things.jpg | absolute_url)
+![Meme image of Webpack All The Things!]({{ "/assets/img/2019/webpack-all-the-things.jpg" | absolute_url }}){: .center-image }
 
 You can use other bundlers too, if you want. I just like Webpack, so I'm going to use that for this project.
 
@@ -155,11 +155,11 @@ There are a number of ways you could go about deploying your Functions App to Az
 
 After setting up my deployment configuration, Azure automatically ran the deployment job. Awesome.
 
-Unfortunately, at the end of the deployment process, I found myself with an Azure Functions App that had no defined jobs.
+Unfortunately, at the end of the deployment process, I found myself with an Azure Functions App that had no jobs.
 
 What gives, Azure?
 
-Turns out that while the documentation states that [`npm install` will be triggered when a `package.json` file is found][7], Azure does not automatically run the build job. According to their documentation, [transpilation is done before the host is initialized and during the deployment process][8].
+Turns out that while the documentation states that [`npm install` will be triggered when a `package.json` file is found][7], Azure does not automatically run the build job. According to their documentation, [transpilation is done before the host is initialized and during the deployment process][8]. I suspect that the transpilation process probably failed for the same reason mentioned above.
 
 Solution? NPM scripts.
 
@@ -175,6 +175,12 @@ While I haven't found a way to manually invoke an NPM command during the deploym
 ```
 
 This ensures the project is built during deployment, and sure enough, I now see my new Azure Functions listed under the Functions list.
+
+## Conclusion
+
+It's awesome that Azure functions now support TypeScript out of the box. However, while their current implementation is probably good enough for simple apps, they are still missing a few functionalities, most notably aliasing. Fortunately, by utilising a combination of webpack and the NPM script pipeline, I was able to overcome these obstacles.
+
+I hope this helps anyone else facing the same issue.
 
 
 [0]: https://github.com/Microsoft/TypeScript/issues/10866
