@@ -57,7 +57,7 @@ I hope this helps anyone else running into this problem.
 
 If you're like me, and you're running your app in HTTPS mode locally, you will run into some issues when trying to get the dev server to work properly. For whatever reason, the `webpack-dev-server` team saw it fit to switch the request protocol for the SockJS request to connect to the dev server. So you'll see something like this when your application loads up.
 
-```console
+```
 GET https://localhost:56670/sockjs-node/info?t=1585758023901 net::ERR_SSL_PROTOCOL_ERROR
 ```
 
@@ -101,7 +101,7 @@ var targetUriTask = portTask.ContinueWith(
 
 I stopped seeing requests being made to the HTTPS endpoint, but I started getting a different error instead.
 
-```console
+```
 Uncaught Error: SecurityError: An insecure SockJS connection may not be initiated from a page loaded over HTTPS
 ```
 
