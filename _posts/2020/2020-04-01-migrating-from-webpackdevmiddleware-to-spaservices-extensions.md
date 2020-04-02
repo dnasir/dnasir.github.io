@@ -109,7 +109,7 @@ Damned if I HTTPS. Damned if I HTTP.
 
 /tableflip
 
-I was just about ready to give up, when I can across this option in the `webpack-dev-server` documentation to switch the transport mode from the default one, `sockjs` to regular Websockets. As soon, as I switched to Websockets, everything clicked into place, and I wasn't getting any more errors, and HMR was working.
+I was just about ready to give up, when I came across this option in the `webpack-dev-server` documentation to switch the transport mode from the default one, `sockjs` to regular Websockets. As soon, as I switched to Websockets, everything clicked into place, and I wasn't getting any more errors, and HMR was working.
 
 /yeay!
 
