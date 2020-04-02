@@ -63,7 +63,7 @@ GET https://localhost:56670/sockjs-node/info?t=1585758023901 net::ERR_SSL_PROTOC
 
 Accessing that URL resulted in a "This site can’t provide a secure connection" error.
 
-However, when I navigated to `http://localhost:56670/sockjs-node/info?t=1585758023901` (notice the HTTP protocol), I was met by the usual response when everything is working correctly.
+However, when I navigated to `http://localhost:56670/sockjs-node/info?t=1585758023901` (notice the HTTP protocol), I was met with the usual response when everything is working correctly.
 
 ```json
 {
