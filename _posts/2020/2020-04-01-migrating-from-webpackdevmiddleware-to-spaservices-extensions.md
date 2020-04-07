@@ -80,14 +80,14 @@ I've tried a number of things in my attempt to get around this problem.
 
 I've tried running the dev server in HTTPS mode, which resulted in the app to completely die on me with the `VueDevelopmentServerMiddleware` complaining that `UseProxyToSpaDevelopmentServer` is not able to connect to the dev server. This makes sense, since the dev server doesn't have a valid SSL certificate, and I couldn't be bothered to set one up for development purposes.
 
-I then came across this [GitHub Pull Request][2], that prevents `webpack-dev-server` from changing the request protocol if the hostname is set to `127.0.0.1`.
+I then came across this [GitHub Pull Request][2], that prevents `webpack-dev-server` from changing the request protocol if the host name is set to `127.0.0.1`.
 
 I updated my `vue.config.js` with the following settings:
 
 ```js
 module.exports = {
     devServer: {
-        hostname: '127.0.0.1'
+        host: '127.0.0.1'
     }
 };
 ```
@@ -120,7 +120,7 @@ To sum up, the final `vue.config.js` is as follows:
 ```js
 module.exports = {
     devServer: {
-        hostname: '127.0.0.1',
+        host: '127.0.0.1',
         port: process.env.PORT,
         transportMode: 'ws'
     }
@@ -133,7 +133,7 @@ I'm pretty sure I'm not the first person to run into this issue, and I really do
 
 ## Another update
 
-My colleague brought [this NuGet package][3] to my attention, which does pretty much everything you would need in order to run HMR in a .Net Core Vue.js project. The setup is much simpler and the code looks cleaner. However, you will need to specify `hostname` and `transportMode` as described above is you're running your project in HTTPS locally.
+My colleague brought [this NuGet package][3] to my attention, which does pretty much everything you would need in order to run HMR in a .Net Core Vue.js project. The setup is much simpler and the code looks cleaner. However, you will need to specify `host` and `transportMode` as described above is you're running your project in HTTPS locally.
 
 [0]: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/ReactDevelopmentServer/ReactDevelopmentServerMiddleware.cs
 [1]: https://gist.github.com/alexeyzimarev/f0262426aa38e2c1ed2913252ceb5e7a
