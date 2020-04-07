@@ -131,6 +131,11 @@ The `process.env.PORT` environment variable is set by `VueDevelopmentServerMiddl
 
 I'm pretty sure I'm not the first person to run into this issue, and I really do hope that my experience today can help other developers who run into the same problem.
 
+## Another update
+
+My colleague brought [this NuGet package][3] to my attention, which does pretty much everything you would need in order to run HMR in a .Net Core Vue.js project. The setup is much simpler and the code looks cleaner. However, you will need to specify `hostname` and `transportMode` as described above is you're running your project in HTTPS locally.
+
 [0]: https://github.com/dotnet/aspnetcore/blob/master/src/Middleware/SpaServices.Extensions/src/ReactDevelopmentServer/ReactDevelopmentServerMiddleware.cs
 [1]: https://gist.github.com/alexeyzimarev/f0262426aa38e2c1ed2913252ceb5e7a
 [2]: https://github.com/webpack/webpack-dev-server/pull/2303
+[3]: https://github.com/EEParker/aspnetcore-vueclimiddleware
