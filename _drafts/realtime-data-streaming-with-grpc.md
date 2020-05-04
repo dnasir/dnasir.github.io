@@ -30,17 +30,11 @@ Sound familiar? That's because we've been doing this with REST using XML and JSO
 
 The idea is pretty simple - push the data we receive from Azure down to all connected clients.
 
-!Insert diagram here!
+// TODO: insert architectural diagram here
 
 Azure -> API Controller -> SnapshotReceiverBuffer <- onNewItem.Invoke -> 
 
-TL;DR
-
-Since we already have the data service set up, we needed to be able to broadcast to all connected clients.
-
-* We set up a buffer class with an instance of `Channel` that listens for a specific `Trigger`. The `Trigger` is fired by a separate process that listens for incoming message from Azure.
-* We set up the gRPC server with a method that registers a handler with the aforementioned buffer class that pushes data to connected clients when the handler is invoked.
-* We set up a `Task` that subscribes to the `Channel` and asynchronously waits for the `Trigger` to be fired, at which point it fetches the latest data from Azure Storage and invokes the aforementioned handler.
+Since we already have the data service set up, all that's left to do is to set up the mechanism to broadcast to all connected clients.
 
 ## The server
 
@@ -179,7 +173,7 @@ public override async Task StartStream(
 
 But we needed the connection the remain open indefinitely, since we there isn't an end to the data we wanted to stream.
 
-The easiest (read: naive) way to this way to do this is by simply setting up a while loop that would only exit when the `IsCancellationRequested` flag is true. Like so;
+The fastest (read: naive) way to this way to do this is by simply setting up a while loop that would only exit when the `IsCancellationRequested` flag is true. Like so;
 
 ```csharp
 public override async Task StartStream(
@@ -211,11 +205,13 @@ The next problem with this approach is much more severe, and it's one that would
 
 We later discovered that for every client connecting to the gRPC endpoint, a new instance of the gRPC service was created, and by extension, a new `while` loop. Task Manager showed a bump in CPU usage by as much as 20% for every new client.
 
-Needless to say, this will inevitably kill the hamsters powering the server.
+Needless to say, this will inevitably kill the hamsters powering our servers.
 
 We wanted to make the endpoint available to hundreds, if not thousands, of clients. Not five.
 
 // TODO: add some screenshots of the task manager
+
+// TODO: stop here for this part?
 
 The solution? Async/await for the cancellation token instead.
 
@@ -243,6 +239,8 @@ public static class CancellationTokenExtensions
 }
 ```
 
+Next, we updated our gRPC service code to utilise the new extension method.
+
 ```csharp
 public override async Task StartStream(
     StartStreamRequest request,
@@ -264,10 +262,17 @@ What this allows us to do now is asynchronously wait for the cancellation token 
 
 But now we have to handle the data streaming a bit differently to how we did in the previous example with the `while` loop.
 
+## Part 2 - Using Channel
+
+
+
+
 
 ## The client
 
-Since we'll be compiling `.proto` files, we will need to install a compiler. Unfortunately, this is  Follow the instructions in the [gRPC-Web quick start guide][8] and set up `protoc` for your machine.
+Once we have all the backend stuff set up, 
+
+Since we'll be compiling `.proto` files, we will need to install a compiler. Unfortunately, the compiler is not available as an NPM package and needs to be installed on the development machine. Follow the instructions in the [gRPC-Web quick start guide][8] and set up `protoc` for your machine.
 
 
 ### NPM packages
