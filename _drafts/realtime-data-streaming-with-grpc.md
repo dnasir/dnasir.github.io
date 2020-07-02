@@ -270,9 +270,29 @@ But now we have to handle the data streaming a bit differently to how we did in 
 
 ## The client
 
-Once we have all the backend stuff set up, 
+Setting up the back end was just half the story. Let's move onto the front end stuff.
 
-Since we'll be compiling `.proto` files, we will need to install a compiler. Unfortunately, the compiler is not available as an NPM package and needs to be installed on the development machine. Follow the instructions in the [gRPC-Web quick start guide][8] and set up `protoc` for your machine.
+### Prerequisites
+
+We went with a project called [`grpc-web`][4] for our front end implementation. However, there are a few things that needed to be set up in order to get the whole thing running.
+
+Firstly, we had to install a protobuf compiler, which is used to generate the client code needed to communicate with the gRPC endpoint. Fortunately, the good devs have provided a [quick start guide][8] on how to install `protoc` and `protoc-gen-grpc-web` on your development machine.
+
+### Generating the gRPC client lib
+
+Once we have `protoc` installed, we can now generate our gRPC client library.
+
+```
+protoc --js_out=import_style=commonjs,binary:./src/proto --grpc-web_out=import_style=typescript,mode=grpcwebtext:./src/proto --proto_path=./Protos ./Protos/rtmap.proto
+```
+
+The command is quite lengthy. So, let's break it down.
+
+We're basically telling `protoc` to generate the gRPC client library as a CommonJS module, and output the files to `/src/proto` (`--js_out=import_style=commonjs,binary:./src/proto`). Additionally, we want it to generate the service stub in TypeScript, use the `grpcwebtext` wire format mode, and output the files to `./src/proto` (`--grpc-web_out=import_style=typescript,mode=grpcwebtext:./src/proto`). We're also telling `protoc` where it can find any other `.proto` files we have referenced (`--proto_path=./Protos`) in the input `.proto` file, which is the final argument in the command (`./Protos/rtmap.proto`).
+
+But why use `grpcwebtext`, which is simply base64-encoded string, instead of `grpcweb` which is binary? At the time of writing, `grpcweb` does not yet support server streaming calls. We will update to `grpcweb` once server streaming calls become supported.
+
+We added the command to our `package.json` as an NPM script, because we knew we'd be running it several times during our development.
 
 
 ### NPM packages
@@ -295,3 +315,5 @@ Since we'll be compiling `.proto` files, we will need to install a compiler. Unf
 [7]: https://blog.tech-fellow.net/2019/12/08/building-real-time-public-transport-tracking-system-on-azure-part1/
 [8]: https://github.com/grpc/grpc-web/tree/master/packages/grpc-web#quick-start
 [9]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/grpc/grpc-start?view=aspnetcore-3.1&tabs=visual-studio
+[10]: https://www.npmjs.com/package/protoc-gen-grpc
+[11]: https://github.com/grpc/grpc-web#wire-format-mode
