@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Real-time web applications with gRPC"
-description: "The first part of my series on developing a gRPC endpoint for web applications."
+title: "Real-time web applications with gRPC - Part 1"
+description: "The first part of my series on developing web applications with gRPC."
 comments: true
 tags:
   - grpc
@@ -10,9 +10,11 @@ tags:
   - protobuf
 ---
 
-In this post, I'll be collaborating with my colleague, Valdis Iljuconoks, on the topic of real-time data distribution using gRPC. If you haven't done so already, head over to Valdis' blog for a multi-part series on ["Building Real-time Public Transport Tracking System on Azure"][7] for details on setting up the Azure infrastructure for this project. This post focuses on the client distribution system.
+In this series, I'll be collaborating with my colleague, Valdis Iljuconoks, on the topic of real-time data distribution using gRPC. If you haven't done so already, head over to Valdis' blog for a multi-part series on ["Building Real-time Public Transport Tracking System on Azure"][7] for details on setting up the Azure infrastructure for this project. This post focuses on the client distribution system.
 
 Let's get started.
+
+<!--more-->
 
 ## Background
 
@@ -24,15 +26,17 @@ One of the many technologies we have experimented with is gRPC. You can read abo
 
 In short, gRPC allows data to be transferred between systems that are running on completely different frameworks, languages, and even environments. For example, a .NET system can communicate with a system running Java via a common data format.
 
-Sound familiar? That's because we've been doing this with REST using XML and JSON. So why gRPC? This is because when dealing with real-time data streaming of large data sets, gRPC has a good advantage over the traditional REST approach employed by most API services that use the XML and JSON data formats, as described in this [post][6].
+Sound familiar? That's because we've been doing this with REST using XML and JSON.
+
+So why gRPC?
+
+This is because when dealing with real-time data streaming of large data sets, gRPC has a good advantage over the traditional REST approach employed by most API services that use the XML and JSON data formats, as described in this [post][6].
 
 ## Architecture
 
 The idea is pretty simple - push the data we receive from Azure down to all connected clients.
 
-// TODO: insert architectural diagram here
-
-Azure -> API Controller -> SnapshotReceiverBuffer <- onNewItem.Invoke -> 
+![My super detailed architectural diagram ;)]({{ "/assets/img/2020/grpc-server-architecture-simplified.jpg" | absolute_url }}){: .center-image }
 
 Since we already have the data service set up, all that's left to do is to set up the mechanism to broadcast to all connected clients.
 
@@ -40,9 +44,11 @@ Since we already have the data service set up, all that's left to do is to set u
 
 Since this is a .Net Core gRPC project, we needed to set up a gRPC service project. Thankfully, Microsoft has posted a [tutorial][9] on this. It covers setting up both server and client, but we were only interested in the server part, since we weren't planning on setting up a .Net gRPC client.
 
-### Updating the `.proto` file
+### Defining the `.proto` file
 
 The `.proto` file that came with the standard gRPC template is not really useful for anything more than a simple demo. So we updated it.
+
+Code has been simplified for brevity.
 
 ```
 syntax = "proto3";
@@ -117,7 +123,7 @@ namespace GrpcServiceApp
 
             app.UseEndpoints(endpoints =>
             {
-                // This tells it which service to allow web clients for
+                // This tells netcore which service to map as a gRPC endpoint
                 endpoints.MapGrpcService<GrpcService>().EnableGrpcWeb();
 
                 endpoints.MapGet("/",
@@ -173,7 +179,9 @@ public override async Task StartStream(
 
 But we needed the connection the remain open indefinitely, since we there isn't an end to the data we wanted to stream.
 
-The fastest (read: naive) way to this way to do this is by simply setting up a while loop that would only exit when the `IsCancellationRequested` flag is true. Like so;
+#### The quick (read: naive) way
+
+The quickest way to this way to do this is by simply setting up a while loop that would only exit when the `IsCancellationRequested` flag is true. Like so;
 
 ```csharp
 public override async Task StartStream(
@@ -201,7 +209,7 @@ The `Task.Delay()` is there to prevent the service from spamming the data servic
 
 Ideally, the data service should determine when new data is broadcasted.
 
-The next problem with this approach is much more severe, and it's one that would bring the entire system down to its knees and beg for mercy.
+The next problem with this approach is much more severe, and it's one that would bring the entire system down to its knees and beg for the sweet release of death.
 
 We later discovered that for every client connecting to the gRPC endpoint, a new instance of the gRPC service was created, and by extension, a new `while` loop. Task Manager showed a bump in CPU usage by as much as 20% for every new client.
 
@@ -209,11 +217,9 @@ Needless to say, this will inevitably kill the hamsters powering our servers.
 
 We wanted to make the endpoint available to hundreds, if not thousands, of clients. Not five.
 
-// TODO: add some screenshots of the task manager
-
-// TODO: stop here for this part?
-
 The solution? Async/await for the cancellation token instead.
+
+#### This is the way
 
 Valdis came up with a pretty simple extension method that allowed us to wait for the cancellation token, rendering the while loop redundant.
 
@@ -249,7 +255,7 @@ public override async Task StartStream(
 {
     try
     {
-        await context.CancellationToken.WaitUntilCancelled();
+        await context.CancellationToken.WaitUntilCancelled().ConfigureAwait(false);
     }
     catch (InvalidOperationException)
     {
@@ -260,46 +266,57 @@ public override async Task StartStream(
 
 What this allows us to do now is asynchronously wait for the cancellation token to be called, and in the meantime not take up any CPU cycles like `while` loops do.
 
-But now we have to handle the data streaming a bit differently to how we did in the previous example with the `while` loop.
+Now that we no longer have a `while` loop, we had to change the way fetch our data from the data service. We wanted to let the data service determine when the data is broadcasted, as described in my super detailed architectural diagram above. So instead of actively fetching the data, we implemented a listener that would react when new data comes in, and broadcast it to all connected clients.
 
-## Part 2 - Using Channel
+This is where `System.Threading.Channels` comes in handy. Here's a [nice introductory article][12] by Stephen Toub, but the TL;DR version is that it's a pretty useful pub/sub class that allows us to set up a single publisher for multiple subscribers.
 
+For our project, we went with the [Easy.MessageHub][13] NuGet package so we wouldn't have to manually set everything up ourselves.
 
+```csharp
+private readonly IMessageHub _hub;
 
+public GrpcService(IMessageHub hub)
+{
+    _hub = hub;
+}
 
+public override async Task StartStream(
+    StartStreamRequest request,
+    IServerStreamWriter<StartStreamResponse> responseStream,
+    ServerCallContext context)
+{
+    var streamToken = _hub.Subscribe<SnapshotBroadcastWorkItem.Data>(data => onNewData(data, responseStream));
 
-## The client
+    try
+    {
+        await context.CancellationToken.WaitUntilCancelled().ConfigureAwait(false);
+    }
+    catch (Exception e)
+    {
+        // log me, maybe?
+    }
+    finally
+    {
+        // cleanup
+        _hub.Unsubscribe(streamToken);
+    }
+}
 
-Setting up the back end was just half the story. Let's move onto the front end stuff.
-
-### Prerequisites
-
-We went with a project called [`grpc-web`][4] for our front end implementation. However, there are a few things that needed to be set up in order to get the whole thing running.
-
-Firstly, we had to install a protobuf compiler, which is used to generate the client code needed to communicate with the gRPC endpoint. Fortunately, the good devs have provided a [quick start guide][8] on how to install `protoc` and `protoc-gen-grpc-web` on your development machine.
-
-### Generating the gRPC client lib
-
-Once we have `protoc` installed, we can now generate our gRPC client library.
-
+private async Task onNewData(SnapshotBroadcastWorkItem.Data data, IServerStreamWriter<StartStreamResponse> responseStream)
+{
+    await responseStream.WriteAsync(data).ConfigureAwait(false);
+}
 ```
-protoc --js_out=import_style=commonjs,binary:./src/proto --grpc-web_out=import_style=typescript,mode=grpcwebtext:./src/proto --proto_path=./Protos ./Protos/rtmap.proto
-```
 
-The command is quite lengthy. So, let's break it down.
+As you can see from the code snippet above, we've set up a subscriber that actively listens for incoming data, and calls the broadcast method when that happens, and writes to the gRPC data stream.
 
-We're basically telling `protoc` to generate the gRPC client library as a CommonJS module, and output the files to `/src/proto` (`--js_out=import_style=commonjs,binary:./src/proto`). Additionally, we want it to generate the service stub in TypeScript, use the `grpcwebtext` wire format mode, and output the files to `./src/proto` (`--grpc-web_out=import_style=typescript,mode=grpcwebtext:./src/proto`). We're also telling `protoc` where it can find any other `.proto` files we have referenced (`--proto_path=./Protos`) in the input `.proto` file, which is the final argument in the command (`./Protos/rtmap.proto`).
+## Conclusion
 
-But why use `grpcwebtext`, which is simply base64-encoded string, instead of `grpcweb` which is binary? At the time of writing, `grpcweb` does not yet support server streaming calls. We will update to `grpcweb` once server streaming calls become supported.
+We have set up a gRPC connection that stays open indefinitely, that we then use to stream data to all connected clients. Instead of using `while` loops to achieve this, we added an awaitable helper method that listens for the `CancellationToken` to be cancelled before allowing the application to then proceed in closing the connection.
 
-We added the command to our `package.json` as an NPM script, because we knew we'd be running it several times during our development.
+We have also set up a mechanism that uses the `Channel` class to listen for incoming data from our data service, and to then push out received data to all connected clients.
 
-
-### NPM packages
-
-* [google-protobuf][3]
-* [grpc-web][4]
-
+That's it for the server-side stuff. There's so much more to write about, but I'll have to leave that for future posts, as this one is already getting too long as it is.
 
 ## References
 
@@ -317,3 +334,5 @@ We added the command to our `package.json` as an NPM script, because we knew we'
 [9]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/grpc/grpc-start?view=aspnetcore-3.1&tabs=visual-studio
 [10]: https://www.npmjs.com/package/protoc-gen-grpc
 [11]: https://github.com/grpc/grpc-web#wire-format-mode
+[12]: https://devblogs.microsoft.com/dotnet/an-introduction-to-system-threading-channels/
+[13]: https://www.nuget.org/packages/Easy.MessageHub
