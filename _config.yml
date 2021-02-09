@@ -43,7 +43,7 @@ author:
   name:                Dzulqarnain Nasir
   email:               dzul1983@gmail.com
   # Used by `jekyll-seo-tag`:
-  twitter:             dzul1983
+  twitter:             therealdnasir
   github:              dnasir
 
 # This text will appear in a `<small>` tag in the footer of every page.
@@ -114,7 +114,7 @@ google_site_verification: 1UPmBlY2j-b6aBUZ7XylQvcre5uTNF99I3snEfyGlNM
 social:
   name:                Dzulqarnain Nasir
   github:              dnasir
-  twitter:             dzul1983
+  twitter:             therealdnasir
 #   links:
 #     - https://twitter.com/<username>
 #     - https://github.com/<username>
@@ -174,3 +174,4 @@ defaults:
     values:
       layout: "post"
       comments: true
+      image: profile-photo.jpg
