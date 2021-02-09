@@ -180,17 +180,3 @@ And the result?
 ![Real-time map app screenshot]({{ "/assets/img/2021/rtmap-screenshot.png" | absolute_url }}){: .center-image }
 
 Obviously the app in this post is super simple. It's missing a lot of the features we have in the actual app, such as customised marker icons for individual vehicle types, popups, and animated marker movements. But that's outside the scope of this post, would simply make it way longer than it already is.
-
-[1]: https://www.nuget.org/packages/Grpc.AspNetCore
-[2]: https://www.nuget.org/packages/Grpc.AspNetCore.Web
-[3]: https://www.npmjs.com/package/google-protobuf
-[4]: https://www.npmjs.com/package/grpc-web
-[5]: https://developers.google.com/protocol-buffers/
-[6]: https://www.yonego.com/nl/why-milliseconds-matter/
-[7]: https://blog.tech-fellow.net/2019/12/08/building-real-time-public-transport-tracking-system-on-azure-part1/
-[8]: https://github.com/grpc/grpc-web/tree/master/packages/grpc-web#quick-start
-[9]: https://docs.microsoft.com/en-us/aspnet/core/tutorials/grpc/grpc-start?view=aspnetcore-3.1&tabs=visual-studio
-[10]: https://www.npmjs.com/package/protoc-gen-grpc
-[11]: https://github.com/grpc/grpc-web#wire-format-mode
-[12]: https://devblogs.microsoft.com/dotnet/an-introduction-to-system-threading-channels/
-[13]: https://www.nuget.org/packages/Easy.MessageHub
