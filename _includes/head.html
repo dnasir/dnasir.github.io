@@ -85,13 +85,19 @@
   {% if site.google_analytics %} {% include google_analytics.html %} {% endif %}
   <meta name="google-site-verification" content="1UPmBlY2j-b6aBUZ7XylQvcre5uTNF99I3snEfyGlNM" />
   <style>
-    .posts .highlight,
+    .posts li {
+      margin-bottom: 1.5em;
+      border-bottom: 2px solid #d9d9d9;
+      padding-bottom: 1.5em;
+    }
+
     .posts img {
       margin-bottom: 2rem;
     }
 
-    .posts .highlight {
-      clear: both;
+    .post pre.highlight,
+    .posts pre.highlight {
+      margin: 0;
     }
 
     .center-image {
