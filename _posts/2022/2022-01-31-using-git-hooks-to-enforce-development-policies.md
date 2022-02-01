@@ -13,7 +13,7 @@ I was recently asked to automate some front-end checks that ensures the code our
 
 One of the other teams have been using [Husky](https://github.com/typicode/husky) for some time, and while they seem to really like it, I wasn't convinced. I didn't understand why I would need to use a separate package to achieve what can already be done using [Git hooks](https://git-scm.com/docs/githooks). I felt that it was overkill for what we needed it for, especially since the setup is laborious compared to Git hooks.
 
-There are two tasks I want to run before allowing Git commits to take place - linting, and unit testing IF any of the staged files are "testable" - i.e. TypeScript files, Vue.js components. We didn't want anyone to commit anything that would just end up failing at the CI build step.
+There are two tasks I want to run before allowing Git commits to take place - linting, and unit testing. We didn't want anyone to commit anything that would just end up failing at the CI build step.
 
 <!--more-->
 
@@ -61,47 +61,8 @@ then
     PATH="$HOME/.nvm/versions/node/$(nvm current)/bin:$PATH"
 fi
 
-# Check if we have anything to commit
-staged_files=$(git diff --name-only --cached)
-if [ -z "$staged_files" ]; then
-    echo "Nothing to commit."
-    exit 1
-fi
-
-# CD into folder with package.json - depends on project setup
-cd src/MyProject
-
-# Run lint and fix
-npx lint-staged --allow-empty
-
-lint_status=$?
-if [ $lint_status -ne 0 ]; then
-  echo "Linting failed. Fix and try again."
-  exit 1
-fi
-
-# Check again in case changes were reverted due to linting
-staged_files=$(git diff --name-only --cached)
-if [ -z "$staged_files" ]; then
-    echo "Nothing to commit."
-    exit 1
-fi
-
-# Check if there are "testable" changes - i.e. JS, TS, Vue files
-staged_testable_files=$(git diff --name-only --cached | grep -E '\.(js|ts|vue)$')
-if [ -n "$staged_testable_files" ]; then
-    # Run tests
-    echo "Running tests"
-    npm run test
-
-    test_status=$?
-    if [ $test_status -ne 0 ]; then
-        echo "Tests failed. Fix and try again."
-        exit 1
-    fi
-fi
-
-exit 0
+# cd into project folder, run lint-staged and then run unit tests
+cd src/MyProject && npx lint-staged && npm run test
 ```
 
 {:start="4"}
@@ -129,7 +90,7 @@ This command can also be added to the project's `package.json` file as a `postin
 }
 ```
 
-That's it. Now every time someone tries to commit anything to your repo, Git will automatically execute the lint task, and if necessary, run the unit tests.
+That's it. Now every time someone tries to commit anything to your repo, Git will automatically execute the lint task and run the unit tests.
 
 ## Potentially obvious questions
 
