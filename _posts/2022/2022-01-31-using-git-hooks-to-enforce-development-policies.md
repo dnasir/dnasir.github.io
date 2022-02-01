@@ -27,7 +27,7 @@ As for the runner itself, we went with [lint-staged](https://github.com/okonet/l
 // src/MyProject/package.json
 {
   "optionalDependencies": {
-    
+    "lint-staged": "^12.3.2"
   },
   "lint-staged": {
     "*.{js,ts,vue}": [
@@ -44,9 +44,7 @@ As for the runner itself, we went with [lint-staged](https://github.com/okonet/l
 ## Setting up the pre-commit Git hook
 
 1. Create a folder in the root of your repository, and name it `git-hooks`.
-
 2. Create a file in that new folder, and name it `pre-commit`. This is important, because the file name needs to match the naming convention defined in the Git hooks manual.
-
 3. Paste the following code block as the content for the `pre-commit` file you just created. The comments describe what each step does.
 
 ```sh
@@ -106,12 +104,14 @@ fi
 exit 0
 ```
 
+{:start="4"}
 4. Make the file executable. If you're on Windows, you can do this using the Bash command line.
 
 ```
 chmod +x
 ```
 
+{:start="5"}
 5. Update the Git hooks path. This lets your Git client know where to look for hook files.
 
 ```
