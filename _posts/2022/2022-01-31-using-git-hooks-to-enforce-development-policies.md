@@ -119,6 +119,6 @@ I've tried that, but immediately noticed that any changes made to the `.git` fol
 
 ### Does this work with multiple projects within the same repo?
 
-That's a good question. We'll cross that bridge when we come to it. Stay tuned.
+That's a good question. This post does not cover that, but stay tuned for future posts that will cover this topic.
 
 **If you have any questions about this topic, feel free to ask in the comments below.**
