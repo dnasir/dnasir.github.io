@@ -10,7 +10,7 @@ tags:
   - protobuf
 ---
 
-In my previous [post]({% post_url 2020-11-11-realtime-web-apps-with-grpc-part-1 %}), I described how we set up the back-end infrastructure for our real-time public transportation monitoring system. I will now cover the front-end setup of the application.
+In my previous [post]({% post_url 2020/2020-11-11-realtime-web-apps-with-grpc-part-1 %}), I described how we set up the back-end infrastructure for our real-time public transportation monitoring system. I will now cover the front-end setup of the application.
 
 ## The idea
 
