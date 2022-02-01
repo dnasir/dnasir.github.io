@@ -7,6 +7,8 @@ tags:
   - git-hooks
   - lint-staged
   - pre-commit
+  - husky
+  - lint-staged
 ---
 
 I was recently asked to automate some front-end checks that ensures the code our developers commit to the repositories are in line with the project standards. This ensures that our code is uniform across all our projects, and prevents comments like "please fix linting" in pull requests.
@@ -92,12 +94,31 @@ This command can also be added to the project's `package.json` file as a `postin
 
 That's it. Now every time someone tries to commit anything to your repo, Git will automatically execute the lint task and run the unit tests.
 
+FYI, if you want to bypass this, and any other checks when committing your code, you can always use the `--no-verify` flag. But that would make you evil.
+
 ## Potentially obvious questions
 
 ### Why not just use Husky?
 
 Like I've mentioned above, Husky is yet another dependency that requires some elaborate setup to get going, and does not bring anything useful to the table. Git hooks is more than enough for the stuff we needed done.
 
+Additionally, one of my colleagues pointed out that Husky was failing when he tries to commit using the GitHub Desktop app on Windows. Several issues have been opened for this on both the Husky and the GitHub Desktop app repositories.
+
+- https://github.com/typicode/husky/issues/1072
+- https://github.com/desktop/desktop/issues/12562
+
+The technique described in this post works just fine in the GitHub Desktop app on Windows 10.
+
+![It works!]({{ "/assets/img/2022/git-hooks-works-on-github-desktop.png" | absolute_url }}){: .center-image }
+
+This is not to say that I will never use Husky. I will consider using it if there's compelling enough reason for me to do so.
+
 ### Why use a `git-hooks` folder instead of `.git/hooks`?
 
 I've tried that, but immediately noticed that any changes made to the `.git` folder does not get picked up by Git. I didn't know how to get to work, and I didn't want to waste my time when this solution works just as well.
+
+### Does this work with multiple projects within the same repo?
+
+That's a good question. We'll cross that bridge when we come to it. Stay tuned.
+
+**If you have any questions about this topic, feel free to ask in the comments below.**
