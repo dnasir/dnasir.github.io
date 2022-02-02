@@ -3,9 +3,9 @@ layout: default
 title: About me
 date: 2011-08-02 02:24
 ---
-Hi! I'm Dzul - it's short for Dzulqarnain, and depending on where you're from, it might be a mouthful to pronounce.
+Hi! I'm Dzul - it's short for Dzulqarnain, and depending on where you're from, it might be a mouthful to pronounce.
 
-I'm a fullstack web developer based in Latvia. I work with front-end technologies like HTML, CSS, JavaScript, as well as back-end technologies like ASP.NET (C# MVC). I'm a Microsoft Certified Software Associate (Web Applications), and an EPiServer CMS Certified Developer.
+I'm a fullstack web developer based in Latvia. I work with front-end technologies like HTML, CSS, JavaScript, as well as back-end technologies like ASP.NET (C# MVC). I'm a Microsoft Certified Software Associate, and an EPiServer CMS Certified Developer.
 
 I enjoy working with them as well as writing about them. I have found that sharing my knowledge further cements said knowledge into my own head. And since I'm rather forgetful at times, I need all the help I can get.
 
@@ -17,7 +17,7 @@ I also enjoy meeting new people, especially those with similar interests, so don
 
 ### Languages
 
-* JavaScript
+* JavaScript/TypeScript
 * C#
 
 ### Frameworks
@@ -26,6 +26,7 @@ I also enjoy meeting new people, especially those with similar interests, so don
 * AngularJS
 * jQuery
 * ASP.NET MVC
+* ASP.NET Core
 
 ### Platforms
 
